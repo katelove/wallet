@@ -1,8 +1,11 @@
 <template>
+<div class="flex items-center">
     <p 
-      class="font-normal text-2.1xl font-sans text-center">
+      class="font-normal text-2.1xl font-sans">
         {{heading}}
     </p>
+</div>
+
 </template>
 
 <script>
