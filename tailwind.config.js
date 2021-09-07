@@ -22,7 +22,10 @@ module.exports = {
 				"10px": "10px"
 			},
 			fontSize: {
-				"25px": "25px"
+				"25px": "25px",
+        '2.1xl':['25px',{
+          lineHeight:'34px'
+        }] 
 			},
 			height: {
 				"65px": "65px"
@@ -30,10 +33,14 @@ module.exports = {
 			minHeight: {
 				"100px": "100px"
 			},
+      fontFamily:{
+        'sans':['Noto Sans']
+      }
 		},
 	},
 	variants: {
 		extend: {},
 	},
 	plugins: [],
+
 }
