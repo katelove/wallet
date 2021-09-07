@@ -22,13 +22,30 @@ module.exports = {
 				"10px": "10px"
 			},
 			fontSize: {
-				"25px": "25px"
+				"25px": "25px",
+				"12px": "12px",
+				"10px": "10px"
 			},
 			height: {
-				"65px": "65px"
+				"65px": "65px",
+				"27px": "27px"
 			},
 			minHeight: {
 				"100px": "100px"
+			},
+			padding: {
+				"22px": "22px",
+				"12px": "12px"
+			},
+			margin: {
+				"6px": "6px",
+				"26px": "26px",
+				"10px": "10px",
+				"27px": "27px",
+				"21px": "21px",
+				"22px": "22px",
+				"20px": "20px",
+				"12px": "12px"
 			},
 		},
 	},
