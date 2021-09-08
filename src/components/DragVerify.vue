@@ -1,19 +1,19 @@
 <template>
-  <div class="flex items-center mt-10 flex-col">
     <drag-verify-img-chip
       ref="dragVerify"
       :width="260"
       :imgsrc="img"
       :isPassing.sync="isPassing"
       :showRefresh="true"
-      text="请按住滑块拖动"
+      text="向右拖动滑块填充拼图"
       successText="验证通过"
-      handlerIcon="el-icon-d-arrow-right"
+      handlerIcon="el-icon-right"
       successIcon="el-icon-circle-check"
+      handlerBg="#30BEED"
+      radius="0px"
       @passcallback="pass"
     >
     </drag-verify-img-chip>
-  </div>
 </template>
 
 <script>
