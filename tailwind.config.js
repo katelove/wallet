@@ -15,7 +15,9 @@ module.exports = {
 				marbleGrey: "#8C8C8C",
 				yewLime: "#969696",
 				diamondGrey: "#F0F0F0",
-				white: "#FFFFFF"
+				white: "#FFFFFF",
+        wordBlue:"#0185AE",
+        skyBlue:"#DAF6FF"
 			},
 			borderRadius: {
 				"2px": "2px",
