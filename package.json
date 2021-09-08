@@ -11,6 +11,7 @@
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-fragment": "^1.5.2",
     "vue-router": "^3.5.2"
   },
   "devDependencies": {
@@ -37,7 +38,11 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-console": 1,
+      "no-debugger": 1,
+      "vue/no-unused-components": "off"
+    }
   },
   "browserslist": [
     "> 1%",

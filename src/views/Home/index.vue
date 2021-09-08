@@ -14,14 +14,16 @@
 
 		<BlueContainer class="mt-12 mb-20px">
 			<div class="flex h-28 justify-evenly items-center">
-				<div>
+				<div >
 					<img class="m-auto" src="@/assets/icon/deposit.svg" />
 					<p class="mt-1">充值/收款</p>
 				</div>
-				<div>
-					<img class="m-auto" src="@/assets/icon/withdraw.svg" />
-					<p class="mt-1">提現/轉帳</p>
-				</div>
+				<router-link :to="'withdraw'">
+					<div>
+						<img class="m-auto" src="@/assets/icon/withdraw.svg" />
+						<p class="mt-1">提現/轉帳</p>
+					</div>
+				</router-link>
 			</div>
 		</BlueContainer>
 
