@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex justify-center mt-10 flex-col w-1/2 m-auto">
     <Title class="w-full h-12" heading="欢迎登录测试钱包"></Title>
     <BlueContainer title="" class="flex items-center flex-col">
       <Input class="w-75 h-8.5 m-6" placeholder="手机/信箱/用户名" />
