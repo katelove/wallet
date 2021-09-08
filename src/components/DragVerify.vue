@@ -1,6 +1,5 @@
 <template>
-  <div class="flex justify-center mt-10 flex-col">
-      <h3>滑图验证</h3>
+  <div class="flex items-center mt-10 flex-col">
     <drag-verify-img-chip
       ref="dragVerify"
       :width="260"
@@ -23,15 +22,16 @@ export default {
   data() {
     return {
       img: require("../../public/image/verify-img.png"),
+      isPassing:false
     };
   },
   components: {
     dragVerifyImgChip,
   },
-  methods:{
-      pass(){
-          
-      }
-  }
+  methods: {
+    pass() {
+      console.log("滑塊驗證");
+    },
+  },
 };
 </script>
