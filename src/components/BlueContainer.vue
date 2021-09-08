@@ -1,14 +1,14 @@
 <template lang="">
-    <div class="relative mt-20">
+    <div class="relative mt-14">
         <div
-            class="text-25px text-white rounded-10px bg-melancholyBlue text-center	absolute h-65px w-full pt-2"
+            class="text-25px text-white rounded-10px bg-melancholyBlue text-center	absolute h-65px w-86 pt-2"
             :class="[title ? '-top-12' : '-top-8']"
         >
             {{title}}
         </div>
 
         <div
-            class="rounded-10px border border-melancholyBlue min-h-100px relative bg-white"
+            class="rounded-10px border border-melancholyBlue min-h-100px relative bg-white w-86"
             v-bind="$attrs"    
         >
             <slot></slot>

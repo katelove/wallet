@@ -35,6 +35,10 @@ module.exports = {
 			},
       fontFamily:{
         'sans':['Noto Sans']
+      },spacing:{
+        '8.5':'2.063rem',
+        '75':'18.625rem',
+        '86':'21.875rem'
       }
 		},
 	},
