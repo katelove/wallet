@@ -1,11 +1,11 @@
 <template>
   <div class="flex justify-center mt-10 flex-col  m-auto">
     <Title class="w-full h-12" heading="测试钱包"></Title>
-    <div class="border-melancholyBlue border m-8 rounded border-shadow">
+    <div class="border-melancholyBlue border m-8 rounded-4px border-shadow">
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <Button class="w-1/3  h-12">手机号</Button>
+        <Button class="w-1/3  h-12 rounded-4px">手机号</Button>
         <p class="w-1/3 text-center text-yewLime">邮箱</p>
         <p class="w-1/3 text-center text-yewLime">用戶名</p>
       </div>

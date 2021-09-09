@@ -20,6 +20,8 @@ module.exports = {
 			},
 			borderRadius: {
 				"2px": "2px",
+				"4px":"4px",
+				"5px":"5px",
 				"10px": "10px"
 			},
 			fontSize: {
