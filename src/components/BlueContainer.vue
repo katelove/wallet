@@ -1,5 +1,7 @@
 <template lang="">
-    <div class="relative mt-8">
+    <div class="relative"
+        :class="[title ? 'mt-14' : 'mt-8']"
+    >
         <div
             class="text-25px text-white rounded-10px bg-melancholyBlue text-center	absolute h-65px w-full pt-2"
             :class="[title ? '-top-12' : '-top-8']"

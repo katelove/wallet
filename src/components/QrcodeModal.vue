@@ -1,5 +1,9 @@
 <template lang="">
-    <div v-show="isShow" class="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-mask">
+    <div
+        v-if="isShow"
+        class="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-mask"
+        @click.self="onClose"
+    >
         <div class="w-4/5 bg-white flex justify-center items-center rounded-20px flex-col px-12 relative">
             <img
                 class="absolute"

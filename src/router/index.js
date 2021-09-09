@@ -11,18 +11,41 @@ const routes = [
         path: "/",
         name: "Home",
         component: () => import("@/views/Home"),
-    },
+	},
 	{
-		path: "/withdraw",
+        path: "/transaction_history",
+        name: "TransactionHistory",
+		component: () => import("@/views/TransactionHistory"),
+		meta: {
+			showGoback: true,
+		}
+	},
+	{
+		path: "/crypto/:action/:crypto",
 		component: RouteView,
 		children: [
 			{
-				path: '/',
-				component: () => import("@/views/Withdraw")
+				path: '/crypto/:action',
+				component: () => import("@/views/CryptoList"),
+				meta: {
+					showGoback: true
+				}
 			},
 			{
-				path: '/withdraw/:crypto',
-				component: () => import("@/views/Withdraw/CryptoWithdraw.vue")
+				path: '/crypto/deposit/:crypto',
+				component: () => import("@/views/Deposit"),
+				meta: {
+					showGoback: true,
+					showHistory: true
+				}
+			},
+			{
+				path: '/crypto/withdraw/:crypto',
+				component: () => import("@/views/Withdraw"),
+				meta: {
+					showGoback: true,
+					showHistory: true
+				}
 			},
 		]
 	}

@@ -2,6 +2,7 @@
     <input
         :type="type"
         class="border-black	border rounded"
+        @input="$emit('input', $event.target.value)"
         v-bind="$attrs"
     />
 </template>
