@@ -16,7 +16,9 @@ module.exports = {
 				yewLime: "#969696",
 				diamondGrey: "#F0F0F0",
 				white: "#FFFFFF",
-				garyWord:"#B0B0B0"
+				garyWord:"#B0B0B0",
+        		wordBlue:"#0185AE",
+       			skyBlue:"#DAF6FF"
 			},
 			borderRadius: {
 				"2px": "2px",
@@ -24,9 +26,9 @@ module.exports = {
 			},
 			fontSize: {
 				"25px": "25px",
-        '2.1xl':['25px',{
-          lineHeight:'34px'
-        }] 
+        		'2.1xl':['25px',{
+          			lineHeight:'34px'
+        		}] 
 			},
 			height: {
 				"65px": "65px"
