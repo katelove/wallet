@@ -7,13 +7,13 @@
     <img src="../../public/image/x.png" />
   </div>
 
-    <Input class="w-full h-8.5 mt-7.5" placeholder=" 邮箱验证码                                 获取验证码"/>
+    <Input class="w-full h-8.5 mt-7.5" placeholder=" 邮箱验证码                                获取验证码"/>
     <span class="text-bayshoreBlue text-xs mt-2">输入您的邮箱sk*****@gmail.com收到的验证码</span>
     <Input class="w-full h-8.5 mt-7.5" placeholder=" 谷歌验证码" />
     <span class="text-bayshoreBlue text-xs mt-2">安全项丢失?</span>
     <div class="flex justify-end">
-    <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-2px">取消</button>
-    <Button class="w-20 h-8">确认</Button>
+    <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-5px">取消</button>
+    <Button class="w-20 h-8 rounded-5px">确认</Button>
     </div>
 
   </div>
