@@ -1,6 +1,6 @@
 <template lang="">
-    <div class="flex justify-center mt-10 flex-col w-1/2 m-auto">
-        <!-- <Button class="w-full h-12">提交sdsds</Button>
+  <!-- <div class="flex justify-center mt-10 flex-col w-1/2 m-auto"> -->
+  <!-- <Button class="w-full h-12">提交sdsds</Button>
         <Input type="password" class="mt-5"/>
         <BlueContainer title="">
             test
@@ -9,25 +9,29 @@
         <BlueContainer title="ㄏ哈哈">
             test
         </BlueContainer> -->
-        <Login/>
-    </div>
+  <!-- <NewPwd /> -->
+  <!-- <RestDragVerify/> -->
+  <!-- <RestPwd/> -->
+  <!-- <SafeVerify/> -->
+  <TestWallet />
+  <!-- </div> -->
 </template>
 
 <script>
-// import Button from "../components/Button.vue"
-// import Input from "../components/Input.vue"
-// import BlueContainer from "../components/BlueContainer.vue"
-import Login from "../components/Login.vue"
+// import NewPwd from "../components/NewPwd.vue";
+//  import RestDragVerify from "../components/RestDragVerify.vue";
+// import RestPwd from "../components/RestPwd.vue";
+// import SafeVerify from "../components/SafeVerify.vue";
+import TestWallet from "../components/TestWallet.vue";
 
 export default {
-    components: {
-        // Button,
-        // Input,
-        // BlueContainer,
-        Login
-    },
-}
+  components: {
+    // NewPwd,
+    //  RestDragVerify,
+    // RestPwd,
+    // SafeVerify,
+    TestWallet,
+  },
+};
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>
