@@ -16,8 +16,8 @@ module.exports = {
 				yewLime: "#969696",
 				diamondGrey: "#F0F0F0",
 				white: "#FFFFFF",
-        wordBlue:"#0185AE",
-        skyBlue:"#DAF6FF"
+        		wordBlue:"#0185AE",
+        		skyBlue:"#DAF6FF"
 			},
 			borderRadius: {
 				"2px": "2px",
@@ -25,9 +25,9 @@ module.exports = {
 			},
 			fontSize: {
 				"25px": "25px",
-        '2.1xl':['25px',{
-          lineHeight:'34px'
-        }] 
+        		'2.1xl':['25px',{
+          		lineHeight:'34px'
+       			 }] 
 			},
 			height: {
 				"65px": "65px"
@@ -38,6 +38,7 @@ module.exports = {
       fontFamily:{
         'sans':['Noto Sans']
       },spacing:{
+		'7.5':'1.875rem',
         '8.5':'2.063rem',
         '25':'6.438rem',
         '75':'18.625rem',
