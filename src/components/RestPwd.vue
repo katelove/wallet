@@ -3,8 +3,8 @@
     class="flex items-center flex-col mt-25 border-melancholyBlue border mr-8 ml-8 p-6 rounded border-shadow"
   >
     <h3 class="text-25px mb-5">重置登录密码</h3>
-    <div class="bg-skyBlue">
-      <p class="text-sm text-wordBlue mr-2 ml-2">
+    <div class="bg-skyBlue w-full text-center">
+      <p class="text-sm text-wordBlue tracking-wider">
         重置登录密码后，24小时内禁止提币和OTC
       </p>
     </div>
