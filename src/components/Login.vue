@@ -6,7 +6,7 @@
       <Input class="w-75 h-8.5 m-6" placeholder="密码" />
       <Button class="w-75 h-10 m-6">登录</Button>
       <div class="flex justify-between m-6">
-        <p>没有帐号？<span class="text-melancholyBlue">注册</span></p>
+        <p class="text-yewLime">没有帐号？<span class="text-melancholyBlue">注册</span></p>
         <p class="text-melancholyBlue">忘记密码？</p>
       </div>
     </BlueContainer>
