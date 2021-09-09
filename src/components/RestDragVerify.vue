@@ -1,16 +1,14 @@
 <template>
   <div
-    class="flex flex-col mt-25 border-melancholyBlue border mr-8 ml-8 pr-11 pl-11"
+    class="flex flex-col mt-25 border-melancholyBlue border mr-8 ml-8 p-6 rounded border-shadow"
   >
-    <!-- <h3 class="text-25px mt-5">滑图验证</h3>
-      <div class="flex justify-items-end">
-        <img src="../../public/image/x.png">
-      </div> -->
     <div class="relative">
       <h3 class="text-25px text-center">滑图验证</h3>
       <img class="absolute right-0 close-top" src="../../public/image/x.png" />
     </div>
-    <dragVerify class="mt-2 mb-5" />
+    <div class="flex justify-center">
+      <dragVerify class="mt-2" />
+    </div>
   </div>
 </template>
 
@@ -24,8 +22,11 @@ export default {
 </script>
 
 <style>
-
+.border-shadow{
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+}
 .close-top{
-  transform: translateY(-50%);
+    transform:translateY(-50%);
+    top:50%;
 }
 </style>
