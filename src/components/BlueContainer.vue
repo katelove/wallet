@@ -8,7 +8,7 @@
         </div>
 
         <div
-            class="rounded-10px border border-melancholyBlue min-h-100px relative bg-white"
+            class="rounded-10px border border-melancholyBlue min-h-100px relative bg-white w-full"
             v-bind="$attrs"    
         >
             <slot></slot>
