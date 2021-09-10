@@ -1,20 +1,16 @@
 <template lang="">
-  <!-- <div class="flex justify-center mt-10 flex-col w-1/2 m-auto"> -->
-  <!-- <Button class="w-full h-12">提交sdsds</Button>
-        <Input type="password" class="mt-5"/>
-        <BlueContainer title="">
-            test
-        </BlueContainer>
-
-        <BlueContainer title="ㄏ哈哈">
-            test
-        </BlueContainer> -->
   <!-- <NewPwd /> -->
   <!-- <RestDragVerify/> -->
   <!-- <RestPwd/> -->
   <!-- <SafeVerify/> -->
-  <TestWallet />
-  <!-- </div> -->
+  <!-- <TestWallet /> -->
+  <!-- <LoginSafeVerify/> -->
+  <!-- <LoginDragVerify/> -->
+  <!-- <PhoneVerify/> -->
+  <!-- <RegisterTestWallet/> -->
+  <!-- <MailVerify/> -->
+  <!-- <NameTestWallet/> -->
+  <NameVerify/>
 </template>
 
 <script>
@@ -22,7 +18,14 @@
 //  import RestDragVerify from "../components/RestDragVerify.vue";
 // import RestPwd from "../components/RestPwd.vue";
 // import SafeVerify from "../components/SafeVerify.vue";
-import TestWallet from "../components/TestWallet.vue";
+// import TestWallet from "../components/TestWallet.vue";
+// import LoginSafeVerify from "../components/LoginSafeVerify.vue";
+// import LoginDragVerify from "../components/LoginDragVerify.vue";
+// import PhoneVerify from "../components/PhoneVerify.vue";
+// import RegisterTestWallet from "../components/RegisterTestWallet.vue";
+// import MailVerify from "../components/MailVerify.vue";
+// import NameTestWallet from "../components/NameTestWallet.vue"
+import NameVerify from "../components/NameVerify.vue"
 
 export default {
   components: {
@@ -30,8 +33,16 @@ export default {
     //  RestDragVerify,
     // RestPwd,
     // SafeVerify,
-    TestWallet,
+    // TestWallet,
+    // LoginSafeVerify,
+    // LoginDragVerify
+    // PhoneVerify 
+    // RegisterTestWallet
+    // MailVerify
+    // NameTestWallet
+    NameVerify
+
   },
-};
+}; 
 </script>
 <style lang=""></style>
