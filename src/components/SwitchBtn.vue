@@ -1,5 +1,5 @@
 <template>
-    <div class="inline-block mt-20 switch">
+    <div class="inline-block switch">
       <input type="checkbox" class="w-9 h-15px bg-melancholyBlue cursor-pointer relative appearance-none outline-none rounded-10px input-time" checked />
     </div>
 </template>

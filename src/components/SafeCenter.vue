@@ -4,9 +4,13 @@
     <BlueContainer title="" class="flex items-center flex-col ml-8 mr-8">
       <div class="flex justify-between p-6">
         <p>修改登錄密碼</p>
-        <img src="../../public/image/arrow.png"/>
+        <img class="h-full" src="../../public/image/arrow.png" />
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
+      <div class="flex justify-between p-6">
+        <p>面容支付</p>
+        <SwithBtn />
+      </div>
     </BlueContainer>
   </div>
 </template>
@@ -14,10 +18,12 @@
 <script>
 import Title from "../components/Title.vue";
 import BlueContainer from "../components/BlueContainer.vue";
+import SwithBtn from "../components/SwitchBtn.vue";
 export default {
   components: {
     Title,
     BlueContainer,
+    SwithBtn,
   },
 };
 </script>
