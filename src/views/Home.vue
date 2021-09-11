@@ -13,7 +13,8 @@
   <!-- <NameVerify/> -->
   <!-- <SwitchBtn/> -->
   <!-- <SafeCenter/> -->
-  <ModifyLoginPwd/>
+  <!-- <ModifyLoginPwd/> -->
+  <ModifyLoginSecondPwd/>
 </template>
 
 <script>
@@ -31,7 +32,8 @@
 // import NameVerify from "../components/NameVerify.vue"
 // import SwitchBtn from "../components/SwitchBtn.vue"
 // import SafeCenter from "../components/SafeCenter.vue"
-import ModifyLoginPwd from "../components/ModifyLoginPwd.vue"
+// import ModifyLoginPwd from "../components/ModifyLoginPwd.vue"
+import ModifyLoginSecondPwd from "../components/ModifyLoginSecondPwd.vue"
 
 export default {
   components: {
@@ -49,7 +51,8 @@ export default {
     // NameVerify
     // SwitchBtn
     // SafeCenter
-    ModifyLoginPwd
+    // ModifyLoginPwd
+    ModifyLoginSecondPwd
   },
 }; 
 </script>
