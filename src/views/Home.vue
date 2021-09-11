@@ -14,7 +14,8 @@
   <!-- <SwitchBtn/> -->
   <!-- <SafeCenter/> -->
   <!-- <ModifyLoginPwd/> -->
-  <ModifyLoginSecondPwd/>
+  <!-- <ModifyLoginSecondPwd/> -->
+  <SetSecondPwd/>
 </template>
 
 <script>
@@ -33,7 +34,8 @@
 // import SwitchBtn from "../components/SwitchBtn.vue"
 // import SafeCenter from "../components/SafeCenter.vue"
 // import ModifyLoginPwd from "../components/ModifyLoginPwd.vue"
-import ModifyLoginSecondPwd from "../components/ModifyLoginSecondPwd.vue"
+// import ModifyLoginSecondPwd from "../components/ModifyLoginSecondPwd.vue"
+import SetSecondPwd from "../components/SetSecondPwd.vue";
 
 export default {
   components: {
@@ -52,7 +54,8 @@ export default {
     // SwitchBtn
     // SafeCenter
     // ModifyLoginPwd
-    ModifyLoginSecondPwd
+    // ModifyLoginSecondPwd
+    SetSecondPwd
   },
 }; 
 </script>
