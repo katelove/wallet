@@ -15,7 +15,8 @@
   <!-- <SafeCenter/> -->
   <!-- <ModifyLoginPwd/> -->
   <!-- <ModifyLoginSecondPwd/> -->
-  <SetSecondPwd/>
+  <!-- <SetSecondPwd/> -->
+  <BindPhone/>
 </template>
 
 <script>
@@ -35,7 +36,8 @@
 // import SafeCenter from "../components/SafeCenter.vue"
 // import ModifyLoginPwd from "../components/ModifyLoginPwd.vue"
 // import ModifyLoginSecondPwd from "../components/ModifyLoginSecondPwd.vue"
-import SetSecondPwd from "../components/SetSecondPwd.vue";
+// import SetSecondPwd from "../components/SetSecondPwd.vue";
+import BindPhone from "../components/BindPhone.vue"
 
 export default {
   components: {
@@ -55,7 +57,8 @@ export default {
     // SafeCenter
     // ModifyLoginPwd
     // ModifyLoginSecondPwd
-    SetSecondPwd
+    // SetSecondPwd
+    BindPhone
   },
 }; 
 </script>
