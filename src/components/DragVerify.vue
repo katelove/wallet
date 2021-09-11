@@ -1,5 +1,4 @@
 <template>
-<div class="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-grey">
     <drag-verify-img-chip
       ref="dragVerify"
       :width="260"
@@ -15,7 +14,6 @@
       @passcallback="pass"
     >
     </drag-verify-img-chip>
-</div>
 
 </template>
 
@@ -39,8 +37,3 @@ export default {
 };
 </script>
 
-<style>
-.bg-grey{
-  background: rgba(0, 0, 0, 0.31);
-}
-</style>
