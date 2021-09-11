@@ -18,7 +18,13 @@ const routes = [
 		component: () => import("@/views/TransactionHistory"),
 		meta: {
 			showGoback: true,
+			hideBottomNav: true
 		}
+	},
+	{
+        path: "/wallet",
+        name: "Wallet",
+		component: () => import("@/views/Wallet"),
 	},
 	{
 		path: "/crypto/:action/:crypto",

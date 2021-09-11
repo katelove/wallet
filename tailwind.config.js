@@ -29,6 +29,7 @@ module.exports = {
 				"10px": "10px",
 				"14px": "14px",
 				"20px": "20px",
+				"24px": "24px",
 			},
 			height: {
 				"65px": "65px",
@@ -66,14 +67,18 @@ module.exports = {
 				"16px": "16px",
 				"30px": "30px",
 				"26px": "26px",
+				"37px": "37px",
 			},
 			margin: {
+				"2px": "2px",
+				"3px": "3px",
 				"6px": "6px",
 				"7px": "7px",
 				"8px": "8px",
 				"9px": "9px",
 				"19px": "19px",
 				"15px": "15px",
+				"16px": "16px",
 				"26px": "26px",
 				"25px": "25px",
 				"24px": "24px",
@@ -88,11 +93,15 @@ module.exports = {
 				"12px": "12px",
 				"13px": "13px",
 				"30px": "30px",
+				"31px": "31px",
 				"18px": "18px",
 				"39px": "39px",
 				"40px": "40px",
 				"32px": "32px",
 				"35px": "35px",
+			},
+			boxShadow: {
+				"normal": "4px 4px 4px rgba(0, 0, 0, 0.25)"
 			}
 		},
 	},

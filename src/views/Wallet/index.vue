@@ -1,18 +1,16 @@
-<template>
+<template lang="">
     <div class="mt-2 mx-26px">
-        <div class="flex">
-			<img src="@/assets/icon/profile.svg" />
-			<p class="text-25px flex-grow text-center">测试钱包</p>
-		</div>
-
-		<div class="flex mt-27px mb-21px">
+        <div class="flex mt-27px mb-21px">
 			<p class="mr-10px">总资产折合(USDT)</p>
 			<img src="@/assets/icon/open_eye.svg" />
 		</div>
 
-		<p class="text-24px">{{balance}}</p>
+        <div class="flex justify-between">
+            <p class="text-24px">{{balance}}</p>
+            <img src="@/assets/icon/next.svg" />
+        </div>
 
-		<BlueContainer class="mt-12 mb-20px">
+        <BlueContainer class="mt-12 mb-20px">
 			<div class="flex h-28 justify-evenly items-center">
 				<router-link :to="'/crypto/deposit'">
 					<div >
@@ -29,15 +27,12 @@
 			</div>
 		</BlueContainer>
 
-		<img src="@/assets/banner.jpg" class="mb-12px"/>
-
-		<CryptoList/>
+        <CryptoItem />
     </div>
 </template>
-
 <script>
 import BlueContainer from "@/components/BlueContainer"
-import CryptoList from "./CryptoList.vue"
+import CryptoItem from "./CryptoItem"
 
 export default {
 	data() {
@@ -46,8 +41,8 @@ export default {
 		}
 	},
 	components: {
-		BlueContainer,
-		CryptoList,
+        BlueContainer,
+        CryptoItem
 	}
 }
 </script>

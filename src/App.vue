@@ -2,12 +2,14 @@
 	<div id="app" class="relative">
 		<TopNav />
 		<router-view/>
+		<BottomNav />
 	</div>
 </template>
 
 <script>
 import './index.css'
 import TopNav from "@/components/TopNav"
+import BottomNav from "@/components/BottomNav"
 import axios from "axios"
 
 export default {
@@ -19,7 +21,8 @@ export default {
 		})
 	},
 	components: {
-		TopNav
+		TopNav,
+		BottomNav
 	}
 }
 </script>
