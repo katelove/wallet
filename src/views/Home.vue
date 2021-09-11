@@ -18,7 +18,8 @@
   <!-- <SetSecondPwd/> -->
   <!-- <BindPhone/> -->
   <!-- <BindGoogle/> -->
-  <ModalDragVerify/>
+  <!-- <ModalDragVerify/> -->
+  <BindSecondGoogle/>
 </template>
 
 <script>
@@ -41,7 +42,8 @@
 // import SetSecondPwd from "../components/SetSecondPwd.vue";
 // import BindPhone from "../components/BindPhone.vue"
 // import BindGoogle from "../components/BindGoogle.vue"
-import ModalDragVerify from "../components/ModalDragVerify.vue"
+// import ModalDragVerify from "../components/ModalDragVerify.vue"
+import BindSecondGoogle from "@/components/BindSecondGoogle.vue"
 
 export default {
   components: {
@@ -64,7 +66,8 @@ export default {
     // SetSecondPwd
     // BindPhone
     // BindGoogle
-    ModalDragVerify
+    // ModalDragVerify,
+    BindSecondGoogle
   },
 }; 
 </script>
