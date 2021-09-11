@@ -16,7 +16,8 @@
   <!-- <ModifyLoginPwd/> -->
   <!-- <ModifyLoginSecondPwd/> -->
   <!-- <SetSecondPwd/> -->
-  <BindPhone/>
+  <!-- <BindPhone/> -->
+  <BindGoogle/>
 </template>
 
 <script>
@@ -37,7 +38,8 @@
 // import ModifyLoginPwd from "../components/ModifyLoginPwd.vue"
 // import ModifyLoginSecondPwd from "../components/ModifyLoginSecondPwd.vue"
 // import SetSecondPwd from "../components/SetSecondPwd.vue";
-import BindPhone from "../components/BindPhone.vue"
+// import BindPhone from "../components/BindPhone.vue"
+import BindGoogle from "../components/BindGoogle.vue"
 
 export default {
   components: {
@@ -58,7 +60,8 @@ export default {
     // ModifyLoginPwd
     // ModifyLoginSecondPwd
     // SetSecondPwd
-    BindPhone
+    // BindPhone
+    BindGoogle
   },
 }; 
 </script>
