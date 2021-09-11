@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center mt-10 flex-col m-auto">
     <Title class="flex justify-center" heading="欢迎登录测试钱包"></Title>
-    <BlueContainer title="" class="flex items-center flex-col ml-8 mr-8">
+    <BlueContainer title="" class="flex items-center flex-col ml-8 mr-8 mt-14">
       <Input class="w-75 h-8.5 m-6" placeholder="手机/信箱/用户名" />
       <Input class="w-75 h-8.5 m-6" placeholder="密码" />
       <Button class="w-75 h-10 m-6">登录</Button>
