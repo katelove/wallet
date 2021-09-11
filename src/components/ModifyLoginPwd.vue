@@ -4,25 +4,23 @@
     <BlueContainer title="" class="ml-8 mr-8 mt-10">
       <div class="pr-6 pl-6 pt-5 pb-5">
         <p class="text-base">当前登录密码</p>
-        <div class="flex">
+        <div class="relative">
           <input
-            class="w-full border-none border-line relative mt-8"
+            class="w-full border-none border-line  mt-8"
             placeholder="请输入当前登录密码"
           />
-            <div class="eye-line absolute"></div>
-            <img class="absolute right-6 bottom-8" src="../../public/image/eye.png" />
+          <img class="absolute right-0 top-6" src="../../public/image/eye.png" />
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-      <div class="pr-6 pl-6 pt-5 pb-5">
+          <div class="pr-6 pl-6 pt-5 pb-5">
         <p class="text-base">新登录密码</p>
-        <div class="flex">
+        <div class="relative">
           <input
-            class="w-full border-none border-line relative mt-8"
+            class="w-full border-none border-line  mt-8"
             placeholder="请输入新登录密码"
           />
-          <div class="eye-line absolute"></div>
-          <img class="absolute right-6 bottom-8" src="../../public/image/eye.png" />
+          <img class="absolute right-0 top-6" src="../../public/image/eye.png" />
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
@@ -47,14 +45,5 @@ export default {
 <style>
 .border-line {
   border-bottom: 1px solid #b0b0b0;
-}
-
-.eye-line {
-  border: 1px solid #000000;
-  transform: rotate(135deg);
-  width: 38.18px;
-  height: 0px;
-  bottom: 42px;
-  right: 20px;
 }
 </style>
