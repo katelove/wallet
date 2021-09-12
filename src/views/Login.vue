@@ -2,11 +2,11 @@
   <div class="flex justify-center mt-10 flex-col m-auto">
     <Title class="flex justify-center" heading="欢迎登录测试钱包"></Title>
     <BlueContainer title="" class="flex items-center flex-col ml-8 mr-8 mt-14">
-      <form>
-        <Input class="w-75 h-8.5 m-6" placeholder="手机/信箱/用户名" />
-        <Input class="w-75 h-8.5 m-6" placeholder="密码" />
-      </form>
-      <Button class="w-75 h-10 m-6" type="submit" @click="login">登录</Button>
+      <!-- <input class="w-75 h-8.5 m-6" type="text" v-model="actName" placeholder="手机/信箱/用户名"/> -->
+      <Input class="w-75 h-8.5 m-6" type="text" v-model="actName" placeholder="手机/信箱/用户名" />
+      <Input class="w-75 h-8.5 m-6" type="text" v-model="actPwd" placeholder="密码" />
+    <!-- <button class="w-75 h-10 m-6" @click="loginPage">登录</button> -->
+      <Button class="w-75 h-10 m-6" @click="loginPage">登录</Button>
       <div class="flex justify-between m-6">
         <p class="text-yewLime">
           没有帐号？<span class="text-melancholyBlue">注册</span>
@@ -27,14 +27,15 @@ export default {
   name: "Login",
   data() {
     return {
-      user: {
-        accout: "",
-        password: "",
-      },
+        actName: "",
+        actPwd: "",
+      
     };
   },
   methods: {
-    login() {
+    loginPage() {
+      // console.log("account:" + this.actName );
+      console.log("account:" + this.actName + " pwd:" + this.actPwd);
       this.$store.commit({
         type: "setUsereData",
         userData: this.user,
@@ -46,7 +47,8 @@ export default {
     Title,
     BlueContainer,
     Input,
-    Button,
+    Button
+
   },
 };
 </script>

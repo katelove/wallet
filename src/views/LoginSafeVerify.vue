@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import Title from "../components/Title.vue";
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
+import Title from "@/components/Title.vue";
+import Input from "@/components/Input.vue";
+import Button from "@/components/Button.vue";
 export default {
   components: {
     Title,

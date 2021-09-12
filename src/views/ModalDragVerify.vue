@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import dragVerify from "../components/DragVerify.vue";
+import dragVerify from "@/components/DragVerify.vue";
 export default {
   components: {
     dragVerify,
