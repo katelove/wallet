@@ -2,27 +2,39 @@ import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
 
-const state = {
-  user: {
-    account: "",
-    password: "",
-    isLogin: false,
-  },
-};
-
-const mutations = {
-  setUserData(state, { userData }) {
-    console.log('state:'+state);
-    state.user.account = userData.account;
-    state.user.password = userData.password;
-    state.user.isLogin = true;
-  },
-};
-
-const actions = {};
-
 export default new Vuex.Store({
-  state,
-  mutations,
-  actions,
-});
+  state: {
+    user: null,
+    progress: 0
+
+  },
+  mutations: {
+    SET_USER_DATA(state, userData) {
+      console.log('state:'+ state+' userData:'+userData);
+      // 登入==>設置state
+      state.user = userData
+      // 設置localstorage連到自動登入
+      localStorage.setItem('user_id', JSON.stringify(userData))
+    },
+    CLEAR_USER_DATA() {      
+      localStorage.removeItem('user_id')
+    },
+  },
+  actions: {
+    // 登入=>帳號和密碼登入
+    login ({ commit }) {
+      commit('SET_USER_DATA')
+    },
+    // 登出方法
+    logout ({ commit }) {
+      console.log('logout')
+      commit('CLEAR_USER_DATA')
+    },
+  },
+  // 創造一個Getter取值
+  getters: {
+    getUser: state => {
+      return state.user
+    }
+  }
+})
