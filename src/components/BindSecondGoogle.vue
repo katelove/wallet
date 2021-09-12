@@ -9,33 +9,34 @@
             class="w-full border-none border-line  mt-8"
             placeholder="请输入手机验证码"
           />
-      <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 ">获取验证码</Button>
+          <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 "
+            >获取验证码</Button
+          >
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-            <div class="pr-6 pl-6 pt-5 pb-5">
+      <div class="pr-6 pl-6 pt-5 pb-5">
         <p class="text-base">信箱验证码</p>
         <div class="relative">
           <input
             class="w-full border-none border-line  mt-8"
             placeholder="请输入信箱验整码"
           />
-      <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 ">获取验证码</Button>
+          <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 "
+            >获取验证码</Button
+          >
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-                  <div class="pr-6 pl-6 pt-5 pb-5">
-        <p class="text-base">信箱验证码</p>
-        <div class="relative">
+      <div class="pr-6 pl-6 pt-5 pb-5">
+        <p class="text-base">谷歌验证码</p> 
           <input
             class="w-full border-none border-line  mt-8"
-            placeholder="请输入信箱验整码"
+            placeholder="请输入谷歌验整码"
           />
-      <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 ">获取验证码</Button>
-        </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-       <Button class="w-75 h-10 m-6 rounded-10px">提交</Button>
+      <Button class="w-75 h-10 m-6 rounded-10px">提交</Button>
     </BlueContainer>
   </div>
 </template>
