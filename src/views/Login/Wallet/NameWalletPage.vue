@@ -1,28 +1,29 @@
 <template>
-  <div>
+      <div>
     <section v-if="$store.getters.getSiteNum === 1">
-      <MailWallet />
+      <NameWallet />
     </section>
     <section v-else-if="$store.getters.getSiteNum === 2">
       <ModalDragVerify />
     </section>
     <section v-else-if="$store.getters.getSiteNum === 3">
-      <MailVerify />
+      <NameVerify />
     </section>
   </div>
 </template>
 
 <script>
-import MailWallet from "@/views/Login/Wallet/MailWallet.vue";
+import NameWallet from '@/views/Login/Wallet/NameWallet.vue';
 import ModalDragVerify from "@/views/ModalDragVerify.vue";
-import MailVerify from "@/views/Login/Wallet/MailVerify.vue";
+import NameVerify from '@/views/Login/Wallet/NameVerify.vue';
 
 export default {
-  name: "NameWalletPage",
-  components: {
-    MailWallet,
-    ModalDragVerify,
-    MailVerify,
-  },
-};
+    name:'NameWalletPage',
+    components:{
+        NameWallet,
+        ModalDragVerify,
+        NameVerify
+    }
+    
+}
 </script>

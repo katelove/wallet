@@ -4,21 +4,14 @@
   >
     <div class="relative">
       <h3 class="text-25px">绑定谷歌验证器</h3>
-      <img class="absolute right-0 close-top" src="../../public/image/x.png" />
+      <img class="absolute right-0 close-top" src="../../../../public/image/x.png" />
     </div>
-    <!-- <div class="relative">
-      <Input class="w-full h-8.5 mt-7.5 " placeholder=" 新登录密码" />
-      <img
-        class="absolute right-6 new-top"
-        src="../../public/image/more.png"
-      />
-    </div> -->
     <div class="mt-5 flex flex-start">
-      <img src="../../public/image/name-qr-code.png" class="mr-4" />
+      <img src="../../../../public/image/name-qr-code.png" class="mr-4" />
       <div class="pt-4">
         <p class="text-yewLime text-sm font-sans">GF32ADWE32112FDS3DA1</p>
         <div class="flex flex-start mt-3.5">
-          <img src="../../public/image/copy.png" class="mr-5px"/>
+          <img src="../../../../public/image/copy.png" class="mr-5px"/>
           <p class="text-bayshoreBlue text-sm">复制密钥</p>
         </div>
       </div>
@@ -38,9 +31,10 @@
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
+import Input from "@/components/Input.vue";
+import Button from "@/components/Button.vue";
 export default {
+  name:'NameVerify',
   components: {
     Input,
     Button,

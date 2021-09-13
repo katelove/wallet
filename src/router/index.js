@@ -29,6 +29,11 @@ const routes = [
       name: "MailWalletPage",
       component: () => import("@/views/Login/Wallet/MailWalletPage.vue"),
     },
+    {
+      path: '/login-wallet/name',
+      name: "NameWalletPage",
+      component: () => import("@/views/Login/Wallet/NameWalletPage.vue"),
+    },
 
 ];
 

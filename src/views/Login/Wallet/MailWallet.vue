@@ -7,7 +7,7 @@
       >
         <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/phone">手机号</router-link></p>
         <Button class="w-1/3  h-12 rounded-4px"><router-link to="/login-wallet/mail">邮箱</router-link> </Button>
-        <p class="w-1/3 text-center text-yewLime">用戶名</p>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/name">用戶名</router-link></p>
       </div>
       <div class="p-6">
         <Input class="mt-5 w-full input-style" placeholder="  邮箱帐号" />

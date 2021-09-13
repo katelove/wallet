@@ -10,7 +10,7 @@
       <PhoneVerify />
     </section>
   </div>
- </template>
+</template>
 
 <script>
 import PhoneWallet from "@/views/Login/Wallet/PhoneWallet.vue";
@@ -18,7 +18,7 @@ import ModalDragVerify from "@/views/ModalDragVerify.vue";
 import PhoneVerify from "@/views/Login/Wallet/PhoneVerify.vue";
 
 export default {
-  name: "PhoneWalletPage",
+  name: "NameWalletPage",
   components: {
     PhoneWallet,
     ModalDragVerify,
