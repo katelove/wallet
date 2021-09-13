@@ -13,19 +13,31 @@
     <span class="text-bayshoreBlue text-xs mt-2">安全项丢失?</span>
     <div class="flex justify-end">
     <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-5px">取消</button>
-    <Button class="w-20 h-8 rounded-5px">确认</Button>
+    <!-- <Button class="w-20 h-8 rounded-5px" @click="safeSubmit">确认</Button> -->
+    <button
+      class="bg-melancholyBlue text-white w-20 h-8 rounded-5px"
+      @click="safeSubmit"
+    >
+      确认
+    </button>
     </div>
 
   </div>
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
+import Input from "@/components/Input.vue";
+// import Button from "@/components/Button.vue";
 export default {
+  name:'SafeVerify',
+  methods:{
+    safeSubmit(){
+      this.$store.dispatch("progressSite", 4);
+    }
+  },
   components: {
     Input,
-    Button,
+    // Button,
   },
 };
 </script>

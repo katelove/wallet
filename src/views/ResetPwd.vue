@@ -8,26 +8,37 @@
         重置登录密码后，24小时内禁止提币和OTC
       </p>
     </div>
-      <Input class="w-full h-8.5 mt-9" placeholder=" 帐号" />
-      <Button class="w-full h-10 mt-9">提交</Button>
+    <Input class="w-full h-8.5 mt-9" placeholder=" 帐号" />
+    <!-- <Button class="w-full h-10 mt-9">提交</Button> -->
+    <button
+      class="bg-melancholyBlue text-white rounded-2px w-full h-10 mt-9"
+      @click="resetSubmit"
+    >
+      提交
+    </button>
   </div>
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
+import Input from "@/components/Input.vue";
+// import Button from "@/components/Button.vue";
 
 export default {
+  name:'ResetPwd',
+  methods:{
+    resetSubmit(){
+      this.$store.dispatch("progressSite", 2);
+    }
+  },
   components: {
     Input,
-    Button,
+    // Button,
   },
 };
 </script>
 
 <style>
-.border-shadow{
+.border-shadow {
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
 }
-
 </style>

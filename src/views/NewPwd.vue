@@ -22,9 +22,10 @@
 </template>
 
 <script>
-import Input from "../components/Input.vue";
-import Button from "../components/Button.vue";
+import Input from "@/components/Input.vue";
+import Button from "@/components/Button.vue";
 export default {
+  name:'NewPwd',
   components: {
     Input,
     Button,
