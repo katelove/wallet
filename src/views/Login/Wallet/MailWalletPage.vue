@@ -1,7 +1,7 @@
 <template>
   <div>
     <section v-if="$store.getters.getSiteNum === 1">
-      <RegisterTestWallet />
+      <MailWallet />
     </section>
     <section v-else-if="$store.getters.getSiteNum === 2">
       <ModalDragVerify />
@@ -13,14 +13,14 @@
  </template>
 
 <script>
-import RegisterTestWallet from "@/views/Login/Wallet/RegisterTestWallet.vue";
+import MailWallet from "@/views/Login/Wallet/MailWallet.vue";
 import ModalDragVerify from "@/views/ModalDragVerify.vue";
 import MailVerify from "@/views/Login/Wallet/MailVerify.vue";
 
 export default {
   name: "MailWalletPage",
   components: {
-    RegisterTestWallet,
+    MailWallet,
     ModalDragVerify,
     MailVerify,
   },
