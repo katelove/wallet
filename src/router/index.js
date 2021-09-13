@@ -12,7 +12,7 @@ const routes = [
     {
       path: "/login",
       name: "LoginPage",
-      component: () => import("@/views/LoginPage.vue"),
+      component: () => import("@/views/Login/LoginPage.vue"),
     },
     {
     path: "/reset",
@@ -34,7 +34,6 @@ const routes = [
       name: "NameWalletPage",
       component: () => import("@/views/Login/Wallet/NameWalletPage.vue"),
     },
-
 ];
 
 const router = new VueRouter({
