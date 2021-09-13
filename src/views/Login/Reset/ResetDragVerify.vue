@@ -4,7 +4,7 @@
   >
     <div class="relative">
       <h3 class="text-25px text-center">滑图验证</h3>
-      <img class="absolute right-0 close-top" src="../../public/image/x.png" />
+      <img class="absolute right-0 close-top" src="../../../../public/image/x.png" />
     </div>
     <div class="flex justify-center">
       <dragVerify class="mt-2" />
