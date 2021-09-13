@@ -5,7 +5,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: null,
-    progress: 0
+    progress: 1
 
   },
   mutations: {
@@ -19,6 +19,10 @@ export default new Vuex.Store({
     CLEAR_USER_DATA() {      
       localStorage.removeItem('user_id')
     },
+    SET_PROGRESS_NUM (state, status) {
+      state.progress = status
+      console.log('進入更改狀態:' + state.progress)
+    }
   },
   actions: {
     // 登入=>帳號和密碼登入
@@ -30,11 +34,19 @@ export default new Vuex.Store({
       console.log('logout')
       commit('CLEAR_USER_DATA')
     },
+    progressSite (context, status) {
+      console.log('index.js store progressSite' + status)
+      context.commit('SET_PROGRESS_NUM', status)
+    }
   },
   // 創造一個Getter取值
   getters: {
     getUser: state => {
       return state.user
+    },
+    getSiteNum: state => {
+      console.log('getSiteNum state: ' + state.progress)
+      return state.progress
     }
   }
 })

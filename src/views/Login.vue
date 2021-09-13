@@ -56,9 +56,11 @@ export default {
         };
         localStorage.setItem("user_id", JSON.stringify(userData));
         this.$store.commit("SET_USER_DATA", userData);
-        this.$router.push("/");
+        // this.$router.push("/");
+        this.$store.dispatch("progressSite", 2);
+        return this.$store.getters.getSiteNum;
       } else {
-        alert('您的帳號輸入錯誤!')
+        alert("您的帳號輸入錯誤!");
       }
     },
   },
