@@ -60,7 +60,7 @@ export default {
         this.$store.dispatch("progressSite", 2);
         return this.$store.getters.getSiteNum;
       } else {
-        alert("您的帳號輸入錯誤!");
+        alert("帳號請輸入 00001 或 00002");
       }
     },
   },

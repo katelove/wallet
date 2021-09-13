@@ -4,10 +4,10 @@
       <Login />
     </section>
     <section v-else-if="$store.getters.getSiteNum === 2">
-         <ModalDragVerify />
+      <ModalDragVerify />
     </section>
     <section v-else-if="$store.getters.getSiteNum === 3">
-         <LoginSafeVerify />
+      <LoginSafeVerify />
     </section>
   </div>
 </template>

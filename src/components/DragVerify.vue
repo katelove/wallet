@@ -5,7 +5,7 @@
       :imgsrc="img"
       :isPassing.sync="isPassing"
       :showRefresh="true"
-      text="向右拖动滑块填充拼图"
+      text= "向右拖动滑块填充拼图"
       successText="验证通过"
       handlerIcon="el-icon-right"
       successIcon="el-icon-circle-check"
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       img: require("../../public/image/verify-img.png"),
-      isPassing:false
+      isPassing:false,
     };
   },
   components: {
@@ -32,6 +32,8 @@ export default {
   methods: {
     pass() {
       console.log("滑塊驗證");
+      this.img=''
+      this.$store.dispatch("progressSite", 3);
     },
   },
 };
