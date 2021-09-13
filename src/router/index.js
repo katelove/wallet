@@ -11,9 +11,14 @@ const routes = [
     },
     {
       path: "/login",
-      name: "Login",
+      name: "LoginPage",
       component: () => import("@/views/LoginPage.vue"),
-  },
+    },
+    {
+    path: "/reset",
+    name: "ResetPage",
+    component: () => import("@/views/ResetPage.vue"),
+    },
 ];
 
 const router = new VueRouter({
