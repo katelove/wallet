@@ -5,8 +5,8 @@
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <Button class="w-1/3  h-12 rounded-4px">手机号</Button>
-        <p class="w-1/3 text-center text-yewLime">邮箱</p>
+        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/login-wallet/phone">手机号</router-link></Button>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/mail">邮箱</router-link></p>
         <p class="w-1/3 text-center text-yewLime">用戶名</p>
       </div>
       <div class="p-6">

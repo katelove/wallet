@@ -18,7 +18,7 @@ import ModalDragVerify from "@/views/ModalDragVerify.vue";
 import PhoneVerify from "@/views/Login/Wallet/PhoneVerify.vue";
 
 export default {
-  name: "WalletPage",
+  name: "PhoneWalletPage",
   components: {
     TestWallet,
     ModalDragVerify,

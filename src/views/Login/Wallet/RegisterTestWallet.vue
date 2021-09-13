@@ -5,8 +5,8 @@
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <p class="w-1/3 text-center text-yewLime">手机号</p>
-        <Button class="w-1/3  h-12 rounded-4px">邮箱</Button>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/phone">手机号</router-link></p>
+        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/login-wallet/mail">邮箱</router-link> </Button>
         <p class="w-1/3 text-center text-yewLime">用戶名</p>
       </div>
       <div class="p-6">
@@ -20,7 +20,13 @@
             >和<span class="text-melancholyBlue">《隐私条款》</span>
           </p>
         </div>
-        <Button class="w-full mt-12 h-10">注冊</Button>
+        <!-- <Button class="w-full mt-12 h-10">注冊</Button> -->
+      <button
+        class="bg-melancholyBlue text-white rounded-2px w-full mt-12 h-10"
+        @click="register"
+      >
+        注冊
+      </button>
         <p class="text-sm mt-6 text-garyWord">
           已有帐号?<span class="text-melancholyBlue">登录</span>
         </p>
@@ -35,6 +41,11 @@ import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 export default {
   name:'RegisterTestWallet',
+  methods:{
+    register(){
+       this.$store.dispatch("progressSite", 2);
+    }
+  },
   components: {
     Title,
     Input,
