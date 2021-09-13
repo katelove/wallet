@@ -20,10 +20,16 @@ const routes = [
     component: () => import("@/views/ResetPage.vue"),
     },
     {
-      path: "/wallet",
-      name: "WalletPage",
-      component: () => import("@/views/Login/Wallet/WalletPage.vue"),
-      },
+      path: "/login-wallet/phone",
+      name: "PhoneWalletPage",
+      component: () => import("@/views/Login/Wallet/PhoneWalletPage.vue"),
+    },
+    {
+      path: '/login-wallet/mail',
+      name: "MailWalletPage",
+      component: () => import("@/views/Login/Wallet/MailWalletPage.vue"),
+    },
+
 ];
 
 const router = new VueRouter({
