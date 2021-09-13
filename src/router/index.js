@@ -19,6 +19,11 @@ const routes = [
     name: "ResetPage",
     component: () => import("@/views/ResetPage.vue"),
     },
+    {
+      path: "/wallet",
+      name: "WalletPage",
+      component: () => import("@/views/Login/Wallet/WalletPage.vue"),
+      },
 ];
 
 const router = new VueRouter({
