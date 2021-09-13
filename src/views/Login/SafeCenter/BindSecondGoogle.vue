@@ -42,11 +42,12 @@
 </template>
 
 <script>
-import Title from "./Title.vue";
-import BlueContainer from "./BlueContainer.vue";
-import Button from "./Button.vue";
+import Title from "@/components/Title.vue";
+import BlueContainer from "@/components/BlueContainer.vue";
+import Button from "@/components/Button.vue";
 
 export default {
+  name:'BindSecondGoogle',
   components: {
     Title,
     BlueContainer,

@@ -1,21 +1,7 @@
 <template>
   <div class="flex justify-center mt-2 flex-col m-auto">
-    <Title class="flex justify-center" heading="修改二次验证密码"></Title>
+    <Title class="flex justify-center" heading="重置二次验证密码"></Title>
     <BlueContainer title="" class="ml-8 mr-8 mt-10">
-      <div class="pr-6 pl-6 pt-5 pb-5">
-        <p class="text-base">当前二次验证密码</p>
-        <div class="relative">
-          <input
-            class="w-full border-none border-line  mt-8"
-            placeholder="请输入当前二次验证密码"
-          />
-          <img
-            class="absolute right-0 top-6"
-            src="../../public/image/eye.png"
-          />
-        </div>
-      </div>
-      <div class="w-full bg-diamondGrey h-2"></div>
       <div class="pr-6 pl-6 pt-5 pb-5">
         <p class="text-base">新二次验证密码</p>
         <div class="relative">
@@ -25,13 +11,13 @@
           />
           <img
             class="absolute right-0 top-6"
-            src="../../public/image/eye.png"
+            src="../../../../public/image/eye.png"
           />
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
       <div class="pr-6 pl-6 pt-5 pb-5">
-        <p class="text-base">确认登录密码</p>
+        <p class="text-base">确认新密码</p>
         <div class="relative">
           <input
             class="w-full border-none border-line  mt-8"
@@ -39,7 +25,7 @@
           />
           <img
             class="absolute right-0 top-6"
-            src="../../public/image/eye.png"
+            src="../../../../public/image/eye.png"
           />
         </div>
       </div>
@@ -61,11 +47,12 @@
 </template>
 
 <script>
-import Title from "./Title.vue";
-import BlueContainer from "./BlueContainer.vue";
-import Button from "./Button.vue";
+import Title from "@/components/Title.vue";
+import BlueContainer from "@/components/BlueContainer.vue";
+import Button from "@/components/Button.vue";
 
 export default {
+  name:'SetSecondPwd',
   components: {
     Title,
     BlueContainer,
