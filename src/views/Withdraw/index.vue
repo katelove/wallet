@@ -123,9 +123,10 @@ export default {
             }
         },
         transferToken: function() {
+            const user_id = localStorage.getItem('user_id') || '00001'
             const data = {
                 coin: this.crypto === "halo" ? "halo" : "usdt",
-                from: "00001",
+                from: user_id,
                 to: "00002",
                 amount: parseInt(this.amount)
             }
