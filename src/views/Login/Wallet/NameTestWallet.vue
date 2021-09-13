@@ -6,11 +6,11 @@
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
         <p class="w-1/3 text-center text-yewLime">手机号</p>
-        <Button class="w-1/3  h-12 rounded-4px">邮箱</Button>
-        <p class="w-1/3 text-center text-yewLime">用戶名</p>
+        <p class="w-1/3 text-center text-yewLime">邮箱</p>
+        <Button class="w-1/3  h-12 rounded-4px">用戶名</Button>
       </div>
       <div class="p-6">
-        <Input class="mt-5 w-full input-style" placeholder="  邮箱帐号" />
+        <Input class="mt-5 w-full input-style" placeholder="  用戶名" />
         <Input class="mt-7 w-full input-style" placeholder="  设置密码" />
         <Input class="mt-7 w-full input-style" placeholder="  确认密码" />
         <div class="flex justify-start items-center mt-7">
@@ -30,10 +30,11 @@
 </template>
 
 <script>
-import Title from "./Title.vue";
-import Input from "./Input.vue";
-import Button from "./Button.vue";
+import Title from "@/components/Title.vue";
+import Input from "@/components/Input.vue";
+import Button from "@/components/Button.vue";
 export default {
+  name:'NameTestWallet',
   components: {
     Title,
     Input,
