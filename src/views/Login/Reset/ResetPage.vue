@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import ResetPwd from "@/views/ResetPwd.vue";
-import ResetDragVerify from "@/views/ResetDragVerify.vue";
-import SafeVerify from "@/views/SafeVerify.vue";
-import NewPwd from "@/views/NewPwd.vue";
+import ResetPwd from "@/views/Login/Reset/ResetPwd.vue";
+import ResetDragVerify from "@/views/Login/Reset/ResetDragVerify.vue";
+import SafeVerify from "@/views/Login/Reset/SafeVerify.vue";
+import NewPwd from "@/views/Login/Reset/NewPwd.vue";
 
 export default {
   name: "ResetPage",

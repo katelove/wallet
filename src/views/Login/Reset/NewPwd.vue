@@ -4,13 +4,13 @@
   >
     <div class="relative">
       <h3 class="text-25px text-center">新密碼</h3>
-      <img class="absolute right-0 close-top" src="../../public/image/x.png" />
+      <img class="absolute right-0 close-top" src="../../../../public/image/x.png" />
     </div>
     <div class="relative">
       <Input class="w-full h-8.5 mt-7.5 " placeholder=" 新登录密码" />
       <img
         class="absolute right-6 new-top"
-        src="../../public/image/more.png"
+        src="../../../../public/image/more.png"
       />
     </div>
     <label class="text-yewLime text-xs mt-7.5">8-20位字符 不能为纯数字</label>

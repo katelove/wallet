@@ -17,7 +17,7 @@ const routes = [
     {
     path: "/reset",
     name: "ResetPage",
-    component: () => import("@/views/ResetPage.vue"),
+    component: () => import("@/views/Login/Reset/ResetPage.vue"),
     },
     {
       path: "/login-wallet/phone",
