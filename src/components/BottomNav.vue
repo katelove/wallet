@@ -1,6 +1,6 @@
 <template lang="">
     <div
-        v-if="!$route.metahideBottomNav"
+        v-if="!$route.meta.hideBottomNav"
         class="rounded-10px border-black border flex justify-evenly items-center text-10px my-4 mx-25px ">
         <div
             v-for="item in nav"
@@ -9,7 +9,10 @@
             :class="[sameOrigin === item.url ? 'text-melancholyBlue' : '']"
             @click="jumpto(item.url)"
         >
-            <img :src="sameOrigin === item.url ? item.blueIcon : item.icon" class="mb-6px h-27px"/>
+            <img
+                :src="sameOrigin === item.url ? item.blueIcon : item.icon"
+                class="mb-6px h-27px w-27px"
+            />
             <p>
                 {{item.name}}
             </p>
@@ -23,26 +26,26 @@ export default {
             nav: [
                 {
                     name: "首页",
-                    icon: require('@/assets/icon/home.svg'),
-                    blueIcon: require('@/assets/icon/home_blue.svg'),
+                    icon: require('@/assets/icon/home.png'),
+                    blueIcon: require('@/assets/icon/home_blue.png'),
                     url: '/'
                 },
                 {
                     name: "充值",
-                    icon: require('@/assets/icon/deposit.svg'),
-                    blueIcon: require('@/assets/icon/deposit_blue.svg'),
+                    icon: require('@/assets/icon/deposit.png'),
+                    blueIcon: require('@/assets/icon/deposit_blue.png'),
                     url: '/crypto/deposit'
                 },
                 {
                     name: "提领",
-                    icon: require('@/assets/icon/withdraw.svg'),
-                    blueIcon: require('@/assets/icon/withdraw_blue.svg'),
+                    icon: require('@/assets/icon/withdraw.png'),
+                    blueIcon: require('@/assets/icon/withdraw_blue.png'),
                     url: '/crypto/withdraw'
                 },
                 {
                     name: "资产",
-                    icon: require('@/assets/icon/wallet.svg'),
-                    blueIcon: require('@/assets/icon/wallet_blue.svg'),
+                    icon: require('@/assets/icon/wallet.png'),
+                    blueIcon: require('@/assets/icon/wallet_blue.png'),
                     url: '/wallet'
                 },
             ]
@@ -65,7 +68,7 @@ export default {
                 const route = this.nav.find(({ url }) => {
                     return path.startsWith(url) && url !== '/'
                 });
-                return route.url
+                return route?.url || ''
             }
         }
     }

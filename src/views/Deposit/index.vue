@@ -7,7 +7,11 @@
             <div class="mx-20px my-23px">
                 <div class="flex justify-between">
                     <div class="flex">
-                        <img :src="getCryptoImgUrl($route.params.crypto)" class="mr-12px"/>
+                        <img
+                            :src="getCryptoImgUrl($route.params.crypto)"
+                            class="mr-12px"
+                            style="width: 36px;height: 36px"
+                        />
                         <p>{{crypto.toUpperCase()}}</p>
                     </div>
                     <Button
@@ -17,11 +21,11 @@
                         数字货币
                     </Button>
                 </div>
-                <div class="flex text-14px my-25px">
+                <div class="flex text-12px my-25px justify-between">
                     <div class="flex bg-diamondGrey w-min rounded-10px mr-2">
                         <Button
                             v-for="(item, index) in chainList" :key="index"
-                            class="py-1 px-14px rounded-10px "
+                            class="py-6px px-14px rounded-10px "
                             :bg="selectChain === item ? 'bg-plumRed' : 'bg-diamondGrey'"
                             :textColor="selectChain === item ? 'text-white' : 'text-black'"
                             @click="selectChain = item"
@@ -34,7 +38,7 @@
                         bg="bg-diamondGrey"
                         textColor="text-black"
                     >
-                        +新增地址
+                        新增地址
                     </Button>
                 </div>
                 <div class="py-14px px-15px border border-black rounded-10px">
@@ -70,7 +74,7 @@
             class="flex py-25px px-23px bg-diamondGrey rounded-10px items-center text-14px mx-12px"
         >
             <div>
-                <img src="@/assets/qrcode.svg" class="w-72px h-72px mb-13px"/>
+                <img src="@/assets/qrcode.png" class="w-72px h-72px mb-13px"/>
                 <p
                     class=" text-melancholyBlue text-center"
                     @click="showQrcodeModal = true"

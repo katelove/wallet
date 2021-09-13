@@ -13,7 +13,7 @@ const routes = [
         component: () => import("@/views/Home"),
 	},
 	{
-        path: "/transaction_history",
+        path: "/transaction_history/:crypto",
         name: "TransactionHistory",
 		component: () => import("@/views/TransactionHistory"),
 		meta: {
@@ -60,6 +60,7 @@ const routes = [
 const router = new VueRouter({
   routes,
   mode: 'history',
+//   base: "/frontend",
 });
 
 

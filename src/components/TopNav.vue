@@ -6,14 +6,14 @@
         <img 
             v-show="$route.meta.showGoback"
             style="width: 23px"
-            src="@/assets/icon/return.svg"
+            src="@/assets/icon/return.png"
             @click="goback()"
         />
         <img 
             v-show="$route.meta.showHistory"
             style="width: 23px"
-            src="@/assets/icon/history.svg"
-            @click="$router.push('/transaction_history')"
+            src="@/assets/icon/history.png"
+            @click="$router.push('/transaction_history/' + $route.params.crypto)"
         />
     </div>
 </template>

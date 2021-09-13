@@ -7,15 +7,18 @@
         <div class="w-4/5 bg-white flex justify-center items-center rounded-20px flex-col px-12 relative">
             <img
                 class="absolute"
-                src="@/assets/icon/cross.svg"
+                src="@/assets/icon/cross.png"
                 style="width: 23px;height: 23px;right: 23px;top:26px"
                 @click="this.onClose"
             />
-            <div class="flex mb-28px mt-12">
-                <img :src="getCryptoImgUrl()" />
+            <div class="flex mb-28px mt-12 items-center">
+                <img
+                    :src="getCryptoImgUrl()"
+                    style="width: 36px;height: 36px"    
+                />
                 <p class="ml-12px">{{cryptoAndChain}} 收款地址</p>
             </div>
-            <img src="@/assets/qrcode.svg" style="width: 208px;height: 208px"/>
+            <img src="@/assets/qrcode.png" style="width: 208px;height: 208px"/>
 
             <p class="mt-7px bg-diamondGrey text-14px py-9px px-27px rounded-20px mb-20px">
                 DWFRF345345FR34fk4tj4jf4j444rj
@@ -52,7 +55,7 @@ export default {
     },
     methods: {
         getCryptoImgUrl() {
-            return require(`@/assets/crypto/${this.crypto}.svg`)
+            return require(`@/assets/crypto/${this.crypto}.png`)
         }
     },
     computed: {

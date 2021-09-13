@@ -1,13 +1,13 @@
 <template>
     <div class="mt-2 mx-26px">
         <div class="flex">
-			<img src="@/assets/icon/profile.svg" />
+			<Icon :src="require('@/assets/icon/profile.png')" />
 			<p class="text-25px flex-grow text-center">测试钱包</p>
 		</div>
 
 		<div class="flex mt-27px mb-21px">
 			<p class="mr-10px">总资产折合(USDT)</p>
-			<img src="@/assets/icon/open_eye.svg" />
+			<Icon :src="require('@/assets/icon/open_eye.png')" style="width: 30px;height: 21px"/>
 		</div>
 
 		<p class="text-24px">{{balance}}</p>
@@ -16,20 +16,20 @@
 			<div class="flex h-28 justify-evenly items-center">
 				<router-link :to="'/crypto/deposit'">
 					<div >
-						<img class="m-auto" src="@/assets/icon/deposit.svg" />
+						<Icon class="m-auto" :src="require('@/assets/icon/deposit.png')" />
 						<p class="mt-1">充值/收款</p>
 					</div>
 				</router-link>
 				<router-link :to="'/crypto/withdraw'">
 					<div>
-						<img class="m-auto" src="@/assets/icon/withdraw.svg" />
+						<Icon class="m-auto" :src="require('@/assets/icon/withdraw.png')" />
 						<p class="mt-1">提現/轉帳</p>
 					</div>
 				</router-link>
 			</div>
 		</BlueContainer>
 
-		<img src="@/assets/banner.jpg" class="mb-12px"/>
+		<Icon :src="require('@/assets/banner.png')" class="mb-12px" style="width: unset;height: unset"/>
 
 		<CryptoList/>
     </div>
@@ -38,6 +38,7 @@
 <script>
 import BlueContainer from "@/components/BlueContainer"
 import CryptoList from "./CryptoList.vue"
+import Icon from "@/components/Icon.vue"
 
 export default {
 	data() {
@@ -48,6 +49,7 @@ export default {
 	components: {
 		BlueContainer,
 		CryptoList,
+		Icon
 	}
 }
 </script>

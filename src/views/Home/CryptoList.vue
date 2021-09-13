@@ -34,7 +34,7 @@
                     :class="[value.priceChangePercent >= 0 ? 'text-grassGreen' : 'text-plumRed']"
                     style="width: 95px"
                 >
-                    {{value.priceChangePercent ? value.priceChangePercent.toFixed(2) + '%' : ''}}
+                    {{value.priceChangePercent ? value.priceChangePercent.toFixed(2) + '%' : '0.00%'}}
                 </p>
             </div>
         </div>
@@ -48,19 +48,19 @@ export default {
 		return {
 			spot: {
                 btc: {
-                    image: require("@/assets/crypto/btc.svg"),
+                    image: require("@/assets/crypto/btc.png"),
                     name: "Bitcoin"
                 },
                 eth: {
-                    image: require("@/assets/crypto/eth.svg"),
+                    image: require("@/assets/crypto/eth.png"),
                     name: "Ethereum"
                 },
                 busd: {
-                    image: require("@/assets/crypto/busd.svg"),
+                    image: require("@/assets/crypto/busd.png"),
                     name: "BUSD"
                 },
                 bnb: {
-                    image: require("@/assets/crypto/bnb.svg"),
+                    image: require("@/assets/crypto/bnb.png"),
                     name: "BNB"
                 },
             },
@@ -83,11 +83,11 @@ export default {
 			this.spot = newObj
 			setTimeout(() => {
 				this.getSymbol(symbol, pair)
-			}, 1000)
+			}, 1500)
 		}
 	},
 	beforeDestroy() {
-		this.timer.forEach(e => clearInterval(e))
+		this.timer.forEach(e => clearTimeout(e))
     }
 }
 </script>

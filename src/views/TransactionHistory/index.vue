@@ -6,12 +6,12 @@
         >
             <div class="flex mx-auto mt-30px items-center justify-center">
                 <img
-                    src="@/assets/crypto/usdt.svg"
+                    :src="getCryptoImgUrl(crypto)"
                     style="width: 36px;height: 36px;margin-right: 12px"
                 />
-                USDT
+                {{crypto}}
             </div>
-            <div class="text-center my-17px">{{total}}</div>
+            <div class="text-center my-17px">{{balance}}</div>
 
             <div class="bg-diamondGrey" style="height: 27px"></div>
             <div class="flex mt-16px mx-22px justify-center flex-col">
@@ -26,15 +26,15 @@
                     :key="index"
                 >
                     <img
-                        :src="require(`@/assets/${item.action}.svg`)"
+                        :src="require(`@/assets/${item.type}.png`)"
                         style="with: 34px;height: 34px;margin-right: 35px"
                     />
                     <div style="width: 153px;margin-right: 47px">
-                        <p>{{item.address}}</p>
+                        <p>erj32128h414h1j</p>
                         <p>{{item.date | moment('YYYY-MM-DD HH:MM:SS')}}</p>
                     </div>
                     <div style="width: 70px">
-                        {{item.action === 'deposit' ? '+' : '-'}}{{item.amount}}
+                        {{item.type === 'in' ? '+' : '-'}}{{item.amount}}
                     </div>
                 </div>
             </div>
@@ -61,8 +61,17 @@
 import BlueContainer from "@/components/BlueContainer"
 import Button from "@/components/Button"
 import { getCryptoImgUrl } from "@/utlis"
+import { getTransferHistory } from "@/api"
 
 export default {
+    created() {
+        getTransferHistory()
+        .then(data => {
+            const user_id = localStorage.getItem('user_id')
+            const filterData = data.filter(e => e.user_id === user_id && e.coin === this.crypto)
+            this.transactionHistory = filterData || []
+        })
+    },
     mounted() {
         this.transactionHistory.forEach(e => {
             this.total += e.amount
@@ -70,8 +79,9 @@ export default {
     },
     data() {
         return {
-            transactionHistory: JSON.parse(localStorage.getItem('transactionHistory')) || [],
-            total: 0
+            transactionHistory: [],
+            balance: localStorage.getItem('balance'),
+            crypto: this.$route.params.crypto
         }
     },
     methods: {
