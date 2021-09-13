@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 export const getBalance = async () => {
-    const rep = await axios.get('https://api.105paolian.com/wallet/users/00001')
+    const user_id = localStorage.getItem('user_id') || "00001"
+    const rep = await axios.get(`https://api.105paolian.com/wallet/users/${user_id}`)
     let total = 0
     rep?.data?.wallets?.forEach(({ balance }) => {
         total += balance;

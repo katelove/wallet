@@ -127,12 +127,12 @@ export default {
             const data = {
                 coin: this.crypto === "halo" ? "halo" : "usdt",
                 from: user_id,
-                to: "00002",
+                to: user_id === "00001" ? "00002" : "00001",
                 amount: parseInt(this.amount)
             }
             transfer(JSON.stringify(data))
             .then(() => {
-                this.$router.push(`/transaction_history/${this.crypto}`)
+                this.$router.push(`/transaction_history/${this.crypto}?showLast=true`)
             })
             .catch(() => {
                 alert('轉帳失敗請在試一次')

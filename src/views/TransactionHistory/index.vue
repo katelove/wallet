@@ -11,13 +11,15 @@
                 />
                 {{crypto}}
             </div>
-            <div class="text-center my-17px">{{balance}}</div>
+            <div class="text-center my-17px">
+                {{showLast ? showAmountText(transactionHistory[0].type, transactionHistory[0].amount) : balance}}
+            </div>
 
             <div class="bg-diamondGrey" style="height: 27px"></div>
             <div class="flex mt-16px mx-22px justify-center flex-col">
-                <div class="flex text-center mb-30px">
-                    <p class="border-b border-yewLime pb-3px mr-35px">全部</p>
-                    <p style="width: 153px;margin-right: 47px">转出</p>
+                <div class="flex text-center mb-30px justify-between">
+                    <p class="border-b border-yewLime pb-3px">全部</p>
+                    <p style="width: 153px">转出</p>
                     <p style="width: 70px">转入</p>
                 </div>
                 <div
@@ -34,7 +36,7 @@
                         <p>{{item.date | moment('YYYY-MM-DD HH:MM:SS')}}</p>
                     </div>
                     <div style="width: 70px">
-                        {{item.type === 'in' ? '+' : '-'}}{{item.amount}}
+                        {{showAmountText(item.type, item.amount)}}
                     </div>
                 </div>
             </div>
@@ -81,11 +83,15 @@ export default {
         return {
             transactionHistory: [],
             balance: localStorage.getItem('balance'),
-            crypto: this.$route.params.crypto
+            crypto: this.$route.params.crypto,
+            showLast: this.$route.query.showLast
         }
     },
     methods: {
         getCryptoImgUrl,
+        showAmountText: function(type, amount) {
+            return `${type === 'in' ? '+' : '-'} ${amount}`
+        }
     },
     components: {
 		BlueContainer,
