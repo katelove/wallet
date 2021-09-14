@@ -1,7 +1,7 @@
 <template>
     <div class="mt-2 mx-26px">
         <div class="flex">
-			<Icon :src="require('@/assets/icon/profile.png')" />
+			<router-link :to="'/safeCenter'"><Icon :src="require('@/assets/icon/profile.png')" /></router-link>
 			<p class="text-25px flex-grow text-center">测试钱包</p>
 		</div>
 

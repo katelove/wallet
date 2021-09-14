@@ -41,10 +41,11 @@ import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 export default {
   name:'NameRegister',
-  methods:{
-    register(){
-       this.$store.dispatch("progressSite", 2);
-    }
+  methods: {
+    register() {
+      localStorage.setItem("user_id", "00001");
+      this.$store.dispatch("progressSite", 2);
+    },
   },
   components: {
     Title,

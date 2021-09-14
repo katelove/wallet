@@ -157,5 +157,17 @@ const router = new VueRouter({
 //   base: "/frontend",
 });
 
+const withoutPermission = ['/login', '/register/phone', '/register/mail', '/register/name', '/reset','/safeCenter','/safeCenter/modifyPwd','modifySecondPwd','/safeCenter/setSecondPwd','/safeCenter/bindPhone','/safeCenter/bindGoogle']
+
+router.beforeEach(function(to, from, next){
+  const user_id = localStorage.getItem('user_id')
+  if (withoutPermission.includes(to.path)) {
+    next()
+  } else if(user_id === '00001' || user_id === '00002' ) {
+    next();
+  } else {
+    next({ path: '/login' })
+  }
+})
 
 export default router;
