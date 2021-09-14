@@ -6,12 +6,13 @@
         <p class="text-base">新二次验证密码</p>
         <div class="relative">
           <input
+            type="password"
             class="w-full border-none border-line  mt-8"
             placeholder="请输入新二次验证密码"
           />
           <img
             class="absolute right-0 top-6"
-            src="../../../../public/image/eye.png"
+            src="@/assets/icon/eye.png"
           />
         </div>
       </div>
@@ -20,12 +21,13 @@
         <p class="text-base">确认新密码</p>
         <div class="relative">
           <input
+            type="password"
             class="w-full border-none border-line  mt-8"
             placeholder="请再次输入新登录密码"
           />
           <img
             class="absolute right-0 top-6"
-            src="../../../../public/image/eye.png"
+            src="@/assets/icon/eye.png"
           />
         </div>
       </div>
@@ -34,6 +36,7 @@
         <p class="text-base">手机验证码</p>
         <div class="relative">
           <input
+            type="text"
             class="w-full border-none border-line  mt-8"
             placeholder="请输入手机验证码"
           />
@@ -41,7 +44,8 @@
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-       <Button class="w-75 h-10 m-6 rounded-10px">提交</Button>
+      <button class="bg-melancholyBlue text-white rounded-10px w-75 h-10 m-6" @click="safeCenter" >提交</button>
+       <!-- <Button class="w-75 h-10 m-6 rounded-10px">提交</Button> -->
     </BlueContainer>
   </div>
 </template>
@@ -53,6 +57,11 @@ import Button from "@/components/Button.vue";
 
 export default {
   name:'SetSecondPwd',
+  methods:{
+   safeCenter(){
+      this.$router.push('/safeCenter')
+   }
+  },
   components: {
     Title,
     BlueContainer,
