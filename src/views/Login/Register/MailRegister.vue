@@ -5,30 +5,50 @@
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/phone">手机号</router-link></p>
-        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/register/mail">邮箱</router-link> </Button>
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/name">用戶名</router-link></p>
+        <p class="w-1/3 text-center text-yewLime">
+          <router-link to="/register/phone">手机号</router-link>
+        </p>
+        <Button class="w-1/3  h-12 rounded-4px"
+          ><router-link to="/register/mail">邮箱</router-link>
+        </Button>
+        <p class="w-1/3 text-center text-yewLime">
+          <router-link to="/register/name">用戶名</router-link>
+        </p>
       </div>
       <div class="p-6">
-        <Input class="mt-5 w-full input-style" type="text" placeholder="  邮箱帐号" />
-        <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
-        <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
+        <Input
+          class="mt-5 w-full input-style"
+          type="text"
+          placeholder="  邮箱帐号"
+        />
+        <Input
+          class="mt-7 w-full input-style"
+          type="password"
+          placeholder="  设置密码"
+        />
+        <Input
+          class="mt-7 w-full input-style"
+          type="password"
+          placeholder="  确认密码"
+        />
         <div class="flex justify-start items-center mt-7">
-          <input type="checkbox"/>
+          <input type="checkbox" />
           <p class="text-sm text-garyWord ml-1">
             我已阅读并同意<span class="text-melancholyBlue">《用户协议》</span
             >和<span class="text-melancholyBlue">《隐私条款》</span>
           </p>
         </div>
         <!-- <Button class="w-full mt-12 h-10">注冊</Button> -->
-      <button
-        class="bg-melancholyBlue text-white rounded-2px w-full mt-12 h-10"
-        @click="register"
-      >
-        注冊
-      </button>
+        <button
+          class="bg-melancholyBlue text-white rounded-2px w-full mt-12 h-10"
+          @click="register"
+        >
+          注冊
+        </button>
         <p class="text-sm mt-6 text-garyWord">
-          已有帐号?<span class="text-melancholyBlue">登录</span>
+          已有帐号?<span class="text-melancholyBlue"
+            ><router-link to="/login">登录</router-link></span
+          >
         </p>
       </div>
     </div>
@@ -40,11 +60,12 @@ import Title from "@/components/Title.vue";
 import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 export default {
-  name:'MailRegister',
-  methods:{
-    register(){
-       this.$store.dispatch("progressSite", 2);
-    }
+  name: "MailRegister",
+  methods: {
+    register() {
+      localStorage.setItem("user_id", "00001");
+      this.$store.dispatch("progressSite", 2);
+    },
   },
   components: {
     Title,

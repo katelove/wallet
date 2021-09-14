@@ -28,7 +28,7 @@
         注冊
       </button>
         <p class="text-sm mt-6 text-garyWord">
-          已有帐号?<span class="text-melancholyBlue">登录</span>
+          已有帐号?<span class="text-melancholyBlue"><router-link to="/login">登录</router-link></span>
         </p>
       </div>
     </div>
@@ -41,10 +41,11 @@ import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 export default {
   name:'NameRegister',
-  methods:{
-    register(){
-       this.$store.dispatch("progressSite", 2);
-    }
+  methods: {
+    register() {
+      localStorage.setItem("user_id", "00001");
+      this.$store.dispatch("progressSite", 2);
+    },
   },
   components: {
     Title,

@@ -9,11 +9,11 @@
       </p>
       <Input
         type="text"
-        class="w-75 h-8.5 mt-12 text-center text-base"
+        class="w-full h-8.5 mt-12 text-center text-base"
         placeholder="手机验证码"
       />
       <button
-        class="bg-melancholyBlue text-white rounded-2px w-75 h-10 mt-12"
+        class="bg-melancholyBlue text-white rounded-2px w-full h-10 mt-12"
         @click="home"
       >
         确认

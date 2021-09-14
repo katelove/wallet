@@ -4,7 +4,7 @@
   >
     <div class="relative">
       <h3 class="text-25px text-center">新密碼</h3>
-      <img class="absolute right-0 close-top" src="@/assets/icon/cross.png" />
+      <Icon class="absolute right-0 close-top" :src="require('@/assets/icon/cross.png')" style="width:17px;height:17px" />
     </div>
     <div class="relative">
       <Input type="password" class="w-full h-8.5 mt-7.5 " placeholder=" 新登录密码" />
@@ -24,6 +24,7 @@
 
 <script>
 import Input from "@/components/Input.vue";
+import Icon from "@/components/Icon.vue"
 // import Button from "@/components/Button.vue";
 export default {
   name:'NewPwd',
@@ -34,6 +35,7 @@ export default {
   },
   components: {
     Input,
+    Icon
     // Button,
   },
 };
