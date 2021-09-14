@@ -59,56 +59,95 @@ const routes = [
       path: "/login",
       name: "LoginPage",
       component: () => import("@/views/Login/LoginPage.vue"),
+      meta: {
+        hideBottomNav: true
+      }
     },
     {
     path: "/reset",
     name: "ResetPage",
     component: () => import("@/views/Login/Reset/ResetPage.vue"),
+    meta: {
+      hideBottomNav: true
+    }
     },
     {
       path: "/register/phone",
       name: "PhoneRegisterPage",
       component: () => import("@/views/Login/Register/PhoneRegisterPage.vue"),
+      meta: {
+        hideBottomNav: true
+      }
     },
     {
       path: '/register/mail',
       name: "MailRegisterPage",
       component: () => import("@/views/Login/Register/MailRegisterPage.vue"),
+      meta: {
+        hideBottomNav: true
+      }
     },
     {
       path: '/register/name',
       name: "NameRegisterPage",
       component: () => import("@/views/Login/Register/NameRegisterPage.vue"),
+      meta: {
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter',
       name: "SafeCenter",
       component: () => import("@/views/Login/SafeCenter/SafeCenter.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter/modifyPwd',
       name: "ModifyLoginPwd",
       component: () => import("@/views/Login/SafeCenter/ModifyLoginPwd.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter/modifySecondPwd',
       name: "ModifyLoginSecondPwd",
       component: () => import("@/views/Login/SafeCenter/ModifyLoginSecondPwd.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter/setSecondPwd',
       name: "SetSecondPwd",
       component: () => import("@/views/Login/SafeCenter/SetSecondPwd.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter/bindPhone',
       name: "BindPhone",
       component: () => import("@/views/Login/SafeCenter/BindPhone.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
     {
       path: '/safeCenter/bindGoogle',
       name: "BindGooglePage",
       component: () => import("@/views/Login/SafeCenter/BindGooglePage.vue"),
+      meta: {
+        showGoback: true,
+        hideBottomNav: true
+      }
     },
 ];
 
