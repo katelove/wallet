@@ -5,7 +5,7 @@
     <div class="border-shadow border-melancholyBlue border p-4 rounded bg-white">
       <div class="flex justify-between items-center">
         <h3 class="text-lg">请完成安全认证</h3>
-        <img src="../../public/image/x.png" />
+        <img src="@/assets/icon/cross.png" />
       </div>
       <div class="flex justify-center">
         <dragVerify class="mt-2" />

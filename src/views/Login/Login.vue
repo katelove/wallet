@@ -11,7 +11,7 @@
       />
       <input
         class="border-black	border rounded w-75 h-8.5 m-6"
-        type="text"
+        type="password"
         v-model="actPwd"
         placeholder="密码"
       />
