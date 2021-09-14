@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-      <button class="bg-melancholyBlue text-white rounded-10px w-75 h-10 m-6" @click="safeCenter" >提交</button>
+      <button class="bg-melancholyBlue text-white rounded-10px w-75 h-10 m-6" @click="home" >提交</button>
        <!-- <Button class="w-75 h-10 m-6 rounded-10px">提交</Button> -->
     </BlueContainer>
   </div>
@@ -58,8 +58,8 @@ import Button from "@/components/Button.vue";
 export default {
   name:'SetSecondPwd',
   methods:{
-   safeCenter(){
-      this.$router.push('/safeCenter')
+   home(){
+      this.$router.push('/')
    }
   },
   components: {

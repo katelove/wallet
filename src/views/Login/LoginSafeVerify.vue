@@ -7,11 +7,11 @@
       <p class="text-yewLime text-center text-sm">输入谷歌验证器中6位验证码</p>
       <Input
         type="text"
-        class="w-75 h-8.5 mt-12 text-center text-base"
+        class="w-full h-8.5 mt-12 text-center text-base"
         placeholder="谷歌验证码"
       />
       <button
-        class="bg-melancholyBlue text-white rounded-2px w-75 h-10 mt-12"
+        class="bg-melancholyBlue text-white rounded-2px w-full h-10 mt-12"
         @click="home"
       >
         确认

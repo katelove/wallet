@@ -4,7 +4,7 @@
   >
     <div class="relative">
       <h3 class="text-25px">绑定谷歌验证器</h3>
-      <img class="absolute right-0 close-top" src="@/assets/icon/cross.png" />
+      <Icon class="absolute right-0 close-top" :src="require('@/assets/icon/cross.png')" style="width:17px;height:17px" />
     </div>
     <div class="mt-5 flex flex-start">
       <img src="@/views/Login/Register/name-qr-code.png" class="mr-4" />
@@ -33,6 +33,7 @@
 
 <script>
 import Input from "@/components/Input.vue";
+import Icon from "@/components/Icon.vue"
 // import Button from "@/components/Button.vue";
 export default {
   name:'NameVerify',
@@ -43,6 +44,7 @@ export default {
   },
   components: {
     Input,
+    Icon
     // Button,
   },
 };

@@ -10,11 +10,11 @@
         <p class="w-1/3 text-center text-yewLime"><router-link to="/register/name">用戶名</router-link></p>
       </div>
       <div class="p-6">
-        <div class="mt-4">
+        <div class="mt-4 flex self-start">
           <select class="select-border">
             <option value="+886" class="text-center">+886</option>
           </select>
-          <Input type="number" class="input-style" placeholder="  手机号码" />
+          <Input type="number" class="input-style w-full" placeholder="  手机号码" />
         </div>
         <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
         <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
@@ -33,7 +33,7 @@
         注冊
       </button>
         <p class="text-sm mt-6 text-garyWord">
-          已有帐号?<span class="text-melancholyBlue">登录</span>
+          已有帐号?<span class="text-melancholyBlue"><router-link to="/login">登录</router-link></span>
         </p>
       </div>
     </div>

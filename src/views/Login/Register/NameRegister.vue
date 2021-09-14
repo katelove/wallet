@@ -28,7 +28,7 @@
         注冊
       </button>
         <p class="text-sm mt-6 text-garyWord">
-          已有帐号?<span class="text-melancholyBlue">登录</span>
+          已有帐号?<span class="text-melancholyBlue"><router-link to="/login">登录</router-link></span>
         </p>
       </div>
     </div>
