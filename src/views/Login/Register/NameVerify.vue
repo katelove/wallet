@@ -4,14 +4,14 @@
   >
     <div class="relative">
       <h3 class="text-25px">绑定谷歌验证器</h3>
-      <img class="absolute right-0 close-top" src="../../../../public/image/x.png" />
+      <img class="absolute right-0 close-top" src="@/assets/icon/cross.png" />
     </div>
     <div class="mt-5 flex flex-start">
-      <img src="../../../../public/image/name-qr-code.png" class="mr-4" />
+      <img src="@/views/Login/Register/name-qr-code.png" class="mr-4" />
       <div class="pt-4">
         <p class="text-yewLime text-sm font-sans">GF32ADWE32112FDS3DA1</p>
         <div class="flex flex-start mt-3.5">
-          <img src="../../../../public/image/copy.png" class="mr-5px"/>
+          <img src="@/assets/icon/copy.png" class="mr-5px"/>
           <p class="text-bayshoreBlue text-sm">复制密钥</p>
         </div>
       </div>
@@ -22,7 +22,8 @@
       <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-5px">
         取消
       </button>
-      <Button class="w-20 h-8 rounded-5px">确认</Button>
+      <button class="bg-melancholyBlue text-white rounded-5px w-20 h-8" @click="home">确认</button>
+      <!-- <Button class="w-20 h-8 rounded-5px">确认</Button> -->
     </div>
     <h3 class="mt-10 text-center text-yewLime text-sm">
       没有收到验证码?<span class="text-bayshoreBlue">获取验证码</span>
@@ -32,12 +33,17 @@
 
 <script>
 import Input from "@/components/Input.vue";
-import Button from "@/components/Button.vue";
+// import Button from "@/components/Button.vue";
 export default {
   name:'NameVerify',
+  methods:{
+    home(){
+       this.$router.push('/')
+    }
+  },
   components: {
     Input,
-    Button,
+    // Button,
   },
 };
 </script>
