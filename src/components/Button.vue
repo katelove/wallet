@@ -1,7 +1,8 @@
 <template lang="">
     <button
-        class="bg-melancholyBlue text-white rounded-2px"
+        :class="[bg, rounded, textColor]"
         v-bind="$attrs"
+        @click="$emit('click')"
     >
         <slot></slot>
     </button>
@@ -9,6 +10,15 @@
 <script>
 export default {
     props: {
+        bg: {
+            default: "bg-melancholyBlue"
+        },
+        rounded: {
+            defauly: "rounded-2px"
+        },
+        textColor: {
+            default: "text-white"
+        }
     },
 }
 </script>

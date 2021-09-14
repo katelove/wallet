@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import { Plugin } from 'vue-fragment'
 
+Vue.use(Plugin)
+Vue.use(require('vue-moment'))
 Vue.config.productionTip = false
 
 new Vue({
