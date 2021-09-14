@@ -17,6 +17,7 @@
 <script>
 import dragVerify from "@/components/DragVerify.vue";
 export default {
+  name:'ModalDragVerify',
   components: {
     dragVerify,
   },

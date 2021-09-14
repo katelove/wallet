@@ -8,7 +8,7 @@
         重置登录密码后，24小时内禁止提币和OTC
       </p>
     </div>
-    <Input class="w-full h-8.5 mt-9" placeholder=" 帐号" />
+    <Input type="text" class="w-full h-8.5 mt-9" placeholder=" 帐号" />
     <!-- <Button class="w-full h-10 mt-9">提交</Button> -->
     <button
       class="bg-melancholyBlue text-white rounded-2px w-full h-10 mt-9"

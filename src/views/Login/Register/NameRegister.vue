@@ -10,7 +10,7 @@
         <Button class="w-1/3  h-12 rounded-4px"><router-link to="/register/name">用戶名</router-link></Button>
       </div>
       <div class="p-6">
-        <Input class="mt-5 w-full input-style" placeholder="  用戶名" />
+        <Input class="mt-5 w-full input-style" type="text" placeholder="  用戶名" />
         <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
         <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
         <div class="flex justify-start items-center mt-7">

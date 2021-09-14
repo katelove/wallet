@@ -14,7 +14,7 @@
 
 <script>
 import NameRegister from '@/views/Login/Register/NameRegister.vue';
-import ModalDragVerify from "@/views/ModalDragVerify.vue";
+import ModalDragVerify from "@/views/Login/ModalDragVerify.vue";
 import NameVerify from '@/views/Login/Register/NameVerify.vue';
 
 export default {

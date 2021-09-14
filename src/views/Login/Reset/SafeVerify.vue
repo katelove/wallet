@@ -7,9 +7,9 @@
     <img src="@/assets/icon/cross.png" />
   </div>
 
-    <Input class="w-full h-8.5 mt-7.5" placeholder=" 邮箱验证码                                获取验证码"/>
+    <Input type="text" class="w-full h-8.5 mt-7.5" placeholder=" 邮箱验证码                                获取验证码"/>
     <span class="text-bayshoreBlue text-xs mt-2">输入您的邮箱sk*****@gmail.com收到的验证码</span>
-    <Input class="w-full h-8.5 mt-7.5" placeholder=" 谷歌验证码" />
+    <Input type="text" class="w-full h-8.5 mt-7.5" placeholder=" 谷歌验证码" />
     <span class="text-bayshoreBlue text-xs mt-2">安全项丢失?</span>
     <div class="flex justify-end">
     <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-5px">取消</button>

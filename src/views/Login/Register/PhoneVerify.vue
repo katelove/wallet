@@ -8,6 +8,7 @@
         请输入您的手机号+97120304582 收到的验证码
       </p>
       <Input
+        type="text"
         class="w-75 h-8.5 mt-12 text-center text-base"
         placeholder="手机验证码"
       />

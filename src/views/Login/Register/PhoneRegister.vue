@@ -14,7 +14,7 @@
           <select class="select-border">
             <option value="+886" class="text-center">+886</option>
           </select>
-          <Input class="input-style" placeholder="  手机号码" />
+          <Input type="number" class="input-style" placeholder="  手机号码" />
         </div>
         <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
         <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
@@ -46,7 +46,7 @@ import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 
 export default {
-  name:'TestWallet',
+  name:'PhoneRegister',
   methods:{
     register(){
        this.$store.dispatch("progressSite", 2);

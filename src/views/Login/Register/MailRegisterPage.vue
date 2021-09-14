@@ -14,7 +14,7 @@
 
 <script>
 import MailRegister from "@/views/Login/Register/MailRegister.vue";
-import ModalDragVerify from "@/views/ModalDragVerify.vue";
+import ModalDragVerify from "@/views/Login/ModalDragVerify.vue";
 import MailVerify from "@/views/Login/Register/MailVerify.vue";
 
 export default {

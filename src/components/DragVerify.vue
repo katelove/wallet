@@ -22,7 +22,7 @@ import dragVerifyImgChip from "vue-drag-verify-img-chip";
 export default {
   data() {
     return {
-      img: require("../../public/image/verify-img.png"),
+      img: require("@/assets/verify/verify-img.png"),
       isPassing:false,
     };
   },

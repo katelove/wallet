@@ -15,7 +15,7 @@
 <script>
 import Login from "@/views/Login/Login.vue";
 import LoginSafeVerify from "@/views/Login/LoginSafeVerify.vue";
-import ModalDragVerify from "@/views/ModalDragVerify.vue";
+import ModalDragVerify from "@/views/Login/ModalDragVerify.vue";
 export default {
   name: "LoginPage",
   components: {

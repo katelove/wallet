@@ -6,6 +6,7 @@
     >
       <p class="text-yewLime text-center text-sm">输入谷歌验证器中6位验证码</p>
       <Input
+        type="text"
         class="w-75 h-8.5 mt-12 text-center text-base"
         placeholder="谷歌验证码"
       />

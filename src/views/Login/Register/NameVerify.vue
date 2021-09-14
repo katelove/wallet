@@ -17,7 +17,7 @@
       </div>
     </div>
     <label class="text-yewLime text-base mt-3.5">输入谷歌验证码</label>
-    <Input class="w-full h-8.5 mt-2.5" />
+    <Input type="text" class="w-full h-8.5 mt-2.5" />
     <div class="flex justify-end mt-11">
       <button class="bg-white text-bayshoreBlue w-20 h-8 mr-5 rounded-5px">
         取消

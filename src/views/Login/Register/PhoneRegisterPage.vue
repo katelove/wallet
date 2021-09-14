@@ -14,11 +14,11 @@
 
 <script>
 import PhoneRegister from "@/views/Login/Register/PhoneRegister.vue";
-import ModalDragVerify from "@/views/ModalDragVerify.vue";
+import ModalDragVerify from "@/views/Login/ModalDragVerify.vue";
 import PhoneVerify from "@/views/Login/Register/PhoneVerify.vue";
 
 export default {
-  name: "NameWalletPage",
+  name: "PhoneRegisterPage",
   components: {
     PhoneRegister,
     ModalDragVerify,
