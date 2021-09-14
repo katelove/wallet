@@ -4,7 +4,7 @@
   >
   <div class="flex justify-between items-center">
     <h3 class="text-25px">安全验证</h3>
-    <img src="../../../../public/image/x.png" />
+    <img src="@/assets/icon/cross.png" />
   </div>
 
     <Input class="w-full h-8.5 mt-7.5" placeholder=" 邮箱验证码                                获取验证码"/>
