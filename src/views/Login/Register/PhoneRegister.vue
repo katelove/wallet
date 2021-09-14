@@ -1,27 +1,32 @@
 <template>
   <div class="flex justify-center mt-10 flex-col  m-auto">
-    <Title class="w-full h-12" heading="注冊  测试钱包"></Title>
+    <Title class="w-full h-12" heading="测试钱包"></Title>
     <div class="border-melancholyBlue border m-8 rounded-4px border-shadow">
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/phone">手机号</router-link></p>
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/mail">邮箱</router-link></p>
-        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/login-wallet/name">用戶名</router-link></Button>
+        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/register/phone">手机号</router-link></Button>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/mail">邮箱</router-link></p>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/name">用戶名</router-link></p>
       </div>
       <div class="p-6">
-        <Input class="mt-5 w-full input-style" placeholder="  用戶名" />
-        <Input class="mt-7 w-full input-style" placeholder="  设置密码" />
-        <Input class="mt-7 w-full input-style" placeholder="  确认密码" />
-        <div class="flex justify-start items-center mt-7">
-          <input type="checkbox"/>
-          <p class="text-sm text-garyWord ml-1">
+        <div class="mt-4">
+          <select class="select-border">
+            <option value="+886" class="text-center">+886</option>
+          </select>
+          <Input class="input-style" placeholder="  手机号码" />
+        </div>
+        <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
+        <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
+        <div class="flex justify-start mt-7">
+          <input type="checkbox" />
+          <p class="text-sm text-garyWord">
             我已阅读并同意<span class="text-melancholyBlue">《用户协议》</span
             >和<span class="text-melancholyBlue">《隐私条款》</span>
           </p>
         </div>
         <!-- <Button class="w-full mt-12 h-10">注冊</Button> -->
-              <button
+        <button
         class="bg-melancholyBlue text-white rounded-2px w-full mt-12 h-10"
         @click="register"
       >
@@ -39,8 +44,9 @@
 import Title from "@/components/Title.vue";
 import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
+
 export default {
-  name:'NameWallet',
+  name:'TestWallet',
   methods:{
     register(){
        this.$store.dispatch("progressSite", 2);
@@ -69,8 +75,8 @@ export default {
   background: white;
 }
 
-.input-style {
-  height: 33px;
-  border-radius: 4px;
+.input-style{
+    height: 33px;
+    border-radius: 4px;
 }
 </style>

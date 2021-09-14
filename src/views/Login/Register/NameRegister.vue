@@ -5,14 +5,14 @@
       <div
         class="flex justify-start items-center border-melancholyBlue border-b"
       >
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/phone">手机号</router-link></p>
-        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/login-wallet/mail">邮箱</router-link> </Button>
-        <p class="w-1/3 text-center text-yewLime"><router-link to="/login-wallet/name">用戶名</router-link></p>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/phone">手机号</router-link></p>
+        <p class="w-1/3 text-center text-yewLime"><router-link to="/register/mail">邮箱</router-link></p>
+        <Button class="w-1/3  h-12 rounded-4px"><router-link to="/register/name">用戶名</router-link></Button>
       </div>
       <div class="p-6">
-        <Input class="mt-5 w-full input-style" placeholder="  邮箱帐号" />
-        <Input class="mt-7 w-full input-style" placeholder="  设置密码" />
-        <Input class="mt-7 w-full input-style" placeholder="  确认密码" />
+        <Input class="mt-5 w-full input-style" placeholder="  用戶名" />
+        <Input class="mt-7 w-full input-style" type="password" placeholder="  设置密码" />
+        <Input class="mt-7 w-full input-style" type="password" placeholder="  确认密码" />
         <div class="flex justify-start items-center mt-7">
           <input type="checkbox"/>
           <p class="text-sm text-garyWord ml-1">
@@ -21,7 +21,7 @@
           </p>
         </div>
         <!-- <Button class="w-full mt-12 h-10">注冊</Button> -->
-      <button
+              <button
         class="bg-melancholyBlue text-white rounded-2px w-full mt-12 h-10"
         @click="register"
       >
@@ -40,7 +40,7 @@ import Title from "@/components/Title.vue";
 import Input from "@/components/Input.vue";
 import Button from "@/components/Button.vue";
 export default {
-  name:'RegisterTestWallet',
+  name:'NameRegister',
   methods:{
     register(){
        this.$store.dispatch("progressSite", 2);

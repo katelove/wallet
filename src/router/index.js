@@ -20,19 +20,19 @@ const routes = [
     component: () => import("@/views/Login/Reset/ResetPage.vue"),
     },
     {
-      path: "/login-wallet/phone",
-      name: "PhoneWalletPage",
-      component: () => import("@/views/Login/Wallet/PhoneWalletPage.vue"),
+      path: "/register/phone",
+      name: "PhoneRegisterPage",
+      component: () => import("@/views/Login/Register/PhoneRegisterPage.vue"),
     },
     {
-      path: '/login-wallet/mail',
-      name: "MailWalletPage",
-      component: () => import("@/views/Login/Wallet/MailWalletPage.vue"),
+      path: '/register/mail',
+      name: "MailRegisterPage",
+      component: () => import("@/views/Login/Register/MailRegisterPage.vue"),
     },
     {
-      path: '/login-wallet/name',
-      name: "NameWalletPage",
-      component: () => import("@/views/Login/Wallet/NameWalletPage.vue"),
+      path: '/register/name',
+      name: "NameRegisterPage",
+      component: () => import("@/views/Login/Register/NameRegisterPage.vue"),
     },
     {
       path: '/safeCenter',
