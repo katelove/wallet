@@ -5,12 +5,13 @@
       <div class="pr-6 pl-6 pt-5 pb-5">
         <p class="text-base">绑定手机</p>
         <div class="relative  mt-8">
-          <select class="select-border  text-yewLime absolute">
+          <select class="select-border text-yewLime absolute w-14">
             <option value="+886" class="text-center">+886</option>
           </select>
           <Input
-            class="border-none border-line w-full"
-            placeholder="                  請輸入手機號碼"
+            type="number"
+            class="border-none border-line w-full pl-14"
+            placeholder=" 請輸入手機號碼"
           />
         </div>
       </div>
@@ -19,16 +20,17 @@
         <p class="text-base">验证码</p>
         <div class="relative">
           <input
+            type="text"
             class="w-full border-none border-line  mt-8"
             placeholder="请输入验整码"
           />
           <Button class="h-8 absolute right-2 bottom-2 rounded-5px p-1.5 "
-            >获取验证码</Button
-          >
+            >获取验证码</Button>
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-      <Button class="w-75 h-10 m-6 rounded-10px">提交</Button>
+      <button class="bg-melancholyBlue text-white rounded-10px w-75 h-10 m-6" @click="safeCenter" >提交</button>
+      <!-- <Button class="w-75 h-10 m-6 rounded-10px">提交</Button> -->
     </BlueContainer>
   </div>
 </template>
@@ -39,7 +41,12 @@ import BlueContainer from "@/components/BlueContainer.vue";
 import Button from "@/components/Button.vue";
 
 export default {
-  name:'BindPhone',
+  name: "BindPhone",
+  methods: {
+    safeCenter() {
+      this.$router.push("/safeCenter");
+    },
+  },
   components: {
     Title,
     BlueContainer,

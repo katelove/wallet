@@ -14,7 +14,7 @@
           密鑰用於手機更換或遺失時找回谷歌驗證器，綁定前請務必將下述密鑰備份保存
         </p>
         <div class="flex justify-center mt-4 mb-6">
-          <img src="../../../../public/image/google-qr-code.png" />
+          <img src="@/views/Login/SafeCenter/google-qr-code.png" />
         </div>
         <div class="flex justify-center m-4">
           <Button class="w-64 text-center rounded-lg text-xs h-8"
@@ -28,7 +28,7 @@
           >
             GF32ADWE32112FDS3DA1
           </p>
-          <img src="../../../../public/image/copy.png" class="mr-5px" />
+          <img src="@/assets/icon/copy.png" class="mr-5px" />
         </div>
         <!-- <Button class="w-75 h-10 mt-4 rounded-10px">下一步</Button> -->
         <button
@@ -45,7 +45,7 @@
 <script>
 import Title from "@/components/Title.vue";
 import BlueContainer from "@/components/BlueContainer.vue";
-// import Button from "@/components/Button.vue";
+import Button from "@/components/Button.vue";
 
 export default {
   name: "BindGoogle",
@@ -57,7 +57,7 @@ export default {
   components: {
     Title,
     BlueContainer,
-    // Button,
+    Button,
   },
 };
 </script>

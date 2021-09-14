@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import BindGoogle from "./BindGoogle.vue";
+import BindGoogle from "@/views/Login/SafeCenter/BindGoogle.vue";
 import BindSecondGoogle from "@/views/Login/SafeCenter/BindSecondGoogle.vue";
 
 export default {
