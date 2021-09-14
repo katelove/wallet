@@ -16,12 +16,10 @@ module.exports = {
 				yewLime: "#969696",
 				diamondGrey: "#F0F0F0",
 				white: "#FFFFFF",
-				mask: "rgba(0, 0, 0, 0.31)"
-			},
-			borderRadius: {
-				"2px": "2px",
-				"10px": "10px",
-				"20px": "20px"
+				mask: "rgba(0, 0, 0, 0.31)",
+				garyWord:"#B0B0B0",
+				wordBlue:"#0185AE",
+				skyBlue:"#DAF6FF"
 			},
 			fontSize: {
 				"25px": "25px",
@@ -30,6 +28,18 @@ module.exports = {
 				"14px": "14px",
 				"20px": "20px",
 				"24px": "24px",
+				'2.1xl': [
+					'25px',{
+						lineHeight:'34px'
+                    }
+				]
+			},
+			borderRadius: {
+				"2px": "2px",
+				"4px":"4px",
+				"5px":"5px",
+				"10px": "10px",
+				"20px": "20px"
 			},
 			height: {
 				"65px": "65px",
@@ -102,6 +112,15 @@ module.exports = {
 			},
 			boxShadow: {
 				"normal": "4px 4px 4px rgba(0, 0, 0, 0.25)"
+			},
+			spacing:{
+				'5px':'5px',
+				'15px':'15px',
+				'7.5':'1.875rem',
+				'8.5':'2.063rem',
+				'25':'6.438rem',
+				'75':'18.625rem',
+				'86':'21.875rem'
 			}
 		},
 	},
@@ -109,4 +128,5 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [],
+
 }
