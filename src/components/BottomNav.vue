@@ -1,7 +1,8 @@
 <template lang="">
     <div
         v-if="!$route.meta.hideBottomNav"
-        class="rounded-10px border-black border flex justify-evenly items-center text-10px my-4 mx-25px ">
+        class="rounded-10px border-black border flex justify-evenly items-center text-10px my-4 mx-25px "
+    >
         <div
             v-for="item in nav"
             :key="item.name"
