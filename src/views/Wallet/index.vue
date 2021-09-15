@@ -6,8 +6,7 @@
 		</div>
 
         <div class="flex justify-between">
-            <p class="text-24px">{{balance}}</p>
-            <Icon :src="require('@/assets/icon/next.png')" style="width: 10px;height: 17px"/>
+            <p class="text-24px text-melancholyBlue">{{balance}}</p>
         </div>
 
         <BlueContainer class="mt-12 mb-20px">
