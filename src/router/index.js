@@ -18,7 +18,6 @@ const routes = [
       component: () => import("@/views/TransactionHistory"),
       meta: {
         showGoback: true,
-        hideBottomNav: true
       }
     },
     {
@@ -149,6 +148,10 @@ const routes = [
         hideBottomNav: true
       }
     },
+    {
+      path: '*',
+      redirect: '/'
+    }
 ];
 
 const router = new VueRouter({

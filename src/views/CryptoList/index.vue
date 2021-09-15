@@ -1,5 +1,8 @@
 <template lang="">
-    <BlueContainer :title="$route.params.action === 'deposit' ? '充值/收款' : '提領/轉帳'" class="mx-12px">
+    <BlueContainer
+        :title="$route.params.action === 'deposit' ? '充值/收款' : '提領/轉帳'"
+        class="mx-12px"
+    >
         <div
             v-if="$route.params.action === 'deposit'"
             class="flex h-65px text-25px justify-center items-center border-b border-melancholyBlue"

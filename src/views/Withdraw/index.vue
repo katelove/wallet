@@ -51,7 +51,7 @@
                 <Input class="w-full" placeholder="請輸入收款地址" v-model="address"/>
                 <div class="flex justify-between mb-24px mt-40px items-center">
                     <p>轉賬數量</p>
-                    <p class="text-yewLime text-12px self-end">可用  {{balance}}  {{symbol}}</p>
+                    <p class="text-yewLime text-12px self-end">可用  {{avaibleAmount}}  {{symbol}}</p>
                 </div>
 
                 <div class="relative">
@@ -92,9 +92,17 @@ import Button from "@/components/Button"
 import Input from "@/components/Input"
 import WithdrawCheckModal from "@/components/WithdrawCheckModal"
 import { getCryptoImgUrl } from "@/utlis"
-import { transfer } from "@/api"
+import { transfer, getBalance } from "@/api"
 
 export default {
+    created() {
+        getBalance()
+        this.$nextTick(() => {
+            const wallets = JSON.parse(localStorage.getItem('wallets'))
+            const crypto = wallets.find(({ coin }) => coin === this.crypto)
+            this.avaibleAmount = crypto.balance
+        })
+    },
     data() {
 		return {
             selectChain: 'TRC20',
@@ -104,7 +112,7 @@ export default {
             showWithdrawCheckModal: false,
             amount: '',
             address: '',
-            balance: localStorage.getItem('balance')
+            avaibleAmount: 0,
 		}
 	},
     methods: {
@@ -116,7 +124,7 @@ export default {
             const amount = parseInt(this.amount || 0)
             if (amount <= 0) {
                 alert('金額不能為0')
-            } else if (parseInt(this.balance) < parseInt(amount)) {
+            } else if (parseInt(this.avaibleAmount) < parseInt(amount)) {
                 alert('資產不足')
             } else {
                 this.showWithdrawCheckModal = true
@@ -132,6 +140,7 @@ export default {
             }
             transfer(JSON.stringify(data))
             .then(() => {
+                localStorage.setItem('balance', parseInt(localStorage.getItem('balance')) - parseInt(this.amount))
                 this.$router.push(`/transaction_history/${this.crypto}?showLast=true`)
             })
             .catch(() => {

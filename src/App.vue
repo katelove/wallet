@@ -1,7 +1,9 @@
 <template>
 	<div id="app" class="relative">
 		<TopNav />
-		<router-view/>
+		<div style="height: 75vh;overflow: scroll">
+			<router-view/>
+		</div>
 		<BottomNav />
 	</div>
 </template>

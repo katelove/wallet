@@ -7,6 +7,7 @@ export const getBalance = async () => {
     rep?.data?.wallets?.forEach(({ balance }) => {
         total += balance;
     })
+    localStorage.setItem('wallets', JSON.stringify(rep.data.wallets))
     localStorage.setItem('balance', total || 0)
     return rep.data
 }

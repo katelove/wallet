@@ -1,7 +1,7 @@
 <template lang="">
     <div
         class="bg-melancholyBlue flex justify-between px-25px pb-4 items-end"
-        style="height: 80px;margin-bottom: 12px"
+        style="height: 10vh;margin-bottom: 12px"
     >
         <img 
             v-show="$route.meta.showGoback"

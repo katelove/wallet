@@ -3,7 +3,7 @@
         <div class="flex py-2 px-22px text-12px border-b border-melancholyBlue">
             <p style="width: 183px">名称</p>
             <p style="width: 70px">最新价</p>
-            <p>24小時漲跌</p>
+            <p style="width: 74px">24小時漲跌</p>
         </div>
         <div class="my-2">
             <div v-for="(value, symbol, index) in spot" :key="symbol"

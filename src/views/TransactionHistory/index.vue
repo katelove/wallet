@@ -18,9 +18,9 @@
             <div class="bg-diamondGrey" style="height: 27px"></div>
             <div class="flex mt-16px mx-22px justify-center flex-col">
                 <div class="flex text-center mb-30px justify-between">
-                    <p class="border-b border-yewLime pb-3px">全部</p>
+                    <p class="border-b border-yewLime pb-3px mr-35px">全部</p>
                     <p style="width: 153px">转出</p>
-                    <p style="width: 70px">转入</p>
+                    <p style="text-align: end">转入</p>
                 </div>
                 <div
                     class="flex text-center items-center mb-27px"
@@ -31,11 +31,11 @@
                         :src="require(`@/assets/${item.type}.png`)"
                         style="with: 34px;height: 34px;margin-right: 35px"
                     />
-                    <div style="width: 153px;margin-right: 47px">
+                    <div style="width: 153px">
                         <p>erj32128h414h1j</p>
                         <p>{{item.date | moment('YYYY-MM-DD HH:MM:SS')}}</p>
                     </div>
-                    <div style="width: 70px">
+                    <div style="flex-grow: 1;text-align: end">
                         {{showAmountText(item.type, item.amount)}}
                     </div>
                 </div>
