@@ -56,7 +56,9 @@
         </div>
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-      <button class="bg-yewLime text-white rounded-10px w-75 h-10 m-6" @click="logout" >登出</button>
+      <div class="p-6">
+        <button class="bg-yewLime text-white rounded-10px w-full h-10" @click="logout" >登出</button>
+      </div>
     </BlueContainer>
   </div>
 </template>
