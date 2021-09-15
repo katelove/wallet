@@ -31,12 +31,15 @@
           <img src="@/assets/icon/copy.png" class="mr-5px" />
         </div>
         <!-- <Button class="w-75 h-10 mt-4 rounded-10px">下一步</Button> -->
+        <div class="p-6">
         <button
-          class="bg-melancholyBlue text-white rounded-10px w-75 h-10 mt-4"
+          class="bg-melancholyBlue text-white rounded-10px w-full h-10 mt-4"
           @click="nextStep"
         >
           下一步
         </button>
+        </div>
+
       </div>
     </BlueContainer>
   </div>

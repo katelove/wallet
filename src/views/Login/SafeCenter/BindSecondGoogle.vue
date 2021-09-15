@@ -39,7 +39,9 @@
           />
       </div>
       <div class="w-full bg-diamondGrey h-2"></div>
-      <button class="bg-melancholyBlue text-white rounded-10px w-75 h-10 m-6" @click="home" >提交</button>
+      <div class="p-6">
+      <button class="bg-melancholyBlue text-white rounded-10px w-full h-10" @click="home" >提交</button>
+      </div>
       <!-- <Button class="w-75 h-10 m-6 rounded-10px">提交</Button> -->
     </BlueContainer>
   </div>
