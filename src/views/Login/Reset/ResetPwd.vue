@@ -27,6 +27,7 @@ export default {
   name:'ResetPwd',
   methods:{
     resetSubmit(){
+      localStorage.setItem("user_id","00001");
       this.$store.dispatch("progressSite", 2);
     }
   },
