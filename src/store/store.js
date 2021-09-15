@@ -35,7 +35,6 @@ export default new Vuex.Store({
       commit('CLEAR_USER_DATA')
     },
     progressSite (context, status) {
-      console.log('index.js store progressSite' + status)
       context.commit('SET_PROGRESS_NUM', status)
     }
   },
