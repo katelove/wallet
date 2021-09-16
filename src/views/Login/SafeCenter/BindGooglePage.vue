@@ -15,6 +15,9 @@ import BindSecondGoogle from "@/views/Login/SafeCenter/BindSecondGoogle.vue";
 
 export default {
   name: "BindGooglePage",
+  created() {
+    this.$store.dispatch("progressSite", 1);
+  },
   components: {
     BindGoogle,
     BindSecondGoogle,
