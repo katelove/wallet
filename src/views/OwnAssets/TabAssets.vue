@@ -1,11 +1,13 @@
 <template lang="">
-    <div>
-        <h1>TabAssets</h1>
+    <div class="bg-lightGray flex items-center justify-center">
+  <h1>123</h1>
     </div>
 </template>
 <script>
+
 export default {
-    name:'TabAssets'
+    name:'TabAssets',
+
     
 }
 </script>
