@@ -1,7 +1,7 @@
 <template>
 	<div id="app" class="relative">
 		<TopNav />
-		<div style="height: 75vh;overflow: scroll">
+		<div :style="`height: ${hideBottomNav ? '90vh' : '75vh'};overflow: scroll`">
 			<router-view/>
 		</div>
 		<BottomNav />
@@ -16,6 +16,11 @@ import { getBalance } from "@/api"
 
 export default {
 	name: 'App',
+	computed: {
+		hideBottomNav: function() {
+			return this.$route.meta.hideBottomNav
+		}
+	},
 	created() {
 		getBalance()
 	},

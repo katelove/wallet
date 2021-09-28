@@ -62,6 +62,7 @@
                         <Button
                             class="py-7px px-23px rounded-10px"
                             @click="showCopy = !showCopy"
+                            v-clipboard:copy="'DWFRF345345FR34fk4tj4jf4j444rj'"
                         >
                             复制
                         </Button>
