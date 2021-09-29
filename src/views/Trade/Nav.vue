@@ -4,22 +4,21 @@
             <Icon
                 :src="require('@/assets/icon/nav.png')"
                 class="w-[24px] h-[24px]"
+                @click="showMarketModal = true"
             />
 
             <p class="ml-[11px] mr-[8px]">{{ symbol }}</p>
 
-            <div
-                class="px-[8px] py-[4px] text-white rounded-full text-[12px]"
-                :class="ticker.c > old.c ? 'bg-bid' : 'bg-ask'"
-            >
-                {{ ticker.P }}%
-            </div>
+            <PercentPriceBulb
+                :percentPrice="ticker.P"
+            />
         </div>
 
         <div class="flex items-center">
             <Icon
                 :src="require('@/assets/icon/kline.png')"
                 class="mr-[8px] w-[24px] h-[24px]"
+                @click="$router.push(`/kline/${symbol}`)"
             />
             <Icon
                 :src="require(`@/assets/icon/${favorite.includes(symbol) ? 'isFavorite' : 'noFavorite'}.png`)"
@@ -27,22 +26,30 @@
                 @click="toggleFavorite"
             />
         </div>
+        <MarketListModal
+            v-show="showMarketModal"
+            @onClose="showMarketModal = false"
+        />
     </div>
 </template>
 
 <script>
 import Icon from "@/components/Icon.vue"
 import Websocket from '@/helper/websocket';
+import MarketListModal from "@/components/MarketListModal.vue";
+import PercentPriceBulb from "@/components/PercentPriceBulb.vue";
 
 export default {
     components: {
-        Icon
+        Icon,
+        MarketListModal,
+        PercentPriceBulb
     },
     data() {
         return {
+            showMarketModal: false,
             symbol: this.$route.params.symbol.toUpperCase(),
             ticker: {},
-            old: {},
             favorite: JSON.parse(localStorage.getItem('favorite')) || []
         }
     },
@@ -52,8 +59,6 @@ export default {
         ws.tickerWS(this.$route.params.symbol, {
             message: evt => {
                 const data = JSON.parse(evt.data);
-
-                this.old = JSON.parse(JSON.stringify(this.ticker));
                 this.ticker = data;
             }
         });

@@ -94,8 +94,8 @@
     padding: 6px 8px;
     color: #fff;
     border-radius: 5px;
-    border-color: rgba(0, 0, 0, 0.75);
-    background-color: rgba(0, 0, 0, 0.75);
+    border-color: #FFA31A;
+    background-color: #FFA31A;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: scale(0.9);
     transition: transform 0.3s;
