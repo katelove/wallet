@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     pass() {
-      console.log("滑塊驗證");
       this.img=''
       this.$store.dispatch("progressSite", 3);
     },

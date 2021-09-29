@@ -1,6 +1,21 @@
 import axios from 'axios'
+import binancePublicRequest from '@/helper/binancePublicRequest';
+import backendRequest from '@/helper/backendRequest';
 
-export const getBalance = async () => {
+export const getDepthBySymbol = (symbol) => {
+    return binancePublicRequest.get(`/api/v1/depth?limit=100&symbol=${symbol}`)
+    .then(({ data }) => data);
+};
+
+export const newOrder = (data) => {
+    return backendRequest.post('/wallet/orders', data)
+};
+
+export const getBalance = (data) => {
+    return backendRequest.get('/wallet/me/balance', data)
+};
+
+export const getBalance2 = async () => {
     const user_id = localStorage.getItem('user_id') || "00001"
     const rep = await axios.get(`https://api.105paolian.com/wallet/users/${user_id}`)
     let total = 0

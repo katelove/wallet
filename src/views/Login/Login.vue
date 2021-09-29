@@ -58,7 +58,6 @@ export default {
   },
   methods: {
     login() {
-      console.log("account:" + this.actName + " pwd:" + this.actPwd);
       if (this.actName === "00001" || this.actName === "00002") {
         localStorage.setItem("user_id", this.actName);
         this.$store.dispatch("progressSite", 2);

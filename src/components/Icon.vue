@@ -1,7 +1,8 @@
 <template lang="">
     <img
         :src="src"
-        style="width: 36px;height:36px"
+        class="w-[36px] h-[36px]"
+        @click="$emit('click')"
     />
 </template>
 <script>
