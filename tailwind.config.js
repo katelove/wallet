@@ -22,7 +22,8 @@ module.exports = {
 				skyBlue:"#DAF6FF",
 				lightGray:"#D1D2D2",
 				greenWord:"#46DF4C",
-				redWord:"#FD5959"
+				redWord:"#FD5959",
+				orangeWord:"#FFA31A"
 			},
 			fontSize: {
 				"25px": "25px",
