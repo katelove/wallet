@@ -13,6 +13,16 @@ const routes = [
         component: () => import("@/views/Home"),
     },
     {
+      path: "/kline/:symbol",
+      name: "kline",
+      component: () => import("@/views/Kline"),
+    },
+    {
+      path: "/trade/:symbol",
+      name: "Trade",
+      component: () => import("@/views/Trade"),
+    },
+    {
       path: "/transaction_history/:crypto",
       name: "TransactionHistory",
       component: () => import("@/views/TransactionHistory"),

@@ -5,3 +5,7 @@
 body {
     overflow: hidden;
 }
+.toasted-container .toasted {
+    width: fit-content;
+    align-self: center;
+}

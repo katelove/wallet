@@ -24,6 +24,10 @@ module.exports = {
 				garyWord:"#B0B0B0",
 				wordBlue:"#0185AE",
 				skyBlue:"#DAF6FF",
+				ask: "#FD5959",
+				bid: "#46DF4C",
+				textGray: "#D1D2D2",
+				mainColor: "#FFA31A",
 				lightGray:"#D1D2D2",
 				greenWord:"#46DF4C",
 				redWord:"#FD5959",
@@ -123,7 +127,8 @@ module.exports = {
 				"35px": "35px",
 			},
 			boxShadow: {
-				"normal": "4px 4px 4px rgba(0, 0, 0, 0.25)"
+				"normal": "4px 4px 4px rgba(0, 0, 0, 0.25)",
+				"bottom": "0px 0px 16px #E8E8E8"
 			},
 			spacing:{
 				'5px':'5px',

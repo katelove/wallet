@@ -1,7 +1,9 @@
 <template>
 	<div id="app" class="relative">
 		<TopNav />
-		<div :style="`height: ${hideBottomNav ? '90vh' : '75vh'};overflow: scroll`">
+		<div
+			class="overflow-y-scroll overflow-x-hidden"
+			:style="`height: ${hideBottomNav ? '90vh' : '75vh'}`">
 			<router-view/>
 		</div>
 		<BottomNav />
