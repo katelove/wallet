@@ -40,7 +40,7 @@
 </template>
 <script>
 export default {
-  name: "Block",
+  name: "OrderBlock",
   props: {
     side: {
       default: "BUY",

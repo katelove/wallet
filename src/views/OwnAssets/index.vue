@@ -1,16 +1,22 @@
 <template lang="">
   <div>
-    <Button
-      v-for="(item, index) in tabs"
-      :key="index"
-      :text-color="[ currentTab===item.tab ? 'text-white' : 'text-yewLime']"
-      :bg="[currentTab===item.tab ? 'bg-melancholyBlue' : 'bg-white']"
-      class="w-1/3  h-12"
-      @click="currentTab = item.tab"
-      >{{ item.word }}</Button
-    >
-  <TabAssets v-show="currentTab==='TabAssets'"></TabAssets>
-  <TabTrust v-show="currentTab==='TabTrust'"></TabTrust>
+    <div class="flex justify-between pl-4 pr-4 pb-2 pt-2">
+      <div>
+        <Button
+          v-for="(item, index) in tabs"
+          :key="index"
+          :class="[
+            currentTab === item.tab ? 'selected-word' : 'no-selected-word',
+          ]"
+          @click="currentTab = item.tab"
+          >{{ item.word }}</Button
+        >
+      </div>
+
+      <img :src="require('@/assets/icon/asset.png')"  style="width: 18px;height:18px"/>
+    </div>
+    <TabAssets v-show="currentTab === 'TabAssets'"></TabAssets>
+    <TabTrust v-show="currentTab === 'TabTrust'"></TabTrust>
   </div>
 </template>
 <script>
@@ -43,3 +49,30 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.selected-word {
+  border-bottom: #fec36b 4px solid;
+  width: 80px;
+  height: 30px;
+  border-radius: 4px;
+  color: #1b1c1e;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  background: white;
+  /* letter-spacing: 0.05em; */
+  text-align: center;
+}
+
+.no-selected-word {
+  color: #d1d2d2;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  background: white;
+  letter-spacing: 0.05em;
+  text-align: center;
+    width: 80px;
+}
+</style>

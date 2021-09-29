@@ -1,16 +1,15 @@
 <template lang="">
-    <div class="bg-lightGray flex items-center justify-center">
-  <h1>123</h1>
-    </div>
+  <div class="bg-lightGray flex items-center justify-center">
+    <MoneyBlock :src="require('@/assets/crypto/usdt.png')" money="USDT"></MoneyBlock>
+  </div>
 </template>
 <script>
-
+import MoneyBlock from "@/components/MoneyBlock.vue";
 export default {
-    name:'TabAssets',
-
-    
-}
+  name: "TabAssets",
+  components: {
+    MoneyBlock,
+  },
+};
 </script>
-<style lang="">
-    
-</style>
+
