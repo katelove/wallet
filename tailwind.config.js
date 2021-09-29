@@ -24,12 +24,14 @@ module.exports = {
 				garyWord:"#B0B0B0",
 				wordBlue:"#0185AE",
 				skyBlue:"#DAF6FF",
-
-
 				ask: "#FD5959",
 				bid: "#46DF4C",
 				textGray: "#D1D2D2",
-				mainColor: "#FFA31A"
+				mainColor: "#FFA31A",
+				lightGray:"#D1D2D2",
+				greenWord:"#46DF4C",
+				redWord:"#FD5959",
+				orangeWord:"#FFA31A"
 			},
 			fontSize: {
 				"25px": "25px",
@@ -49,14 +51,16 @@ module.exports = {
 				"4px":"4px",
 				"5px":"5px",
 				"10px": "10px",
-				"20px": "20px"
+				"20px": "20px",
+				"12px":"12px"
 			},
 			height: {
 				"65px": "65px",
 				"27px": "27px",
 				"36px": "36px",
 				"72px": "72px",
-				"275px": "275px"
+				"275px": "275px",
+				"132px":"132px"
 			},
 			width: {
 				"36px": "36px",
@@ -65,7 +69,8 @@ module.exports = {
 				"90px": "90px",
 				"270px": "270px",
 				"101px": "101px",
-				"65vh": "65vh"
+				"65vh": "65vh",
+				"344px":"344px"
 			},
 			minHeight: {
 				"100px": "100px"
