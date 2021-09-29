@@ -151,7 +151,16 @@ const routes = [
     {
       path: '*',
       redirect: '/'
-    }
+    },
+    {
+      path: "/ownAssets",
+      name: "OwnAssets",
+      component: () => import("@/views/OwnAssets"),
+      meta: {
+        showGoback: false,
+        hideBottomNav: true
+      }
+  },
 ];
 
 const router = new VueRouter({
