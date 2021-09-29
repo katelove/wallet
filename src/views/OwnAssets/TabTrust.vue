@@ -2,7 +2,7 @@
   <div class="bg-lightGray">
     <div>目前尚無委託</div>
     <div>
-      <Block side="BUY" progress="40"></Block>
+      <Block side="BUY" progress="60"></Block>
     </div>
   </div>
 </template>
