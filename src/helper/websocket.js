@@ -3,8 +3,8 @@ const { isEmptyValue } = require('./utils');
 
 class Websocket {
     constructor (options = {}) {
-        this.wsURL = options.wsURL || 'wss://stream.binance.com:9443';
-        // this.wsURL = options.wsURL || 'wss://testnet.binance.vision';
+        // this.wsURL = options.wsURL || 'wss://stream.binance.com:9443';
+        this.wsURL = options.wsURL || 'wss://testnet.binance.vision';
         this.reconnectDelay = 5000;
         this.wsRef = {};
     }
@@ -15,12 +15,12 @@ class Websocket {
     }
 
     tickerWS (symbol = null, callbacks) {
-        let path = '!ticker@arr'
+        let path = '!ticker@arr';
         if (!isEmptyValue(symbol)) {
-          path = `${symbol.toLowerCase()}@ticker`
+            path = `${symbol.toLowerCase()}@ticker`;
         }
-        const url = `${this.wsURL}/ws/${path}`
-        return this.subscribe(url, callbacks)
+        const url = `${this.wsURL}/ws/${path}`;
+        return this.subscribe(url, callbacks);
     }
 
     miniTickerWS (symbol = null, callbacks) {

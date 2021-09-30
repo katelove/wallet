@@ -3,7 +3,7 @@
         <div class="shadow-bottom text-[700] text-[26px] text-center py-[11px]">
             幣幣交易
         </div>
-        <div class="px-[16px] ">
+        <div class="px-[16px]">
             <Nav />
             <div class="flex">
                 <div class="w-[40%]">
@@ -17,15 +17,15 @@
     </div>
 </template>
 <script>
-import Nav from "./Nav"
-import OrderBook from "./OrderBook"
-import OrderForm from "./OrderForm"
+import Nav from "./Nav";
+import OrderBook from "./OrderBook";
+import OrderForm from "./OrderForm";
 
 export default {
     components: {
         Nav,
         OrderBook,
-        OrderForm
-    }
-}
+        OrderForm,
+    },
+};
 </script>

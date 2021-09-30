@@ -4,21 +4,24 @@
         v-bind="$attrs"
         @click="$emit('click')"
     >
-        <slot></slot>
+        <slot />
     </button>
 </template>
 <script>
 export default {
     props: {
         bg: {
-            default: "bg-melancholyBlue"
+            default: "bg-melancholyBlue",
+            type: String,
         },
         rounded: {
-            defauly: "rounded-2px"
+            default: "rounded-2px",
+            type: String,
         },
         textColor: {
-            default: "text-white"
-        }
+            default: "text-white",
+            type: String,
+        },
     },
-}
+};
 </script>

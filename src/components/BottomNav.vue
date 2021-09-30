@@ -1,7 +1,7 @@
 <template lang="">
     <div
         v-if="!$route.meta.hideBottomNav"
-        class="rounded-10px border-black border flex justify-evenly items-center text-10px my-4 mx-25px "
+        class="rounded-10px border-black border flex justify-evenly items-center text-10px my-4 mx-25px"
     >
         <div
             v-for="item in nav"
@@ -13,9 +13,9 @@
             <img
                 :src="sameOrigin === item.url ? item.blueIcon : item.icon"
                 class="mb-6px h-27px w-27px"
-            />
+            >
             <p>
-                {{item.name}}
+                {{ item.name }}
             </p>
         </div>
     </div>
@@ -27,51 +27,51 @@ export default {
             nav: [
                 {
                     name: "首页",
-                    icon: require('@/assets/icon/home.png'),
-                    blueIcon: require('@/assets/icon/home_blue.png'),
-                    url: '/'
+                    icon: require("@/assets/icon/home.png"),
+                    blueIcon: require("@/assets/icon/home_blue.png"),
+                    url: "/",
                 },
                 {
                     name: "充值",
-                    icon: require('@/assets/icon/deposit.png'),
-                    blueIcon: require('@/assets/icon/deposit_blue.png'),
-                    url: '/crypto/deposit'
+                    icon: require("@/assets/icon/deposit.png"),
+                    blueIcon: require("@/assets/icon/deposit_blue.png"),
+                    url: "/crypto/deposit",
                 },
                 {
                     name: "提领",
-                    icon: require('@/assets/icon/withdraw.png'),
-                    blueIcon: require('@/assets/icon/withdraw_blue.png'),
-                    url: '/crypto/withdraw'
+                    icon: require("@/assets/icon/withdraw.png"),
+                    blueIcon: require("@/assets/icon/withdraw_blue.png"),
+                    url: "/crypto/withdraw",
                 },
                 {
                     name: "资产",
-                    icon: require('@/assets/icon/wallet.png'),
-                    blueIcon: require('@/assets/icon/wallet_blue.png'),
-                    url: '/wallet'
+                    icon: require("@/assets/icon/wallet.png"),
+                    blueIcon: require("@/assets/icon/wallet_blue.png"),
+                    url: "/wallet",
                 },
-            ]
-        }
-    },
-    methods: {
-        jumpto: function(url) {
-            const path = this.$route.path;
-            if (url === '/' || !path.includes(url)) {
-                this.$router.push(url)
-            }
-        }
+            ],
+        };
     },
     computed: {
-        sameOrigin: function() {
+        sameOrigin: function () {
             const path = this.$route.path;
-            if (path === '/') {
-                return '/'
+            if (path === "/") {
+                return "/";
             } else {
-                const route = this.nav.find(({ url }) => {
-                    return path.startsWith(url) && url !== '/'
+                const route = this.nav.find(({url}) => {
+                    return path.startsWith(url) && url !== "/";
                 });
-                return route?.url || ''
+                return route?.url || "";
             }
-        }
-    }
-}
+        },
+    },
+    methods: {
+        jumpto: function (url) {
+            const path = this.$route.path;
+            if (url === "/" || !path.includes(url)) {
+                this.$router.push(url);
+            }
+        },
+    },
+};
 </script>
