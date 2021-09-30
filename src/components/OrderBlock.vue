@@ -1,23 +1,17 @@
 <template lang="">
     <div
         v-bind="$attrs"
-        class="bg-white boxShadow rounded-12px text-black w-344px h-132px"
+        class="bg-white boxShadow rounded-12px text-black w-344px h-132px mb-[8px]"
     >
         <div class="flex justify-between pt-2 pl-4 pr-4">
             <div
-                v-if="side === 'BUY'"
                 class="text-greenWord text-xs"
+                :class="side === 'buy' ? 'bid' : 'ask'"
             >
-                限價買入({{ progress }}%)
-            </div>
-            <div
-                v-else
-                class="text-redWord text-xs"
-            >
-                限價賣出({{ progress }}%)
+                限價{{ side === "buy" ? "买入" : "卖出" }}({{ progress }}%)
             </div>
             <div class="text-xs text-lightGray">
-                2021/04/10 15:06:06
+                {{ transactTime | formateToDateTimeSecond }}
             </div>
         </div>
         <div class="sliderContainer flex items-center mt-1">
@@ -32,9 +26,12 @@
         </div>
         <div class="pt-2 pl-4 pr-4">
             <div class="flex justify-between">
-                <h1>BTC/USDT</h1>
+                <h1>{{ symbol }}</h1>
                 <div class="flex justify-center items-center">
-                    <h1 class="text-orangeWord text-xs pr-2">
+                    <h1
+                        class="text-orangeWord text-xs pr-2"
+                        @click="cancelOrderHanlder"
+                    >
                         撤單
                     </h1>
                 </div>
@@ -44,7 +41,7 @@
                     數量
                 </h1>
                 <h1 class="text-xs">
-                    0.00048 BTC
+                    {{ origQty | dimension }} BTC
                 </h1>
             </div>
             <div class="flex justify-between mt-2">
@@ -52,13 +49,15 @@
                     掛單金額
                 </h1>
                 <h1 class="text-xs">
-                    304.82 USDT
+                    {{ price | dimension }} USDT
                 </h1>
             </div>
         </div>
     </div>
 </template>
 <script>
+import {cancelOrder} from "@/api";
+
 export default {
     name: "OrderBlock",
     props: {
@@ -66,18 +65,43 @@ export default {
             type: String,
             default: "BUY",
         },
-        progress: {
-            type: String,
-            default: "10",
+        transactTime: {
+            type: Number,
+            default: 0,
         },
+        symbol: {
+            type: String,
+            default: "",
+        },
+        origQty: {
+            type: String,
+            default: "",
+        },
+        accumulate: {
+            type: String,
+            default: "",
+        },
+        price: {
+            type: String,
+            default: "",
+        },
+    },
+    data() {
+        return {
+            progress: 0,
+        };
     },
     computed: {
         changeProgress() {
-            if (this.side === "BUY") {
-                return `linear-gradient( to right, #46DF4C ${this.progress}%, #f4f4f4 10%)`;
-            } else {
-                return `linear-gradient( to right, #FF8E8E ${this.progress}%, #f4f4f4 10%)`;
-            }
+            const progress = this.progress;
+            return `linear-gradient( to right, ${this.side === "BUY" ? "#46DF4C" : "#FF8E8E"} ${progress}%, #f4f4f4 ${progress}%)`;
+        },
+    },
+    methods: {
+        cancelOrderHanlder() {
+            cancelOrder(this.symbol.toLowerCase()).then(() => {
+                this.$toasted.show("撤單成功");
+            });
         },
     },
 };

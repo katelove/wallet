@@ -21,6 +21,10 @@ const routes = [
         path: "/trade/:symbol",
         name: "Trade",
         component: () => import("@/views/Trade"),
+        meta: {
+            showGoback: true,
+            hideBottomNav: true
+        }
     },
     {
         path: "/transaction_history/:crypto",
@@ -161,16 +165,7 @@ const routes = [
     {
         path: '*',
         redirect: '/'
-    },
-    {
-        path: "/ownAssets",
-        name: "OwnAssets",
-        component: () => import("@/views/OwnAssets"),
-        meta: {
-            showGoback: false,
-            hideBottomNav: true
-        }
-    },
+    }
 ];
 
 const router = new VueRouter({

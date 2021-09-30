@@ -12,6 +12,10 @@ export const newOrder = (data) => {
     return backendRequest.post('/wallet/orders', data);
 };
 
+export const cancelOrder = (symbol) => {
+    return backendRequest.post(`/wallet/orders/${symbol}/cancel`);
+};
+
 export const getBalance = (data) => {
     return backendRequest.get('/wallet/me/balance', data);
 };

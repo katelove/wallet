@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <div class="flex justify-between pl-4 pr-4 pb-2 pt-2">
+        <div class="flex justify-between pl-4 pr-4 pb-2 pt-2 mt-[16px] items-center">
             <div>
                 <Button
                     v-for="(item, index) in tabs"
@@ -14,7 +14,7 @@
 
             <img
                 :src="require('@/assets/icon/asset.png')"
-                style="width: 18px; height: 18px"
+                class="w-[24px] h-[24px]"
             >
         </div>
         <TabAssets v-show="currentTab === 'TabAssets'" />
@@ -23,8 +23,8 @@
 </template>
 <script>
 import Button from "@/components/Button.vue";
-import TabAssets from "@/views/OwnAssets/TabAssets.vue";
-import TabTrust from "@/views/OwnAssets/TabTrust.vue";
+import TabAssets from "./TabAssets.vue";
+import TabTrust from "./TabTrust.vue";
 export default {
     name: "OwnAssets",
     components: {

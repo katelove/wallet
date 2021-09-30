@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         resetSubmit() {
-            localStorage.setItem("user_id", "00001");
+            localStorage.setItem("userId", "00001");
             this.$store.dispatch("progressSite", 2);
         },
     },

@@ -71,7 +71,7 @@ export default {
     methods: {
         login() {
             if (this.actName === "00001" || this.actName === "00002") {
-                localStorage.setItem("user_id", this.actName);
+                localStorage.setItem("userId", this.actName);
                 this.$store.dispatch("progressSite", 2);
             } else {
                 this.$toasted.show("帳號請輸入 00001 或 00002", {

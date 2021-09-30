@@ -14,18 +14,21 @@
                 </div>
             </div>
         </div>
+        <UserInfo />
     </div>
 </template>
 <script>
 import Nav from "./Nav";
 import OrderBook from "./OrderBook";
 import OrderForm from "./OrderForm";
+import UserInfo from "./UserInfo";
 
 export default {
     components: {
         Nav,
         OrderBook,
         OrderForm,
+        UserInfo,
     },
 };
 </script>

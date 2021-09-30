@@ -15,10 +15,10 @@ export default new Vuex.Store({
       // 登入==>設置state
       state.user = userData;
       // 設置localstorage連到自動登入
-      localStorage.setItem('user_id', JSON.stringify(userData));
+      localStorage.setItem('userId', JSON.stringify(userData));
         },
         CLEAR_USER_DATA() {
-      localStorage.removeItem('user_id');
+      localStorage.removeItem('userId');
         },
         SET_PROGRESS_NUM (state, status) {
       state.progress = status;

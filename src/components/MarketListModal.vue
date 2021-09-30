@@ -1,6 +1,6 @@
 <template lang="">
     <div
-        class="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-[#32333480] z-[10]"
+        class="fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center bg-[#32333466] z-[10]"
         @click.self="$emit('onClose')"
     >
         <div class="flex bg-white h-[400px] rounded-[12px] w-full py-[9px] px-[16px] flex-col">
