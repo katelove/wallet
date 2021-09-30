@@ -16,6 +16,15 @@ const routes = [
         path: "/kline/:symbol",
         name: "kline",
         component: () => import("@/views/Kline"),
+        meta: {
+            showGoback: true,
+            hideBottomNav: true
+        }
+    },
+    {
+        path: "/market",
+        name: "market",
+        component: () => import("@/views/Market"),
     },
     {
         path: "/trade/:symbol",
@@ -23,7 +32,7 @@ const routes = [
         component: () => import("@/views/Trade"),
         meta: {
             showGoback: true,
-            hideBottomNav: true
+            title: '币币交易'
         }
     },
     {
@@ -171,6 +180,9 @@ const routes = [
 const router = new VueRouter({
     routes,
     mode: 'history',
+    scrollBehavior () {
+        document.getElementById('mainContainer').scrollTo(0, 0);
+    }
 //   base: "/frontend",
 });
 

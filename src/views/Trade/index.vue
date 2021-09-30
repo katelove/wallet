@@ -1,8 +1,5 @@
 <template lang="">
     <div>
-        <div class="shadow-bottom text-[700] text-[26px] text-center py-[11px]">
-            幣幣交易
-        </div>
         <div class="px-[16px]">
             <Nav />
             <div class="flex">
@@ -29,6 +26,9 @@ export default {
         OrderBook,
         OrderForm,
         UserInfo,
+    },
+    mounted() {
+        localStorage.setItem("defaultTrade", this.$route.params.symbol);
     },
 };
 </script>

@@ -3,8 +3,8 @@ const { isEmptyValue } = require('./utils');
 
 class Websocket {
     constructor (options = {}) {
-        // this.wsURL = options.wsURL || 'wss://stream.binance.com:9443';
-        this.wsURL = options.wsURL || 'wss://testnet.binance.vision';
+        this.wsURL = options.wsURL || 'wss://stream.binance.com:9443';
+        // this.wsURL = options.wsURL || 'wss://testnet.binance.vision';
         this.reconnectDelay = 5000;
         this.wsRef = {};
     }

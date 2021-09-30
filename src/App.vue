@@ -5,12 +5,13 @@
     >
         <TopNav />
         <div
+            id="mainContainer"
             class="overflow-y-scroll overflow-x-hidden"
-            :style="`height: ${hideBottomNav ? '90vh' : '75vh'}`"
+            :style="`height: ${hideBottomNav ? '90vh' : '79vh'}`"
         >
             <router-view />
         </div>
-        <BottomNav />
+        <BottomNav v-if="!$route.meta.hideBottomNav" />
     </div>
 </template>
 

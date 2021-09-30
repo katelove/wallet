@@ -89,12 +89,19 @@ export default {
                     symbol: "BNBUSDT",
                     icon: require("@/assets/crypto/bnb.png"),
                 },
+                {
+                    name: "ETH/USDT",
+                    symbol: "ETHUSDT",
+                    icon: require("@/assets/crypto/eth.png"),
+                },
             ],
             ticker: {
                 BTCUSDT: {},
                 BNBUSDT: {},
+                ETHUSDT: {},
             },
             tab: "favorite",
+            ws: "",
         };
     },
     created() {
@@ -108,7 +115,8 @@ export default {
                 this.ticker[data.s] = data;
             },
         };
-        ws.combinedStreams(["btcusdt@ticker", "bnbusdt@ticker"], callbacks);
+        ws.combinedStreams(["btcusdt@ticker", "bnbusdt@ticker", "ethusdt@ticker"], callbacks);
+        this.ws = ws;
     },
     methods: {
         jumpto(symbol) {
