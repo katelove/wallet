@@ -1,93 +1,90 @@
 <template lang="">
-    <div class="rounded-10px border border-melancholyBlue">
+    <div class="rounded-10px border border-melancholyBlue mb-[10px]">
         <div class="flex py-2 px-22px text-12px border-b border-melancholyBlue">
-            <p style="width: 183px">名称</p>
-            <p style="width: 70px">最新价</p>
-            <p style="width: 74px">24小時漲跌</p>
+            <p class="flex flex-grow-[2]">
+                名称
+            </p>
+            <p class="flex flex-grow-[1]">
+                最新价
+            </p>
+            <p>24小時漲跌</p>
         </div>
         <div class="my-2">
-            <div v-for="(value, symbol, index) in spot" :key="symbol"
+            <div
+                v-for="(item, index) in symbolList"
+                :key="item.name"
                 class="flex px-22px text-12px items-center"
-                :class="[index === Object.keys(spot).length - 1 ? '' : 'mb-21px']"
+                :class="index !== symbolList.length - 1 && 'mb-[21px]'"
+                @click="$router.push(`/trade/${item.symbol}`)"
             >
-                <img :src="value.image" style="width: 25px;height: 25px"/>
-                <p
-                    class="ml-2 mr-3"
-                    style="width: 34px"
+                <img
+                    :src="item.icon"
+                    class="w-[25px] h-[25px] mr-[8px]"
+                    style="width: 25px; height: 25px"
                 >
-                    {{symbol}}
+                <p>
+                    {{ item.symbol }}
                 </p>
-                <p
-                    class="text-yewLime"
-                    style="width: 80px"
-                >
-                    {{value.name}}
+                <p class="flex flex-grow-[1] justify-center">
+                    ${{ ticker[item.symbol].c | dimension }}
                 </p>
-                <p
-                    class="text-right"
-                    style="width: 60px"
-                >
-                    ${{value.bidPrice}}
-                </p>
-                <p
-                    class="text-right"
-                    :class="[value.priceChangePercent >= 0 ? 'text-grassGreen' : 'text-plumRed']"
-                    style="width: 95px"
-                >
-                    {{value.priceChangePercent ? value.priceChangePercent.toFixed(2) + '%' : '0.00%'}}
-                </p>
+                <PercentPriceBulb :percent-price="ticker[item.symbol].P" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import axios from "axios"
+import Websocket from "@/helper/websocket";
+import PercentPriceBulb from "@/components/PercentPriceBulb.vue";
+
 export default {
+    components: {
+        PercentPriceBulb,
+    },
     data() {
-		return {
-			spot: {
-                btc: {
-                    image: require("@/assets/crypto/btc.png"),
-                    name: "Bitcoin"
+        return {
+            symbolList: [
+                {
+                    name: "BTC/USDT",
+                    symbol: "BTCUSDT",
+                    icon: require("@/assets/crypto/btc.png"),
                 },
-                eth: {
-                    image: require("@/assets/crypto/eth.png"),
-                    name: "Ethereum"
+                {
+                    name: "BNB/USDT",
+                    symbol: "BNBUSDT",
+                    icon: require("@/assets/crypto/bnb.png"),
                 },
-                busd: {
-                    image: require("@/assets/crypto/busd.png"),
-                    name: "BUSD"
+                {
+                    name: "ETH/USDT",
+                    symbol: "ETHUSDT",
+                    icon: require("@/assets/crypto/eth.png"),
                 },
-                bnb: {
-                    image: require("@/assets/crypto/bnb.png"),
-                    name: "BNB"
-                },
+            ],
+            ticker: {
+                BTCUSDT: {},
+                ETHUSDT: {},
+                BNBUSDT: {},
             },
-			timer: []
-		}
-	},
-	mounted() {
-		this.timer.push(this.getSymbol('busd', 'BUSDUSDT'))
-		this.timer.push(this.getSymbol('btc', 'BTCUSDT'))
-		this.timer.push(this.getSymbol('eth', 'ETHUSDT'))
-		this.timer.push(this.getSymbol('bnb', 'BNBUSDT'))
-	},
-	methods: {
-		async getSymbol(symbol, pair) {
-			const rep = await axios.get(`https://api.binance.com/api/v3/ticker/24hr?symbol=${pair}`)
-			const { priceChangePercent, bidPrice } = rep.data;
-			let newObj = Object.assign({}, this.spot)
-			newObj[symbol].priceChangePercent = parseFloat(priceChangePercent)
-            newObj[symbol].bidPrice = parseFloat(bidPrice).toFixed(1)
-			this.spot = newObj
-			setTimeout(() => {
-				this.getSymbol(symbol, pair)
-			}, 1500)
-		}
-	},
-	beforeDestroy() {
-		this.timer.forEach(e => clearTimeout(e))
-    }
-}
+            ws: "",
+        };
+    },
+    created() {
+        const ws = new Websocket();
+
+        const callbacks = {
+            open: () => console.log("open"),
+            close: () => console.log("closed"),
+            message: (evt) => {
+                const {data} = JSON.parse(evt.data);
+                this.ticker[data.s] = data;
+            },
+        };
+        ws.combinedStreams(["btcusdt@ticker", "bnbusdt@ticker", "ethusdt@ticker"], callbacks);
+        this.ws = ws;
+    },
+    beforeDestroy() {
+        this.ws.unsubscribe();
+    },
+};
 </script>

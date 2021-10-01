@@ -7,36 +7,45 @@
             <div class="flex mx-auto mt-30px items-center justify-center">
                 <img
                     :src="getCryptoImgUrl(crypto)"
-                    style="width: 36px;height: 36px;margin-right: 12px"
-                />
-                {{crypto}}
+                    style="width: 36px; height: 36px; margin-right: 12px"
+                >
+                {{ crypto }}
             </div>
             <div class="text-center my-17px">
-                {{showLast ? showAmountText(transactionHistory[0].type, transactionHistory[0].amount) : balance}}
+                {{ showLast ? showAmountText(transactionHistory[0].type, transactionHistory[0].amount) : balance }}
             </div>
 
-            <div class="bg-diamondGrey" style="height: 27px"></div>
+            <div
+                class="bg-diamondGrey"
+                style="height: 27px"
+            />
             <div class="flex mt-16px mx-22px justify-center flex-col">
                 <div class="flex text-center mb-30px justify-between">
-                    <p class="border-b border-yewLime pb-3px mr-35px">全部</p>
-                    <p style="width: 153px">转出</p>
-                    <p style="text-align: end">转入</p>
+                    <p class="border-b border-yewLime pb-3px mr-35px">
+                        全部
+                    </p>
+                    <p style="width: 153px">
+                        转出
+                    </p>
+                    <p style="text-align: end">
+                        转入
+                    </p>
                 </div>
                 <div
-                    class="flex text-center items-center mb-27px"
                     v-for="(item, index) in transactionHistory"
                     :key="index"
+                    class="flex text-center items-center mb-27px"
                 >
                     <img
                         :src="require(`@/assets/${item.type}.png`)"
-                        style="with: 34px;height: 34px;margin-right: 35px"
-                    />
+                        style="with: 34px; height: 34px; margin-right: 35px"
+                    >
                     <div style="width: 153px">
                         <p>erj32128h414h1j</p>
-                        <p>{{item.date | moment('YYYY-MM-DD HH:MM:SS')}}</p>
+                        <p>{{ item.date | moment("YYYY-MM-DD HH:MM:SS") }}</p>
                     </div>
-                    <div style="flex-grow: 1;text-align: end">
-                        {{showAmountText(item.type, item.amount)}}
+                    <div style="flex-grow: 1; text-align: end">
+                        {{ showAmountText(item.type, item.amount) }}
                     </div>
                 </div>
             </div>
@@ -60,42 +69,41 @@
     </div>
 </template>
 <script>
-import BlueContainer from "@/components/BlueContainer"
-import Button from "@/components/Button"
-import { getCryptoImgUrl } from "@/utlis"
-import { getTransferHistory } from "@/api"
+import BlueContainer from "@/components/BlueContainer";
+import Button from "@/components/Button";
+import {getCryptoImgUrl} from "@/utlis";
+import {getTransferHistory} from "@/api";
 
 export default {
-    created() {
-        getTransferHistory()
-        .then(data => {
-            const user_id = localStorage.getItem('user_id')
-            const filterData = data.filter(e => e.user_id === user_id && e.coin === this.crypto)
-            this.transactionHistory = filterData || []
-        })
-    },
-    mounted() {
-        this.transactionHistory.forEach(e => {
-            this.total += e.amount
-        });
+    components: {
+        BlueContainer,
+        Button,
     },
     data() {
         return {
             transactionHistory: [],
-            balance: localStorage.getItem('balance'),
+            balance: localStorage.getItem("balance"),
             crypto: this.$route.params.crypto,
-            showLast: this.$route.query.showLast
-        }
+            showLast: this.$route.query.showLast,
+        };
+    },
+    created() {
+        getTransferHistory().then((data) => {
+            const userId = localStorage.getItem("userId");
+            const filterData = data.filter((e) => e.userId === userId && e.coin === this.crypto);
+            this.transactionHistory = filterData || [];
+        });
+    },
+    mounted() {
+        this.transactionHistory.forEach((e) => {
+            this.total += e.amount;
+        });
     },
     methods: {
         getCryptoImgUrl,
-        showAmountText: function(type, amount) {
-            return `${type === 'in' ? '+' : '-'} ${amount}`
-        }
+        showAmountText: function (type, amount) {
+            return `${type === "in" ? "+" : "-"} ${amount}`;
+        },
     },
-    components: {
-		BlueContainer,
-        Button,
-	},
-}
+};
 </script>
