@@ -5,10 +5,10 @@
     >
         <div class="flex justify-between pt-2 pl-4 pr-4">
             <div
-                class="text-greenWord text-xs"
-                :class="side === 'buy' ? 'bid' : 'ask'"
+                class="text-xs"
+                :class="side === 'BUY' ? 'text-bid' : 'text-ask'"
             >
-                限價{{ side === "buy" ? "买入" : "卖出" }}({{ progress }}%)
+                限價{{ side === "BUY" ? "买入" : "卖出" }}({{ progress }}%)
             </div>
             <div class="text-xs text-lightGray">
                 {{ transactTime | formateToDateTimeSecond }}
@@ -21,7 +21,9 @@
                 max="100"
                 :value="progress"
                 class="pt-1 ht-1"
-                :style="{background: changeProgress}"
+                :style="{
+                    background: `linear-gradient( to right, ${side === 'BUY' ? '#46DF4C' : '#FF8E8E'} ${progress}%, #f4f4f4 ${progress}%)`,
+                }"
             >
         </div>
         <div class="pt-2 pl-4 pr-4">
@@ -63,7 +65,7 @@ export default {
     props: {
         side: {
             type: String,
-            default: "BUY",
+            required: true,
         },
         transactTime: {
             type: Number,
@@ -77,7 +79,7 @@ export default {
             type: String,
             default: "",
         },
-        accumulate: {
+        executedQty: {
             type: String,
             default: "",
         },
@@ -92,9 +94,11 @@ export default {
         };
     },
     computed: {
-        changeProgress() {
-            const progress = this.progress;
-            return `linear-gradient( to right, ${this.side === "BUY" ? "#46DF4C" : "#FF8E8E"} ${progress}%, #f4f4f4 ${progress}%)`;
+        calculateProgress() {
+            const origQty = parseFloat(this.origQty);
+            const executedQty = parseFloat(this.executedQty);
+            const progress = ((executedQty / origQty) * 100).toFixed(1);
+            return progress;
         },
     },
     methods: {

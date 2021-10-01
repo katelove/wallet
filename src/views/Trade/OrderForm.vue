@@ -59,19 +59,19 @@
         >
         <div class="flex justify-between text-[12px] mb-[16px]">
             <p>餘額可用</p>
-            <p>{{ balance.free }} USDT</p>
+            <p>{{ (balances?.USDT?.free || 0) | dimension }} USDT</p>
         </div>
         <Button
             class="rounded-[8px] w-full py-[11px]"
             :class="[canSubmit]"
             @click="['bg-bid', 'bg-ask'].includes(canSubmit) && newOrderHanlder()"
         >
-            買入
+            {{ side === "BUY" ? "买入" : "卖出" }}
         </Button>
     </div>
 </template>
 <script>
-import {newOrder, getBalance} from "@/api";
+import {newOrder} from "@/api";
 import Button from "@/components/Button.vue";
 import Big from "big.js";
 import VueSlider from "vue-slider-component";
@@ -91,10 +91,12 @@ export default {
             price: "48000",
             quoteOrderQty: "0",
             rangeOfTotal: "0",
-            balance: {},
         };
     },
     computed: {
+        balances() {
+            return this.$store.getters.balances;
+        },
         canSubmit() {
             const quantity = parseFloat(this.quantity);
             const price = parseFloat(this.price);
@@ -123,7 +125,7 @@ export default {
         price(newV) {
             const bigPrice = Big(newV || 0);
             const bigQuantity = Big(this.quantity || 0);
-            const bigFree = Big(this.balance.free || 0);
+            const bigFree = Big(this.balances.USDT.free || 0);
             const quoteOrderQty = bigPrice.times(bigQuantity);
             this.quoteOrderQty = quoteOrderQty.toFixed(3);
             this.rangeOfTotal = quoteOrderQty.div(bigFree).times(100).toFixed(0);
@@ -131,19 +133,11 @@ export default {
         quantity(newV) {
             const bigQuantity = Big(newV || 0);
             const bigPrice = Big(this.price || 0);
-            const bigFree = Big(this.balance.free || 0);
+            const bigFree = Big(this.balances.USDT.free || 0);
             const quoteOrderQty = bigQuantity.times(bigPrice);
             this.quoteOrderQty = quoteOrderQty.toFixed(3);
             this.rangeOfTotal = quoteOrderQty.div(bigFree).times(100).toFixed(0);
         },
-    },
-    created() {
-        getBalance().then((rep) => {
-            const {balances} = rep.data;
-            const balance = balances.find((e) => e.asset === "USDT");
-            balance.free = Big(balance.free).toFixed(2);
-            this.balance = balance;
-        });
     },
     methods: {
         newOrderHanlder() {
@@ -170,7 +164,7 @@ export default {
         },
         calculateQty() {
             const bigPrice = Big(this.price || 0);
-            const bigFree = Big(this.balance.free || 0);
+            const bigFree = Big(this.balances.USDT.free || 0);
             this.quantity = bigFree.times(this.rangeOfTotal).div(100).div(bigPrice).toFixed(5);
         },
     },

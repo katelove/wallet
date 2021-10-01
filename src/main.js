@@ -22,7 +22,7 @@ Vue.use(Toasted, {
     type: 'success'
 });
 
-Vue.filter('dimension', (str) => {
+Vue.filter('dimension', (str = '') => {
     if (!str) {
         return '';
     }
