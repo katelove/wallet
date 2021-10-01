@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="rounded-10px border border-melancholyBlue">
+    <div class="rounded-10px border border-melancholyBlue mb-[10px]">
         <div class="flex py-2 px-22px text-12px border-b border-melancholyBlue">
             <p class="flex flex-grow-[2]">
                 名称

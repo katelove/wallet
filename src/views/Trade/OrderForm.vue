@@ -85,7 +85,7 @@ export default {
     data() {
         return {
             symbol: this.$route.params.symbol.toUpperCase(),
-            side: "BUY",
+            side: this.$route.params.side || "BUY",
             type: "LIMIT",
             quantity: "",
             price: "48000",

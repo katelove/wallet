@@ -3,11 +3,11 @@
         id="app"
         class="relative"
     >
-        <TopNav />
+        <TopNav v-if="!$route.meta.hideTopNav" />
         <div
             id="mainContainer"
             class="overflow-y-scroll overflow-x-hidden"
-            :style="`height: ${hideBottomNav ? '90vh' : '79vh'}`"
+            :style="`height: ${hideBottomNav}`"
         >
             <router-view />
         </div>
@@ -29,7 +29,17 @@ export default {
     },
     computed: {
         hideBottomNav: function () {
-            return this.$route.meta.hideBottomNav;
+            const {meta = {}} = this.$route;
+            const {hideBottomNav = false, hideTopNav = false} = meta;
+            let vh = "";
+            if (hideBottomNav && hideTopNav) {
+                vh = "100vh";
+            } else if (!hideBottomNav && !hideTopNav) {
+                vh = "79vh";
+            } else if (!hideBottomNav) {
+                vh = "90vh";
+            }
+            return vh;
         },
     },
     created() {

@@ -18,7 +18,8 @@ const routes = [
         component: () => import("@/views/Kline"),
         meta: {
             showGoback: true,
-            hideBottomNav: true
+            hideBottomNav: true,
+            hideTopNav: true
         }
     },
     {
@@ -27,7 +28,7 @@ const routes = [
         component: () => import("@/views/Market"),
     },
     {
-        path: "/trade/:symbol",
+        path: "/trade/:symbol/:side?",
         name: "Trade",
         component: () => import("@/views/Trade"),
         meta: {
