@@ -10,22 +10,16 @@
 </template>
 <script>
 import MoneyBlock from "@/components/MoneyBlock.vue";
-import {getBalance} from "@/api";
 
 export default {
     name: "TabAssets",
     components: {
         MoneyBlock,
     },
-    data() {
-        return {
-            balances: [],
-        };
-    },
-    created() {
-        getBalance().then((rep) => {
-            this.balances = rep.data.balances;
-        });
+    computed: {
+        balances() {
+            return this.$store.getters.balances;
+        },
     },
 };
 </script>

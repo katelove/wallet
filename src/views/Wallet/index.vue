@@ -12,7 +12,7 @@
 
         <div class="flex justify-between">
             <p class="text-24px text-melancholyBlue">
-                {{ balance }}
+                {{ amountTotal }}
             </p>
         </div>
 
@@ -43,7 +43,13 @@
             </div>
         </BlueContainer>
 
-        <CryptoItem />
+        <CryptoItem
+            v-for="crypto in balances"
+            :key="crypto.asset"
+            :symbol="crypto.asset"
+            :free="crypto.free"
+            :locked="crypto.locked"
+        />
     </div>
 </template>
 <script>
@@ -57,10 +63,13 @@ export default {
         CryptoItem,
         Icon,
     },
-    data() {
-        return {
-            balance: localStorage.getItem("balance"),
-        };
+    computed: {
+        balances() {
+            return this.$store.getters.balances;
+        },
+        amountTotal() {
+            return this.$store.getters.amountTotal;
+        },
     },
 };
 </script>

@@ -42,6 +42,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9",
+    "vue-template-babel-compiler": "^1.0.4",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

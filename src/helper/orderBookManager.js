@@ -24,7 +24,7 @@ const processOrderBookSnapshot = (orderBook, snapshotOrderbook) => {
         e[1] = Big(e[1]);
         const timesNumber = e[0].times(e[1]);
         e[3] = timesNumber;
-        askCount.plus(timesNumber);
+        askCount = askCount.plus(timesNumber);
         return e;
     });
 
@@ -36,7 +36,7 @@ const processOrderBookSnapshot = (orderBook, snapshotOrderbook) => {
         e[1] = Big(e[1]);
         const timesNumber = e[0].times(e[1]);
         e[3] = timesNumber;
-        bidCount.plus(timesNumber);
+        bidCount = bidCount.plus(timesNumber);
         return e;
     });
 
@@ -58,7 +58,7 @@ const processOrderBookUpdate = (orderBook, ask, bid) => {
         e[1] = Big(e[1]);
         const timesNumber = e[0].times(e[1]);
         e[3] = timesNumber;
-        askCount.plus(timesNumber);
+        askCount = askCount.plus(timesNumber);
         return e;
     });
 
@@ -71,7 +71,7 @@ const processOrderBookUpdate = (orderBook, ask, bid) => {
         e[1] = Big(e[1]);
         const timesNumber = e[0].times(e[1]);
         e[3] = timesNumber;
-        bidCount.plus(timesNumber);
+        bidCount = bidCount.plus(timesNumber);
         return e;
     });
     orderBook.askCount = askCount;

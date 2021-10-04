@@ -20,6 +20,14 @@ export const getBalance = (data) => {
     return backendRequest.get('/wallet/me/balance', data);
 };
 
+export const createListenkey = () => {
+    return backendRequest.post('/wallet/me/stream/create');
+};
+
+export const getOpenOrder = () => {
+    return backendRequest.get('/wallet/me/open_order');
+};
+
 export const getBalance2 = async () => {
     const userId = localStorage.getItem('userId') || "00001";
     const rep = await axios.get(`https://api.105paolian.com/wallet/users/${userId}`);
@@ -33,11 +41,11 @@ export const getBalance2 = async () => {
 };
 
 export const transfer = async (data) => {
-    const rep = await axios.post('https://api.105paolian.com/wallet/transfers', data);
+    const rep = backendRequest.post('/wallet/transfers', data);
     return rep.data;
 };
 
 export const getTransferHistory = async () => {
-    const rep = await axios.get('https://api.105paolian.com/wallet/history');
+    const rep = backendRequest.get('/wallet/history');
     return rep.data;
 };

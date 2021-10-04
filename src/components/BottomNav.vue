@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="flex justify-around filter-[drop-shadow(0px 8px 24px #D1D2D2)] shadow-bottom">
+    <div class="flex justify-around shadow-bottom fixed bottom-0 w-full h-[80px] bg-white">
         <div
             v-for="item in nav"
             :key="item.name"

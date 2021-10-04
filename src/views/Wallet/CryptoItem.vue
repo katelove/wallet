@@ -1,18 +1,13 @@
 <template lang="">
     <div class="pt-37px px-9px rounded-10px border border-melancholyBlue">
-        <div
-            v-for="(value, symbol) in spot"
-            :key="symbol"
-            class="flex justify-between text-12px px-13px py-6px mb-32px rounded-10px shadow-normal"
-        >
+        <div class="flex justify-between text-12px px-13px py-6px mb-32px rounded-10px shadow-normal">
             <div>
                 <div class="flex items-center mb-6px">
                     <img
-                        class="mr-8px"
-                        :src="value.image"
-                        style="width: 36px; height: 36px"
+                        class="mr-8px w-[36px] h-[36px]"
+                        :src="getCryptoImgUrl(symbol.toLowerCase())"
                     >
-                    <p>{{ value.name }}</p>
+                    <p>{{ symbol }}</p>
                 </div>
                 <div class="flex text-yewLime mb-3px text-10px">
                     <p class="mr-20px">
@@ -22,48 +17,45 @@
                 </div>
                 <div class="flex text-yewLime mb-3px text-10px">
                     <p class="mr-20px">
-                        {{ value.balance }}
+                        {{ free | dimension }}
                     </p>
-                    <p>0.00</p>
+                    <p>{{ locked | dimension }}</p>
                 </div>
             </div>
             <div>
                 <p class="h-36px flex items-center">
-                    {{ value.balance }}
+                    {{ free | dimension }}
                 </p>
                 <p class="mt-6px mb-3px text-yewLime">
                     折合
                 </p>
                 <p class="text-yewLime">
-                    0.00
+                    {{ locked | dimension }}
                 </p>
             </div>
         </div>
     </div>
 </template>
 <script>
-import {getBalance} from "@/api";
+import {getCryptoImgUrl} from "@/utlis";
+
 export default {
-    data() {
-        return {
-            spot: {
-                usdt: {
-                    image: require("@/assets/crypto/usdt.png"),
-                    name: "USDT",
-                },
-                halo: {
-                    image: require("@/assets/crypto/halo.png"),
-                    name: "HALO",
-                },
-            },
-        };
+    props: {
+        symbol: {
+            required: true,
+            type: String,
+        },
+        free: {
+            required: true,
+            type: String,
+        },
+        locked: {
+            required: true,
+            type: String,
+        },
     },
-    created() {
-        getBalance().then((data) => {
-            data.wallets.forEach(({coin, balance}) => {
-                this.$set(this.spot[coin], "balance", balance);
-            });
-        });
+    methods: {
+        getCryptoImgUrl,
     },
 };
 </script>

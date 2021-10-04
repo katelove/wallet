@@ -19,7 +19,6 @@
 import "./index.css";
 import TopNav from "@/components/TopNav";
 import BottomNav from "@/components/BottomNav";
-import {getBalance} from "@/api";
 
 export default {
     name: "App",
@@ -43,7 +42,7 @@ export default {
         },
     },
     created() {
-        getBalance();
+        this.$store.dispatch("UpdateBalances");
     },
 };
 </script>
