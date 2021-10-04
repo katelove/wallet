@@ -10,6 +10,7 @@
                 v-for="item in orderBook.ask"
                 :key="item[0].toFixed()"
                 class="flex justify-between"
+                :style="{'background-image': calcGradientPercent('ask', item[3])}"
             >
                 <p class="text-ask">
                     {{ item[0] | dimension }}
@@ -25,6 +26,7 @@
                 v-for="item in orderBook.bid"
                 :key="item[0].toFixed()"
                 class="flex justify-between"
+                :style="{'background-image': calcGradientPercent('bid', item[3])}"
             >
                 <p class="text-bid">
                     {{ item[0] | dimension }}
@@ -51,6 +53,8 @@ export default {
                 ask: [],
                 bid: [],
                 lastUpdateId: "",
+                askCount: 0,
+                bidCount: 0,
             },
             ws: "",
         };
@@ -69,9 +73,12 @@ export default {
     },
     methods: {
         calcGradientPercent: function (type, num) {
-            const total = this.streamData.depthTotal[type];
-            const weight = parseFloat(((num / total) * 100).toFixed(2));
-            return `linear-gradient(to left, rgba(2, 199, 122, 0.25) ${weight}%, rgba(0, 0, 0, 0) ${weight}%)`;
+            const count = this.orderBook[`${type}Count`];
+            if (count > 0) {
+                const weight = num.div(count).times(100).toFixed(0);
+                return `linear-gradient(to left, ${type === "bid" ? "#c8eedc" : "#fd595940"} ${weight}%, rgba(0, 0, 0, 0) ${weight}%)`;
+            }
+            return "";
         },
     },
 };
