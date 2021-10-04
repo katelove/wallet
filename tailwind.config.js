@@ -29,9 +29,6 @@ module.exports = {
                 textGray: "#D1D2D2",
                 mainColor: "#FFA31A",
                 lightGray: "#D1D2D2",
-                greenWord: "#46DF4C",
-                redWord: "#FD5959",
-                orangeWord: "#FFA31A"
             },
             fontSize: {
                 "25px": "25px",
