@@ -6,7 +6,11 @@
             src="@/assets/icon/return.png"
             @click="goback()"
         >
-        <p>{{ $route.meta.title }}</p>
+        <div class="flex items-center justify-center mt-[12px] mb-[12px]">
+            <p class="text-[18px] font-bold">
+                {{ $route.meta.title }}
+            </p>
+        </div>
         <img
             v-show="$route.meta.showHistory"
             style="width: 23px"

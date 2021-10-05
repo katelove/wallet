@@ -29,9 +29,6 @@ module.exports = {
                 textGray: "#D1D2D2",
                 mainColor: "#FFA31A",
                 lightGray: "#D1D2D2",
-                greenWord: "#46DF4C",
-                redWord: "#FD5959",
-                orangeWord: "#FFA31A"
             },
             fontSize: {
                 "25px": "25px",
@@ -128,7 +125,9 @@ module.exports = {
             },
             boxShadow: {
                 "normal": "4px 4px 4px rgba(0, 0, 0, 0.25)",
-                "bottom": "0px 0px 16px #E8E8E8"
+                "bottom": "0px 0px 16px #E8E8E8",
+                "small": "0px 4px 4px rgba(0, 0, 0, 0.1);"
+
             },
             spacing: {
                 '5px': '5px',

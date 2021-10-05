@@ -69,7 +69,7 @@
                 買入
             </Button>
             <Button
-                class="w-[152px] h-[44px] rounded-[8px] text-center bg-redWord"
+                class="w-[152px] h-[44px] rounded-[8px] text-center bg-ask"
                 @click="$router.push(`/trade/${symbol}/SELL`)"
             >
                 賣出

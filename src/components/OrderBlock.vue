@@ -31,7 +31,7 @@
                 <h1>{{ symbol }}</h1>
                 <div class="flex justify-center items-center">
                     <h1
-                        class="text-orangeWord text-xs pr-2"
+                        class="text-mainColor text-xs pr-2"
                         @click="cancelOrderHanlder"
                     >
                         撤單
