@@ -1,35 +1,33 @@
 <template lang="">
-    <div class="pt-37px px-9px rounded-10px border border-melancholyBlue">
-        <div class="flex justify-between text-12px px-13px py-6px mb-32px rounded-10px shadow-normal">
-            <div>
-                <div class="flex items-center mb-6px">
+    <div class="mt-[15px] px-[12px]">
+        <div class="flex justify-between text-12px pl-[4px] px-[7px] mx-[12px] shadow-normal">
+            <div class="flex flex-row mt-[7px] mb-[7px] ml-[22px]">
+                <div class="mr-[15px]">
                     <img
-                        class="mr-8px w-[36px] h-[36px]"
+                        class="w-[24px] h-[24px]"
                         :src="getCryptoImgUrl(symbol.toLowerCase())"
                     >
-                    <p>{{ symbol }}</p>
                 </div>
-                <div class="flex text-yewLime mb-3px text-10px">
-                    <p class="mr-20px">
+                <div class="flex flex-col justify-evenly items-end">
+                    <p class="text-[16px]">
+                        {{ symbol }}
+                    </p>
+                    <p class="text-[#767778] text-[14px]">
                         可用
                     </p>
-                    <p>冻结</p>
-                </div>
-                <div class="flex text-yewLime mb-3px text-10px">
-                    <p class="mr-20px">
-                        {{ free | dimension }}
+                    <p class="text-[14px]">
+                        {{ locked | dimension }}
                     </p>
-                    <p>{{ locked | dimension }}</p>
                 </div>
             </div>
-            <div>
-                <p class="h-36px flex items-center">
+            <div class="flex flex-col justify-evenly items-end mt-[7px] mb-[7px] mr-[4px]">
+                <p class="text-[16px]">
                     {{ free | dimension }}
                 </p>
-                <p class="mt-6px mb-3px text-yewLime">
-                    折合
+                <p class="text-[#767778] text-[14px]">
+                    凍結
                 </p>
-                <p class="text-yewLime">
+                <p class="text-[14px]">
                     {{ locked | dimension }}
                 </p>
             </div>

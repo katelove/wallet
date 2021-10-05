@@ -48,6 +48,9 @@ const routes = [
         path: "/wallet",
         name: "Wallet",
         component: () => import("@/views/Wallet"),
+        meta: {
+            title: '資產中心'
+        }
     },
     {
         path: "/crypto/:action/:crypto",
@@ -187,17 +190,17 @@ const router = new VueRouter({
 //   base: "/frontend",
 });
 
-const withoutPermission = ['/login', '/register/phone', '/register/mail', '/register/name', '/reset', '/safeCenter', '/safeCenter/modifyPwd', 'modifySecondPwd', '/safeCenter/setSecondPwd', '/safeCenter/bindPhone', '/safeCenter/bindGoogle'];
+// const withoutPermission = ['/login', '/register/phone', '/register/mail', '/register/name', '/reset', '/safeCenter', '/safeCenter/modifyPwd', 'modifySecondPwd', '/safeCenter/setSecondPwd', '/safeCenter/bindPhone', '/safeCenter/bindGoogle'];
 
-router.beforeEach((to, from, next) => {
-    const userId = localStorage.getItem('userId');
-    if (withoutPermission.includes(to.path)) {
-        next();
-    } else if(userId === '00001' || userId === '00002') {
-        next();
-    } else {
-        next({ path: '/login' });
-    }
-});
+// router.beforeEach((to, from, next) => {
+//     const userId = localStorage.getItem('userId');
+//     if (withoutPermission.includes(to.path)) {
+//         next();
+//     } else if(userId === '00001' || userId === '00002') {
+//         next();
+//     } else {
+//         next({ path: '/login' });
+//     }
+// });
 
 export default router;
