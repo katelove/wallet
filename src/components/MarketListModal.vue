@@ -19,7 +19,7 @@
                     USDT
                 </p>
             </div>
-            <div class="flex text-[12px] py-[10px] border-b border-[#F4F4F4]">
+            <div class="flex text-[12px] py-[10px] border-b border-lightGray3">
                 <div class="flex flex-grow-[2]">
                     交易对
                     <img

@@ -3,10 +3,31 @@ import { getBalance } from "@/api";
 const user = {
     state: {
         balances: [],
-        pairList: [
-            'btcusdt',
-            'ethusdt',
-            'bnbusdt'
+        symbolList: [
+            {
+                base: "BTC",
+                isBuyAllowed: true,
+                isMarginTrade: true,
+                isSellAllowed: true,
+                quote: "USDT",
+                symbol: "BTCUSDT",
+            },
+            {
+                base: "ETH",
+                isBuyAllowed: true,
+                isMarginTrade: true,
+                isSellAllowed: true,
+                quote: "USDT",
+                symbol: "ETHUSDT",
+            },
+            {
+                base: "ADA",
+                isBuyAllowed: true,
+                isMarginTrade: true,
+                isSellAllowed: true,
+                quote: "USDT",
+                symbol: "ADAUSDT",
+            },
         ],
         listenkey: '',
         userId: '',

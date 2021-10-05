@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="bg-[#f4f4f4] flex flex-col justify-center items-center py-[16px] min-h-[200px]">
+    <div class="bg-lightGray3 flex flex-col justify-center items-center py-[16px] min-h-[200px]">
         <div
             v-if="orders.length === 0"
             class="text-[#767778] text-[12px]"

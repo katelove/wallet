@@ -1,86 +1,100 @@
-<template lang="">
-    <div class="rounded-10px border border-melancholyBlue mb-[10px]">
-        <div class="flex py-2 px-22px text-12px border-b border-melancholyBlue">
-            <p class="flex flex-grow-[2]">
-                名称
-            </p>
-            <p class="flex flex-grow-[1]">
-                最新价
-            </p>
-            <p>24小時漲跌</p>
-        </div>
-        <div class="my-2">
-            <div
-                v-for="(item, index) in symbolList"
-                :key="item.name"
-                class="flex px-22px text-12px items-center"
-                :class="index !== symbolList.length - 1 && 'mb-[21px]'"
-                @click="$router.push(`/trade/${item.symbol}`)"
+<template>
+    <div>
+        <p class="text-14px">
+            幣幣行情
+        </p>
+        <SortableList
+            :columns="columns"
+            :source-data="Object.entries(symbolObj)"
+        >
+            <template
+                v-slot:symbol="{column}"
+                class="flex"
             >
-                <img
-                    :src="item.icon"
-                    class="w-[25px] h-[25px] mr-[8px]"
-                    style="width: 25px; height: 25px"
+                <div class="text-[12px]">
+                    {{ column[1].base }}
+                </div>
+                <div class="text-[8px] text-lightGray0">
+                    /{{ column[1].quote }}
+                </div>
+            </template>
+            <template v-slot:c="{column}">
+                <div
+                    class="flex flex-grow-[1] justify-center"
+                    :class="parseFloat(column[1].oldC) > column[1].c ? 'text-ask' : 'text-bid'"
                 >
-                <p>
-                    {{ item.symbol }}
-                </p>
-                <p class="flex flex-grow-[1] justify-center">
-                    ${{ ticker[item.symbol].c | dimension }}
-                </p>
-                <PercentPriceBulb :percent-price="ticker[item.symbol].P" />
-            </div>
-        </div>
+                    ${{ column[1].c | dimension }}
+                </div>
+            </template>
+
+            <template v-slot:P="{column}">
+                <PercentPriceBulb :percent-price="column[1].P" />
+            </template>
+        </SortableList>
     </div>
 </template>
 
 <script>
 import Websocket from "@/helper/websocket";
 import PercentPriceBulb from "@/components/PercentPriceBulb.vue";
+import SortableList from "@/components/SortableList.vue";
 
 export default {
     components: {
         PercentPriceBulb,
+        SortableList,
     },
     data() {
         return {
-            symbolList: [
+            symbolObj: {},
+            ws: "",
+            columns: [
                 {
-                    name: "BTC/USDT",
-                    symbol: "BTCUSDT",
-                    icon: require("@/assets/crypto/btc.png"),
+                    title: "交易对",
+                    dataSlot: "symbol",
+                    sortKey: "symbol",
+                    sortType: "string",
                 },
                 {
-                    name: "BNB/USDT",
-                    symbol: "BNBUSDT",
-                    icon: require("@/assets/crypto/bnb.png"),
+                    title: "最新价",
+                    dataSlot: "c",
+                    sortKey: "c",
+                    sortType: "number",
                 },
                 {
-                    name: "ETH/USDT",
-                    symbol: "ETHUSDT",
-                    icon: require("@/assets/crypto/eth.png"),
+                    title: "24h漲跌",
+                    dataSlot: "P",
+                    sortKey: "P",
+                    sortType: "number",
                 },
             ],
-            ticker: {
-                BTCUSDT: {},
-                ETHUSDT: {},
-                BNBUSDT: {},
-            },
-            ws: "",
         };
     },
     created() {
-        const ws = new Websocket();
+        let symbolObj = {};
+        // init要监听的交易对
+        const symbolList = this.$store.getters.symbolList.map((e) => {
+            symbolObj[e.symbol] = e;
+            return `${e.symbol.toLowerCase()}@ticker`;
+        });
+        this.symbolObj = symbolObj;
 
+        const ws = new Websocket();
         const callbacks = {
             open: () => console.log("open"),
             close: () => console.log("closed"),
             message: (evt) => {
                 const {data} = JSON.parse(evt.data);
-                this.ticker[data.s] = data;
+                let newSymbolObj = Object.assign({}, this.symbolObj);
+
+                const symbol = newSymbolObj[data.s];
+                symbol.oldC = symbol?.c || "0";
+                symbol.c = data.c;
+                symbol.P = data.P;
+                this.symbolObj = newSymbolObj;
             },
         };
-        ws.combinedStreams(["btcusdt@ticker", "bnbusdt@ticker", "ethusdt@ticker"], callbacks);
+        ws.combinedStreams(symbolList, callbacks);
         this.ws = ws;
     },
     beforeDestroy() {

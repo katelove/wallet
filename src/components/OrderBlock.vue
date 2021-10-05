@@ -10,7 +10,7 @@
             >
                 限價{{ side === "BUY" ? "买入" : "卖出" }}({{ progress }}%)
             </div>
-            <div class="text-xs text-lightGray">
+            <div class="text-xs text-lightGray0">
                 {{ transactTime | formateToDateTimeSecond }}
             </div>
         </div>
