@@ -73,7 +73,8 @@ const routes = [
                 meta: {
                     showGoback: true,
                     showHistory: true,
-                    hideBottomNav: true
+                    hideBottomNav: true,
+                    title: '充值/收款'
                 }
             },
             {
