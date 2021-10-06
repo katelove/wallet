@@ -72,7 +72,8 @@ const routes = [
                 component: () => import("@/views/Deposit"),
                 meta: {
                     showGoback: true,
-                    showHistory: true
+                    showHistory: true,
+                    hideBottomNav: true
                 }
             },
             {
@@ -80,7 +81,8 @@ const routes = [
                 component: () => import("@/views/Withdraw"),
                 meta: {
                     showGoback: true,
-                    showHistory: true
+                    showHistory: true,
+                    hideBottomNav: true
                 }
             },
         ]

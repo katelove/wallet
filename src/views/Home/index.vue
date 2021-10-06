@@ -43,7 +43,7 @@
                     <p>充值/收款</p>
                 </router-link>
                 <router-link
-                    :to="'/crypto/deposit'"
+                    :to="'/crypto/withdraw'"
                     class="nav-router border-l border-r border-[#c8c8c8] border-r-[0.5px] border-l-[0.5px]"
                 >
                     <Icon
