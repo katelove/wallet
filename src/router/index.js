@@ -63,7 +63,8 @@ const routes = [
                 path: '/crypto/:action',
                 component: () => import("@/views/CryptoList"),
                 meta: {
-                    showGoback: true
+                    showGoback: true,
+                    title: "幣種選擇"
                 }
             },
             {
@@ -81,7 +82,8 @@ const routes = [
                 component: () => import("@/views/Withdraw"),
                 meta: {
                     showGoback: true,
-                    showHistory: true
+                    showHistory: true,
+                    hideBottomNav: true
                 }
             },
         ]
