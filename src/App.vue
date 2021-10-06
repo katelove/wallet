@@ -35,7 +35,7 @@ export default {
                 vh = "100vh";
             } else if (!hideBottomNav && !hideTopNav) {
                 vh = "79vh";
-            } else if (!hideBottomNav) {
+            } else if (!hideBottomNav || (hideBottomNav && !hideTopNav)) {
                 vh = "90vh";
             }
             return vh;
