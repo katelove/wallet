@@ -173,7 +173,7 @@ export default {
 
 <style lang="postcss" scoped>
 .formInput {
-    @apply rounded-[8px] bg-[#F4F4F4] w-full px-[16px] py-[8px] mb-[8px];
+    @apply rounded-[8px] bg-lightGray3 w-full px-[16px] py-[8px] mb-[8px];
 }
 .typeMarket {
     @apply border-mainColor text-mainColor;

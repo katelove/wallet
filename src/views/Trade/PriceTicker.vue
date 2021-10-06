@@ -6,7 +6,7 @@
         >
             {{ ticker.c | dimension }}
         </p>
-        <p class="text-textGray text-[14px]">
+        <p class="text-lightGray0 text-[14px]">
             ${{ ticker.c | dimension }}
         </p>
     </div>

@@ -26,9 +26,9 @@ module.exports = {
                 skyBlue: "#DAF6FF",
                 ask: "#FD5959",
                 bid: "#46DF4C",
-                textGray: "#D1D2D2",
                 mainColor: "#FFA31A",
-                lightGray: "#D1D2D2",
+                lightGray0: "#D1D2D2",
+                lightGray3: "#F4F4F4"
             },
             fontSize: {
                 "25px": "25px",

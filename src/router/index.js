@@ -11,6 +11,9 @@ const routes = [
         path: "/",
         name: "Home",
         component: () => import("@/views/Home"),
+        meta: {
+            hideTopNav: true
+        }
     },
     {
         path: "/kline/:symbol",
