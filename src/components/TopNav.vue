@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="shadow-bottom text-[700] text-[26px] text-center py-[11px] min-h-[10vh]">
+    <div class="shadow-bottom text-[700] text-[26px] text-center py-[11px] h-[10vh]">
         <img
             v-show="$route.meta.showGoback"
             style="width: 23px"

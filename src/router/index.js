@@ -71,7 +71,9 @@ const routes = [
                 component: () => import("@/views/Deposit"),
                 meta: {
                     showGoback: true,
-                    showHistory: true
+                    showHistory: true,
+                    hideBottomNav: true,
+                    title: '充值/收款'
                 }
             },
             {

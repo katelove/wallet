@@ -1,6 +1,6 @@
 <template lang="">
     <button
-        :class="[bg, rounded, textColor]"
+        :class="[bg, rounded, textColor, borderColor]"
         v-bind="$attrs"
         @click="$emit('click')"
     >
@@ -20,6 +20,10 @@ export default {
         },
         textColor: {
             default: "text-white",
+            type: String,
+        },
+        borderColor: {
+            default: "",
             type: String,
         },
     },
