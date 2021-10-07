@@ -58,9 +58,6 @@ const routes = [
             {
                 path: '/wallet/:crypto',
                 component: () => import("@/views/Wallet/DepositRecords"),
-                meta: {
-                    title: crypto,
-                }
             }
         ]
     },

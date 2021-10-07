@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="flex items-center justify-center mt-[16px] mb-[11px] text-[12px]">
-            <div class="w-[53px] h-[60px]">
+            <div class="mx-[34px] w-[53px] h-[60px]">
                 <router-link :to="'/crypto/deposit'">
                     <Icon
                         class="m-auto w-[40px] h-[40px]"
@@ -36,15 +36,6 @@
                 </router-link>
                 <p class="mt-[8px] text-center">
                     提現/轉帳
-                </p>
-            </div>
-            <div class="w-[53px] h-[60px]">
-                <Icon
-                    class="m-auto w-[40px] h-[40px]"
-                    :src="require('@/assets/icon/bill.png')"
-                />
-                <p class="mt-[8px] text-center">
-                    帳單
                 </p>
             </div>
         </div>
@@ -78,7 +69,7 @@ export default {
             return this.$store.getters.balances;
         },
         amountTotal() {
-            if (this.wordDisplay === false) {
+            if (!this.wordDisplay) {
                 return "***********";
             } else {
                 return this.$store.getters.amountTotal;
@@ -87,7 +78,7 @@ export default {
     },
     methods: {
         toggle() {
-            if (this.wordDisplay === true) {
+            if (this.wordDisplay) {
                 this.wordDisplay = false;
                 this.eyePic = require("@/assets/icon/asset_eye.png");
             } else {

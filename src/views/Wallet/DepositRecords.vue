@@ -1,9 +1,9 @@
 <template lang="">
-    <div class="pt-[16px] px-[12px]">
+    <div class="pt-[16px] px-[12px] relative">
         <CryptoItem
-            :symbol="crypto.asset"
-            :free="crypto.free"
-            :locked="crypto.locked"
+            :symbol="crypto"
+            :free="balances[crypto].free"
+            :locked="balances[crypto].locked"
         />
         <div class="bg-[#E8E8E8] h-[10px] w-full mt-[12px]" />
         <div class="bg-white h-[34px]">
@@ -29,27 +29,26 @@
                 :price="order.price"
             />
         </div>
-        <!-- <div class="bg-lightGray3">
-            <div class="flex flex-row">
-                <router-link to="/crypto/deposit">
-                    <img
-                        :src="getCryptoImgUrl($route.params.crypto)"
-                        class="w-[25px] h-[25px] mr-[7px]"
-                    >
-                </router-link>
-                <p>{{ crypto.toUpperCase() }}</p>
-            </div>
-        </div> -->
+        <div class="absolute bottom-0 px-[18px]">
+            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] mr-[15px]">
+                收款
+            </Button>
+            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] ml-[15px]">
+                轉帳
+            </Button>
+        </div>
     </div>
 </template>
 <script>
-import {getCryptoImgUrl} from "@/utlis";
+// import {getCryptoImgUrl} from "@/utlis";
 import AssetsBlock from "@/components/AssetsBlock.vue";
 import CryptoItem from "./CryptoItem.vue";
+import Button from "@/components/Button.vue";
 export default {
     components: {
         AssetsBlock,
         CryptoItem,
+        Button,
     },
     data() {
         return {
@@ -57,8 +56,10 @@ export default {
             assetsRecords: [],
         };
     },
-    methods: {
-        getCryptoImgUrl,
+    computed: {
+        balances() {
+            return this.$store.getters.balances;
+        },
     },
 };
 </script>
