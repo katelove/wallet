@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="rounded-10px bg-white mb-[10px] shadow-bottom text-12px">
+    <div class="sortableListContainer rounded-10px bg-white mb-[10px] shadow-bottom text-12px">
         <div class="flex pt-[12px] px-[16px] justify-between text-lightGray0">
             <div
                 v-for="column in columns"

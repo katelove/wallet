@@ -23,6 +23,7 @@
                 <img
                     src="@/assets/icon/vector.png"
                     class="w-[6px] h-[12px] transform rotate-180"
+                    @click="$router.push('/wallet')"
                 >
             </div>
         </div>

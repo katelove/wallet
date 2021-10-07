@@ -8,15 +8,24 @@
             :source-data="Object.entries(symbolObj)"
             class="min-h-[180px]"
         >
-            <template
-                v-slot:symbol="{column}"
-                class="flex"
-            >
-                <div class="text-[12px]">
-                    {{ column[1].base }}
-                </div>
-                <div class="text-[8px] text-lightGray0">
-                    /{{ column[1].quote }}
+            <template v-slot:symbol="{column}">
+                <div class="flex flex-col">
+                    <div class="flex">
+                        <div class="text-[12px]">
+                            {{ column[1].base }}
+                        </div>
+                        <div class="text-[8px] text-lightGray0">
+                            /{{ column[1].quote }}
+                        </div>
+                    </div>
+                    <div class="flex text-lightGray0 text-[11px]">
+                        <div class="text-[12px]">
+                            {{ column[1].baseChinese }}
+                        </div>
+                        <div class="text-[8px]">
+                            /{{ column[1].quoteChinese }}
+                        </div>
+                    </div>
                 </div>
             </template>
             <template v-slot:c="{column}">

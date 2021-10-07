@@ -29,7 +29,8 @@ module.exports = {
                 mainColor: "#FFA31A",
                 lightGray0: "#D1D2D2",
                 lightGray2: "#E8E8E8",
-                lightGray3: "#F4F4F4"
+                lightGray3: "#F4F4F4",
+                drak0: "#1B1C1E"
             },
             fontSize: {
                 "25px": "25px",
