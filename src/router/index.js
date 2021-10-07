@@ -45,12 +45,24 @@ const routes = [
         }
     },
     {
-        path: "/wallet",
-        name: "Wallet",
-        component: () => import("@/views/Wallet"),
-        meta: {
-            title: '資產中心'
-        }
+        path: "/wallet/:crypto",
+        component: RouteView,
+        children: [
+            {
+                path: '/wallet',
+                component: () => import("@/views/Wallet/index"),
+                meta: {
+                    title: '資產中心'
+                }
+            },
+            {
+                path: '/wallet/:crypto',
+                component: () => import("@/views/Wallet/DepositRecords"),
+                meta: {
+                    title: crypto,
+                }
+            }
+        ]
     },
     {
         path: "/crypto/:action/:crypto",

@@ -1,6 +1,5 @@
-/* eslint-disable vue/no-side-effects-in-computed-properties */
 <template lang="">
-    <div class="my-2">
+    <div class="my-2 pb-[15px]">
         <div class="bg-mainColor rounded-[12px] flex flex-col items-start justify-center pl-[28px] pt-[16px] pb-[16px] mx-[12px]">
             <p class="font-bold text-white text-[18px]">
                 總資產折合 (USDT)
@@ -18,28 +17,30 @@
         </div>
         <div class="flex items-center justify-center mt-[16px] mb-[11px] text-[12px]">
             <div class="w-[53px] h-[60px]">
-                <Icon
-                    class="m-auto w-[32px] h-[32px]"
-                    :src="require('@/assets/icon/deposit.png')"
-                />
+                <router-link :to="'/crypto/deposit'">
+                    <Icon
+                        class="m-auto w-[40px] h-[40px]"
+                        :src="require('@/assets/icon/deposit.png')"
+                    />
+                </router-link>
                 <p class="mt-[8px] text-center">
                     充值/收款
                 </p>
             </div>
             <div class="mx-[34px] w-[53px] h-[60px]">
-                <Icon
-                    class="m-auto"
-                    style="width: 32px; height: 32px"
-                    :src="require('@/assets/icon/withdraw.png')"
-                />
+                <router-link :to="'/crypto/withdraw'">
+                    <Icon
+                        class="m-auto w-[40px] h-[40px]"
+                        :src="require('@/assets/icon/withdraw.png')"
+                    />
+                </router-link>
                 <p class="mt-[8px] text-center">
                     提現/轉帳
                 </p>
             </div>
             <div class="w-[53px] h-[60px]">
                 <Icon
-                    class="m-auto"
-                    style="width: 28px; height: 31px"
+                    class="m-auto w-[40px] h-[40px]"
                     :src="require('@/assets/icon/bill.png')"
                 />
                 <p class="mt-[8px] text-center">
@@ -78,7 +79,7 @@ export default {
         },
         amountTotal() {
             if (this.wordDisplay === false) {
-                return "*********";
+                return "***********";
             } else {
                 return this.$store.getters.amountTotal;
             }
