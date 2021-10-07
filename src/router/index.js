@@ -12,7 +12,8 @@ const routes = [
         name: "Home",
         component: () => import("@/views/Home"),
         meta: {
-            hideTopNav: true
+            hideTopNav: true,
+            keepAlive: true
         }
     },
     {
@@ -22,13 +23,17 @@ const routes = [
         meta: {
             showGoback: true,
             hideBottomNav: true,
-            hideTopNav: true
+            hideTopNav: true,
+            keepAlive: true
         }
     },
     {
         path: "/market",
-        name: "market",
+        name: "Market",
         component: () => import("@/views/Market"),
+        meta: {
+            keepAlive: true
+        }
     },
     {
         path: "/trade/:symbol/:side?",
@@ -36,7 +41,8 @@ const routes = [
         component: () => import("@/views/Trade"),
         meta: {
             showGoback: true,
-            title: '币币交易'
+            title: '币币交易',
+            keepAlive: true
         }
     },
     {

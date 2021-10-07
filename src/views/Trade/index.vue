@@ -27,7 +27,10 @@ export default {
         OrderForm,
         UserInfo,
     },
-    mounted() {
+    created() {
+        localStorage.setItem("defaultTrade", this.$route.params.symbol);
+    },
+    activated() {
         localStorage.setItem("defaultTrade", this.$route.params.symbol);
     },
 };

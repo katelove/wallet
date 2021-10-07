@@ -9,7 +9,16 @@
             class="overflow-y-scroll overflow-x-hidden"
             :style="`height: ${hideBottomNav}`"
         >
-            <router-view />
+            <keep-alive>
+                <router-view
+                    v-if="$route.meta.keepAlive"
+                    :key="$route.fullPath"
+                />
+            </keep-alive>
+            <router-view
+                v-if="!$route.meta.keepAlive"
+                :key="$route.fullPath"
+            />
         </div>
         <BottomNav v-if="!$route.meta.hideBottomNav" />
     </div>

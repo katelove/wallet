@@ -60,13 +60,13 @@ export default {
         };
     },
     created() {
-        this.ws = new Websocket();
-        this.ws.partialBookDepth(this.orderBook.symbol, "", "1000ms", {
-            message: (evt) => {
-                const data = JSON.parse(evt.data);
-                orderbookUpdateFromWebsocket(this.orderBook, data);
-            },
-        });
+        this.webSocketConnect();
+    },
+    activated() {
+        if (this.orderBook.symbol !== this.$route.params.symbol) {
+            this.activatedInit();
+            this.webSocketConnect();
+        }
     },
     beforeDestroy() {
         this.ws.unsubscribe();
@@ -79,6 +79,26 @@ export default {
                 return `linear-gradient(to left, ${type === "bid" ? "#c8eedc" : "#fd595940"} ${weight}%, rgba(0, 0, 0, 0) ${weight}%)`;
             }
             return "";
+        },
+        activatedInit() {
+            this.orderBook = {
+                symbol: this.$route.params.symbol.toLocaleUpperCase(),
+                ask: [],
+                bid: [],
+                lastUpdateId: "",
+                askCount: 0,
+                bidCount: 0,
+            };
+            this.ws.unsubscribe();
+        },
+        webSocketConnect() {
+            this.ws = new Websocket();
+            this.ws.partialBookDepth(this.orderBook.symbol, "", "1000ms", {
+                message: (evt) => {
+                    const data = JSON.parse(evt.data);
+                    orderbookUpdateFromWebsocket(this.orderBook, data);
+                },
+            });
         },
     },
 };
