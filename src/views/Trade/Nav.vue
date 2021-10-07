@@ -51,17 +51,20 @@ export default {
             symbol: this.$route.params.symbol.toUpperCase(),
             ticker: {},
             favorite: JSON.parse(localStorage.getItem("favorite")) || [],
+            ws: "",
         };
     },
     created() {
-        const ws = new Websocket();
-
-        ws.tickerWS(this.$route.params.symbol, {
-            message: (evt) => {
-                const data = JSON.parse(evt.data);
-                this.ticker = data;
-            },
-        });
+        this.webSocketConnect();
+    },
+    activated() {
+        if (this.symbol !== this.$route.params.symbol.toUpperCase()) {
+            this.activatedInit();
+            this.webSocketConnect();
+        }
+    },
+    beforeDestroy() {
+        this.ws.unsubscribe();
     },
     methods: {
         toggleFavorite() {
@@ -74,6 +77,23 @@ export default {
                 favorite.splice(index, 1);
             }
             localStorage.setItem("favorite", JSON.stringify(favorite));
+        },
+        activatedInit() {
+            this.showMarketModal = false;
+            this.symbol = this.$route.params.symbol.toUpperCase();
+            this.ticker = {};
+            this.favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+            this.ws.unsubscribe();
+        },
+        webSocketConnect() {
+            this.ws = new Websocket();
+
+            this.ws.tickerWS(this.$route.params.symbol, {
+                message: (evt) => {
+                    const data = JSON.parse(evt.data);
+                    this.ticker = data;
+                },
+            });
         },
     },
 };

@@ -19,19 +19,38 @@ export default {
         return {
             ticker: {},
             old: {},
+            ws: "",
+            symbol: this.$route.params.symbol,
         };
     },
     created() {
-        const ws = new Websocket();
+        this.webSocketConnect();
+    },
+    activated() {
+        if (this.symbol !== this.$route.params.symbol) {
+            this.activatedInit();
+            this.webSocketConnect();
+        }
+    },
+    methods: {
+        activatedInit() {
+            this.ticker = {};
+            this.old = {};
+            this.symbol = this.$route.params.symbol;
+            this.ws.unsubscribe();
+        },
+        webSocketConnect() {
+            this.ws = new Websocket();
 
-        ws.miniTickerWS(this.$route.params.symbol, {
-            message: (evt) => {
-                const data = JSON.parse(evt.data);
+            this.ws.miniTickerWS(this.symbol, {
+                message: (evt) => {
+                    const data = JSON.parse(evt.data);
 
-                this.old = JSON.parse(JSON.stringify(this.ticker));
-                this.ticker = data;
-            },
-        });
+                    this.old = JSON.parse(JSON.stringify(this.ticker));
+                    this.ticker = data;
+                },
+            });
+        },
     },
 };
 </script>

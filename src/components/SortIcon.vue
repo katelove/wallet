@@ -1,12 +1,12 @@
 <template lang="">
-    <div>
+    <div class="self-baseline">
         <img
             :src="require(`@/assets/icon/sortUp${isActive && direction === 1 ? 'Active' : ''}.png`)"
-            class="h-[3px] w-[6px]"
+            class="h-[5px] w-[10px] mt-[2px]"
         >
         <img
             :src="require(`@/assets/icon/sortDown${isActive && direction === -1 ? 'Active' : ''}.png`)"
-            class="h-[3px] w-[6px]"
+            class="h-[5px] w-[10px] mt-[1px]"
         >
     </div>
 </template>
