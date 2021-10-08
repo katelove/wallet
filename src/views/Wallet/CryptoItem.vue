@@ -1,6 +1,9 @@
 <template lang="">
     <div class="mt-[15px] px-[12px]">
-        <div class="flex justify-between text-12px pl-[4px] px-[7px] mx-[12px] shadow-small">
+        <div
+            class="flex justify-between text-12px pl-[4px] px-[7px] shadow-small"
+            @click="goWallet(symbol)"
+        >
             <div class="flex flex-row mt-[7px] mb-[7px] ml-[22px]">
                 <div class="mr-[15px]">
                     <img
@@ -62,6 +65,9 @@ export default {
     },
     methods: {
         getCryptoImgUrl,
+        goWallet: function (symbol) {
+            this.$router.push(`/wallet/${symbol}`);
+        },
     },
 };
 </script>
