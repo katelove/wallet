@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="pt-[16px] px-[12px] relative">
+    <div class="pt-[16px] relative h-[75vh]">
         <CryptoItem
             :symbol="crypto"
             :free="balances[crypto].free"
@@ -13,34 +13,27 @@
         </div>
         <div
             v-if="assetsRecords.length === 0"
-            class="bg-[#F4F4F4]"
+            class="bg-[#F4F4F4] h-[40vh] flex items-center justify-center"
         >
             無交易
         </div>
-        <div v-else>
-            <AssetsBlock
-                v-for="order in orders"
-                :key="order.i"
-                :side="order.side"
-                :transact-time="order.time"
-                :symbol="order.symbol"
-                :orig-qty="order.origQty"
-                :executed-qty="order.executedQty"
-                :price="order.price"
-            />
+        <div
+            v-else
+            class="px-[16px]"
+        >
+            <AssetsBlock />
         </div>
-        <div class="absolute bottom-0 px-[18px]">
-            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] mr-[15px]">
+        <div class="absolute bottom-0 m-auto right-0 left-0 text-center">
+            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] mr-[16px]">
                 收款
             </Button>
-            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] ml-[15px]">
+            <Button class="bg-mainColor text-white rounded-[8px] text-center w-[144px] h-[44px] ml-[16px]">
                 轉帳
             </Button>
         </div>
     </div>
 </template>
 <script>
-// import {getCryptoImgUrl} from "@/utlis";
 import AssetsBlock from "@/components/AssetsBlock.vue";
 import CryptoItem from "./CryptoItem.vue";
 import Button from "@/components/Button.vue";

@@ -10,15 +10,15 @@
         </div>
         <div class="flex justify-between">
             <p>金額</p>
-            <p>{{ moneyNum | dimension }}</p>
+            <p>0</p>
         </div>
         <div class="flex justify-between">
             <p>手續費</p>
-            <p>{{ fee | dimension }}</p>
+            <p>100.00</p>
         </div>
         <div class="flex justify-between">
             <p>地址</p>
-            <p class="text-mainColor border border-dotted">
+            <p class="text-mainColor border-dotted border-b border-mainColor">
                 9a246sd4ef......63dfr4e723
             </p>
         </div>
@@ -35,16 +35,6 @@
 <script>
 export default {
     name: "AssetsModel",
-    props: {
-        moneyNum: {
-            type: Number,
-            default: 0,
-        },
-        fee: {
-            type: Number,
-            default: 0,
-        },
-    },
     data() {
         return {
             crypto: this.$route.params.crypto,

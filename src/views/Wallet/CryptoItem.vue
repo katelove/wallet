@@ -1,12 +1,14 @@
 <template lang="">
     <div class="mt-[15px] px-[12px]">
-        <div class="flex justify-between text-12px pl-[4px] px-[7px] mx-[12px] shadow-small">
+        <div
+            class="flex justify-between text-12px pl-[4px] px-[7px] shadow-small"
+            @click="goWallet(symbol)"
+        >
             <div class="flex flex-row mt-[7px] mb-[7px] ml-[22px]">
                 <div class="mr-[15px]">
                     <img
                         class="w-[24px] h-[24px]"
                         :src="getCryptoImgUrl(symbol.toLowerCase())"
-                        @click="goWithdraw(symbol)"
                     >
                 </div>
                 <div class="flex flex-col justify-evenly items-end text-[14px]">
@@ -63,7 +65,7 @@ export default {
     },
     methods: {
         getCryptoImgUrl,
-        goWithdraw: function (symbol) {
+        goWallet: function (symbol) {
             this.$router.push(`/wallet/${symbol}`);
         },
     },
